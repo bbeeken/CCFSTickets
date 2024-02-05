@@ -132,7 +132,7 @@
             Height: =SidebarContainer3_1.Height+SidebarContainer3_2.Height+MainContainer2.Height
             LayoutAlignItems: =LayoutAlignItems.Stretch
             LayoutGap: =5
-            LayoutMinHeight: =200
+            LayoutMinHeight: =If(Dashboard.Size < 4,400,200)
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
             LayoutOverflowY: =LayoutOverflow.Scroll
@@ -682,7 +682,7 @@
             Fill: =RGBA(245, 245, 245, 1)
             LayoutAlignItems: =LayoutAlignItems.Stretch
             LayoutGap: =16
-            LayoutMinHeight: =0
+            LayoutMinHeight: =If(Dashboard.Size < 4,400,200)
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
             LayoutWrap: =true

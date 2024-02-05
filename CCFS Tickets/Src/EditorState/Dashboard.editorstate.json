@@ -127,7 +127,7 @@
           "Property": {
             "Category": "Design",
             "PropertyName": "LayoutMinHeight",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           "PropertyName": "LayoutMinHeight"
         }
@@ -356,7 +356,7 @@
           "Property": {
             "Category": "Design",
             "PropertyName": "LayoutMinHeight",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           "PropertyName": "LayoutMinHeight"
         }
@@ -3285,7 +3285,7 @@
         {
           "Category": "Design",
           "PropertyName": "TemplateSize",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -3569,7 +3569,7 @@
         {
           "Category": "Design",
           "PropertyName": "TemplateSize",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
