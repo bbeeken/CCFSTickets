@@ -217,7 +217,7 @@
                             SortOrder.Descending
                         )
                     Layout: =Layout.Vertical
-                    LayoutMinHeight: =Gallery7_1.TemplateHeight * Gallery7_1.AllItemsCount
+                    LayoutMinHeight: =(Gallery7_1.TemplateHeight * Gallery7_1.AllItemsCount) + ((Gallery7_1.TemplateHeight * Gallery7_1.AllItemsCount) * 25%)
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: =
@@ -402,7 +402,7 @@
                             SortOrder.Descending
                         )
                     Layout: =Layout.Vertical
-                    LayoutMinHeight: =(Gallery7.TemplateHeight * Gallery7.AllItemsCount) + ((Gallery7.TemplateHeight * Gallery7.AllItemsCount) * 5%)
+                    LayoutMinHeight: =(Gallery7.TemplateHeight * Gallery7.AllItemsCount) + ((Gallery7.TemplateHeight * Gallery7.AllItemsCount) * 25%)
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: =
@@ -591,32 +591,12 @@
                             SortOrder.Descending
                         )
                     Layout: =Layout.Vertical
-                    LayoutMinHeight: =
+                    LayoutMinHeight: =(Gallery7_2.TemplateHeight * Gallery7_2.AllItemsCount) + ((Gallery7_2.TemplateHeight * Gallery7_2.AllItemsCount) * 25%)
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: =
                     TemplatePadding: =1
-                    TemplateSize: |-
-                        =// Dynamic TemplateSize for a vertical gallery with one item per line
-                        With(
-                            {
-                                screenHeight: Dashboard.Height,
-                                screenWidth: Dashboard.Width,
-                                visibleItemCount: 4 // Number of items you want to be visible at once
-                            },
-                            If(
-                                Gallery7.AllItemsCount > 0,
-                                If(
-                                    Gallery7.AllItemsCount < visibleItemCount,
-                                    screenHeight / Gallery7.AllItemsCount, // Adjust when fewer items than visible count
-                                    Min(
-                                        screenHeight / visibleItemCount, // Set the size based on visible item count
-                                        75 // Minimum size for an item, adjust as needed
-                                    )
-                                ),
-                                0 // Default size when there are no items
-                            )
-                        )
+                    TemplateSize: =75
                     Width: =Parent.Width
                     ZIndex: =2
 
