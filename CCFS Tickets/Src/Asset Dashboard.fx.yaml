@@ -1772,69 +1772,83 @@
                     FontWeight: =""
                     Height: =32
                     OnSelect: |
-                        =If(
-                            AssetEditForm.Mode = FormMode.New,
-                            // Logic for creating a new asset
-                            Set(
-                                AssetFormItem,
-                                Patch(
-                                    Assets,
-                                    Defaults(Assets),
-                                    {
-                                        Site_ID: Site_ID_DataCard1.Update,
-                                        Serial_Number: Serial_Number_DataCard1.Update,
-                                        Label: Label_DataCard1.Update,
-                                        Manufacturer: Manufacturer_DataCard1.Update,
-                                        Model: Model_DataCard1.Update,
-                                        Asset_Category_ID_MS: Asset_Category_ID_MS_DataCard1.Update,
-                                        AssetType: AssetType_DataCard1.Update,
-                                        Number_Service_Request: 0,
-                                        Prefered_Vendor: Prefered_Vendor_DataCard1.Update,
-                                        Purchase_Price: Value(Purchase_Price_DataCard1.Update),
-                                        Ticket_Category_ID: Ticket_Category_ID_DataCard2.Update,
-                                        Asset_Category_ID: Int(Asset_Category_ID_MS_DataCard1.Update),
-                                        PDIItemID: PDIItemID_DataCard1.Update
-                                        // ... include other data cards as needed
-                                    }
+                        =// Determine the mode of the AssetEditForm and set the IsNewAsset flag accordingly
+                        Set(
+                            IsNewAsset,
+                            AssetEditForm.Mode = FormMode.New
+                        );
+                        
+                        // Clear and collect data into AssetFormProcess based on the mode
+                        ClearCollect(
+                            AssetFormProcess,
+                            {
+                                Asset_ID: If(
+                                    IsNewAsset,
+                                    "",
+                                    Text(ID_DataCard1.Default)
+                                ),
+                                NewAsset: IsNewAsset,
+                                Site_ID: Site_ID_DataCard1.Update,
+                                Serial_Number: Serial_Number_DataCard1.Update,
+                                Label: Label_DataCard1.Update,
+                                Manufacturer: Manufacturer_DataCard1.Update,
+                                Model: Model_DataCard1.Update,
+                                Asset_Category_ID_MS: Asset_Category_ID_MS_DataCard1.Update,
+                                AssetType: AssetType_DataCard1.Update,
+                                Number_Service_Request: If(
+                                    IsNewAsset,
+                                    0,
+                                    Number_Service_Request_DataCard1.Default
+                                ),
+                                Prefered_Vendor: Prefered_Vendor_DataCard1.Update,
+                                Purchase_Price: Value(Purchase_Price_DataCard1.Update),
+                                Ticket_Category_ID: Ticket_Category_ID_DataCard2.Update,
+                                Asset_Category_ID: Int(Asset_Category_ID_MS_DataCard1.Update),
+                                PDIItemID: PDIItemID_DataCard1.Update,
+                                LastModifiedBy: User().FullName,
+                                LastModifiedDate: Now(),
+                                CreatedBy: If(
+                                    IsNewAsset,
+                                    User().FullName,
+                                    LastCreatedBy_DataCard1.Default
+                                ),
+                                Version: If(
+                                    IsNewAsset,
+                                    1,
+                                    Version_DataCard2.Default + 1
                                 )
+                                // ... include other data cards as needed
+                            }
+                        );
+                        
+                        // Notify if there was an issue with the action
+                        If(
+                            IsEmpty(AssetFormProcess),
+                            Notify(
+                                "There was an issue with this action.",
+                                NotificationType.Error
+                            ),
+                            Set(
+                                returnID,
+                                Process_Asset_Form_Data.Run(JSON(AssetFormProcess))
                             );
-                            Notify(
-                                "Asset Created",
-                                NotificationType.Success,20
-                            ),
-                            // Logic for updating an existing asset
-                            Set(
-                                AssetFormItem,
-                                Patch(
-                                    Assets,
-                                    LookUp(
-                                        Assets,
-                                        ID = Int(ID_DataCard1.Default)
-                                    ),
-                                    {
-                                        ID: Int(ID_DataCard1.Default),
-                                        Site_ID: Site_ID_DataCard1.Update,
-                                        Serial_Number: Serial_Number_DataCard1.Update,
-                                        Label: Label_DataCard1.Update,
-                                        Manufacturer: Manufacturer_DataCard1.Update,
-                                        Model: Model_DataCard1.Update,
-                                        Asset_Category_ID_MS: Asset_Category_ID_MS_DataCard1.Update,
-                                        AssetType: AssetType_DataCard1.Update,
-                                        // Assuming Number_Service_Request should not change during an update
-                                        Prefered_Vendor: Prefered_Vendor_DataCard1.Update,
-                                        Purchase_Price: Value(Purchase_Price_DataCard1.Update),
-                                        Ticket_Category_ID: Ticket_Category_ID_DataCard2.Update,
-                                        Asset_Category_ID: Int(Asset_Category_ID_MS_DataCard1.Update),
-                                        PDIItemID: PDIItemID_DataCard1.Update
-                                        // ... include other data cards as needed
-                                    }
+                            If(
+                                IsBlank(returnID),
+                                Notify(
+                                    "There was an issue with saving the asset.",
+                                    NotificationType.Error
+                                ),
+                                Notify(
+                                    "Asset Saved.",
+                                    NotificationType.Success,
+                                    5
                                 )
-                            ),
-                            Notify(
-                                "Asset Updated",
-                                NotificationType.Success,5
                             )
                         );
+                        
+                        // Refresh the asset data source and reset the form
+                        Refresh(Assets);
+                        EditForm(AssetEditForm);
                     Text: ="Save"
                     Width: =96
                     X: =119

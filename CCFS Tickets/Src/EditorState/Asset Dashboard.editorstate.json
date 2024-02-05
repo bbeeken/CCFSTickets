@@ -542,7 +542,7 @@
       "MetaDataIDKey": "",
       "Name": "AssetEditForm",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1038,7 +1038,7 @@
       "MetaDataIDKey": "",
       "Name": "AttachmentContainer_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9111,7 +9111,7 @@
       "MetaDataIDKey": "",
       "Name": "Gallery10_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12383,7 +12383,7 @@
       "MetaDataIDKey": "",
       "Name": "Label18_14",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12679,7 +12679,7 @@
       "MetaDataIDKey": "",
       "Name": "Label18_15",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14995,7 +14995,7 @@
       "MetaDataIDKey": "",
       "Name": "NewAttachmentsBtn_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18867,7 +18867,7 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas2_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19025,7 +19025,7 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas8_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
