@@ -748,22 +748,10 @@
                                 "Quick Order" ,
                                 "Quick Order"
                             )
-                        Width: =Parent.Width - Icon1_1.Width - Icon1_5.Width - Icon1_11.Width
+                        Width: =Parent.Width - Icon1_5.Width - Icon1_11.Width
                         X: =0.00
                         Y: =0.00
                         ZIndex: =1
-
-                    Icon1_1 As icon.Reload:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        Color: =RGBA(255, 255, 255, 1)
-                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                        DisabledColor: =RGBA(244, 244, 244, 1)
-                        Fill: =Label18_24.Fill
-                        Height: =Label18_24.Height
-                        Icon: =Icon.Add
-                        OnSelect: |-
-                            =Collect(partsTableData, {ItemNumber: "", Description: "", Quantity: ""})
-                        ZIndex: =2
 
                     Icon1_5 As icon.Reload:
                         BorderColor: =RGBA(0, 89, 178, 1)
@@ -773,7 +761,7 @@
                         Fill: =Label18_24.Fill
                         Height: =Label18_24.Height
                         Icon: =Icon.Save
-                        OnSelect: =Refresh(ServiceRequestMaster);
+                        OnSelect: =
                         ZIndex: =3
 
                     Icon1_11 As icon.Reload:
@@ -954,6 +942,7 @@
                             DisplayMode: =DisplayMode.Edit
                             FontColor: =
                             Height: =32
+                            Type: ='TextInputCanvas.Type'.Text
                             Width: =120
                             X: =194
                             Y: =8
