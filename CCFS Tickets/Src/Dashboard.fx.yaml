@@ -761,7 +761,7 @@
                         Fill: =Label18_24.Fill
                         Height: =Label18_24.Height
                         Icon: =Icon.Save
-                        OnSelect: =
+                        OnSelect: =Forms_QuickOrder_Link.Run();
                         ZIndex: =3
 
                     Icon1_11 As icon.Reload:
