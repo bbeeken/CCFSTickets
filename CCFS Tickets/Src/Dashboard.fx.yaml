@@ -179,7 +179,7 @@
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =4.63
-                    Size: =16
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
                     Text: ="Recently Updated"
                     Width: =Parent.Width
                     X: =0.00
@@ -365,7 +365,7 @@
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Size: =18.46
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
                         Text: |
                             =If(
                                 UserAdmin = 1,
@@ -593,6 +593,7 @@
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
                     Text: ="Older Than 45 Days"
                     Width: =Parent.Width
                     X: =0.00
@@ -793,7 +794,7 @@
                         PaddingLeft: =7.67
                         PaddingRight: =4.63
                         PaddingTop: =4.63
-                        Size: =18.46
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
                         Text: |
                             =If(
                                 UserAdmin = 1,
@@ -1040,7 +1041,7 @@
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =4.63
-                    Size: =18.46
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
                     Text: ="Forms/Links"
                     Width: =Parent.Width
                     X: =0.00
