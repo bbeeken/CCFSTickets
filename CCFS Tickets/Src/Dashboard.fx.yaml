@@ -896,7 +896,7 @@
                             Height: =28
                             Size: =13
                             Text: |-
-                                ="Parts: "
+                                ="Part #: "
                             Width: =194
                             Y: =11
                             ZIndex: =4
