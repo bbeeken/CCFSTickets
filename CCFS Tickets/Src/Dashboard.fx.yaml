@@ -772,12 +772,13 @@
                         Fill: =Label18_24.Fill
                         Height: =Label18_24.Height
                         Icon: =Icon.Cancel
-                        OnSelect: =Refresh(ServiceRequestMaster);
+                        OnSelect: =ResetForm(QuickOrderForm1)
                         ZIndex: =4
 
-                Form1 As form:
+                QuickOrderForm1 As form:
                     BorderColor: =RGBA(0, 89, 178, 1)
                     DataSource: =Tickets_Master
+                    DefaultMode: =FormMode.New
                     LayoutMinHeight: =250
                     LayoutMinWidth: =Parent.Width - 20
                     ZIndex: =2
@@ -812,47 +813,6 @@
                             Text: |-
                                 ="Order Type:"
                             Width: =Parent.Width *40%
-                            ZIndex: =2
-
-                    OrderSite As typedDataCard.blankCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =35
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =1
-                        ZIndex: =1
-
-                        DropdownCanvas1_1 As Dropdown.pcfdataset:
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =32
-                            Items: =SitesLocalVariable
-                            Width: =Parent.Width *60%
-                            X: =192
-                            Y: =8
-                            ZIndex: =1
-
-                            Label10 As pcfDataField.textualColumn:
-                                FieldDisplayName: ="Label"
-                                FieldName: ="Label"
-                                FieldType: ="s"
-                                FieldVariantName: ="textualColumn"
-                                Order: =1
-                                ZIndex: =12
-
-                        Label9_1 As label:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =31
-                            Size: =13
-                            Text: |-
-                                ="Order Site:"
-                            Width: =Parent.Width *40%
-                            Y: =9
                             ZIndex: =2
 
                     PartsItemNumber As typedDataCard.blankCard:
@@ -958,6 +918,48 @@
                                 ="Qty:"
                             Width: =194
                             Y: =12
+                            ZIndex: =2
+
+                    OrderSite As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =35
+                        Width: =Parent.Width
+                        WidthFit: =true
+                        X: =0
+                        Y: =1
+                        ZIndex: =1
+
+                        DropdownCanvas1_1 As Dropdown.pcfdataset:
+                            DefaultSelectedItems: =LookUp(SitesLocalVariable,ID=UserSite)
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            Items: =SitesLocalVariable
+                            Width: =Parent.Width *60%
+                            X: =192
+                            Y: =8
+                            ZIndex: =1
+
+                            Label10 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Label"
+                                FieldName: ="Label"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =12
+
+                        Label9_1 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =31
+                            Size: =13
+                            Text: |-
+                                ="Order Site:"
+                            Width: =Parent.Width *40%
+                            Y: =9
                             ZIndex: =2
 
             SidebarContainer3_3 As groupContainer.verticalAutoLayoutContainer:
