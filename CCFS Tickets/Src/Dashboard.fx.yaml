@@ -153,7 +153,7 @@
                 Height: =MainContainer1.Height
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =5
-                LayoutMinHeight: =75
+                LayoutMinHeight: =Gallery7_1.Height
                 LayoutMinWidth: |-
                     = If(
                             Dashboard.Width <= 640,  // Small screens
@@ -223,27 +223,7 @@
                     OnSelect: =
                     ShowNavigation: =true
                     TemplatePadding: =1
-                    TemplateSize: |
-                        =// Dynamic TemplateSize for a vertical gallery with one item per line
-                        With(
-                            {
-                                screenHeight: Dashboard.Height,
-                                screenWidth: Dashboard.Width,
-                                visibleItemCount: 4 // Number of items you want to be visible at once
-                            },
-                            If(
-                                Gallery7.AllItemsCount > 0,
-                                If(
-                                    Gallery7.AllItemsCount < visibleItemCount,
-                                    screenHeight / Gallery7.AllItemsCount, // Adjust when fewer items than visible count
-                                    Min(
-                                        screenHeight / visibleItemCount, // Set the size based on visible item count
-                                       75 // Minimum size for an item, adjust as needed
-                                    )
-                                ),
-                                0 // Default size when there are no items
-                            )
-                        )
+                    TemplateSize: =75
                     Width: =Parent.Width
                     ZIndex: =3
 
@@ -422,7 +402,7 @@
                             SortOrder.Descending
                         )
                     Layout: =Layout.Vertical
-                    LayoutMinHeight: =(Gallery7.TemplateHeight * Gallery7.AllItemsCount) + 5%
+                    LayoutMinHeight: =(Gallery7.TemplateHeight * Gallery7.AllItemsCount) + ((Gallery7.TemplateHeight * Gallery7.AllItemsCount) * 5%)
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: =
