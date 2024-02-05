@@ -738,8 +738,8 @@
                         Text: |
                             =If(
                                 UserAdmin = 1,
-                                "Service Request" ,
-                                "Service Request"
+                                "Quick Order" ,
+                                "Quick Order"
                             )
                         Width: =Parent.Width - Icon1_1.Width
                         X: =0.00
@@ -839,122 +839,6 @@
                     X: =0.00
                     Y: =0.00
                     ZIndex: =3
-
-            MainContainer2_3 As groupContainer.verticalAutoLayoutContainer:
-                DropShadow: =DropShadow.Light
-                Fill: =RGBA(255, 255, 255, 1)
-                FillPortions: =7
-                LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: =0
-                LayoutMinWidth: =250
-                LayoutMode: =LayoutMode.Auto
-                RadiusBottomLeft: =8
-                RadiusBottomRight: =8
-                RadiusTopLeft: =8
-                RadiusTopRight: =8
-                Visible: =false
-                ZIndex: =3
-
-                Label18_6 As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 89, 178, 1)
-                    Color: =RGBA(204, 214, 224, 1)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(102, 133, 163, 1)
-                    Height: =30
-                    PaddingBottom: =7.67
-                    PaddingLeft: =7.67
-                    PaddingRight: =4.63
-                    PaddingTop: =4.63
-                    Size: =18.46
-                    Text: ="Site Messages" 
-                    Width: =Parent.Width
-                    X: =0.00
-                    Y: =0.00
-                    ZIndex: =1
-
-                "Gallery5_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    BorderColor: =RGBA(0, 89, 178, 1)
-                    DelayItemLoading: =true
-                    Items: |-
-                        =
-                             If(
-                            UserAdmin = 0,
-                            Filter(
-                                StoreNotificationMessages,
-                                Site_ID = UserSite 
-                            ),
-                            
-                                StoreNotificationMessages
-                               
-                            
-                        )
-                    Layout: =Layout.Vertical
-                    LayoutMinHeight: =Parent.Height - Label18_6.Height
-                    LayoutMinWidth: =320
-                    LoadingSpinner: =LoadingSpinner.Data
-                    TemplatePadding: =0
-                    TemplateSize: |-
-                        =If(Gallery5_1.AllItemsCount >0,
-                        
-                        If(Dashboard.Size >= 4,Gallery5_1.Height/Gallery5_1.AllItemsCount,Gallery5_1.Height/Gallery5_1.AllItemsCount),40)
-                    Width: =Parent.Width
-                    ZIndex: =1
-
-                    Container68_1 As groupContainer.verticalAutoLayoutContainer:
-                        DropShadow: =DropShadow.Light
-                        Fill: =RGBA(204, 214, 224, 1)
-                        Height: =Gallery5_1.TemplateHeight
-                        LayoutDirection: =LayoutDirection.Vertical
-                        LayoutMode: =LayoutMode.Auto
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
-                        Width: =Parent.Width
-                        ZIndex: =5
-
-                        Title2_1 As label:
-                            Color: =RGBA(50, 49, 48, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =RGBA(153, 173, 194, 1)
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Gallery5_1)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: |+
-                                =Text(ThisItem.StartDate, "[$-en-US]mm/dd/yyyy")&"-"&Text(ThisItem.EndDate, "[$-en-US]mm/dd/yyyy")&"-"&ThisItem.Title 
-                                
-                                
-                                
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Gallery5_1.TemplateWidth 
-                            X: =16
-                            Y: =(Gallery5_1.TemplateHeight - (Self.Size * 1.8 + Subtitle2_1.Size * 1.8)) / 2
-                            ZIndex: =1
-
-                        Subtitle2_1 As label:
-                            AutoHeight: =true
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Gallery5_1)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Size: =12
-                            Text: =ThisItem.Message
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Title2_1.Width
-                            X: =24
-                            Y: =34
-                            ZIndex: =2
 
             SidebarContainer3_3 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.Light
@@ -1075,6 +959,150 @@
                     X: =0
                     Y: =0
                     ZIndex: =7
+
+            SidebarContainer3_5 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =5
+
+                Container4_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label18_26.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    Label18_26 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =30
+                        PaddingBottom: =7.67
+                        PaddingLeft: =7.67
+                        PaddingRight: =4.63
+                        PaddingTop: =4.63
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
+                        Text: |
+                            =If(
+                                UserAdmin = 1,
+                                "Service Request" ,
+                                "Service Request"
+                            )
+                        Width: =Parent.Width - Icon1_3.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    Icon1_3 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_26.Fill
+                        Height: =Label18_26.Height
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(ServiceRequestMaster);
+                        ZIndex: =2
+
+                "Gallery5_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =Parent.Height-Label18_27.Height
+                    Items: |+
+                        =
+                        If(UserAdmin = 0, 
+                            Filter(ServiceRequestMaster, SiteID = Int(UserSite) And (ServiceCompleteDate = Blank())), 
+                            Filter(ServiceRequestMaster, ServiceCompleteDate = Blank())
+                        )
+                        
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =60
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Title6_2 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(153, 173, 194, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(Vendors,ID=ThisItem.VendorID).Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth 
+                        ZIndex: =1
+
+                    Subtitle6_2 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.ServiceRequestDate
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title6_2.Width
+                        X: =Title6_2.X
+                        Y: =Title6_2.Y + Title6_2.Height
+                        ZIndex: =2
+
+                    Separator9_2 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =4
+
+                Label18_27 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: ="Scheduled Services"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =3
 
     UserRegisterationPopUp As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
