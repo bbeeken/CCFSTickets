@@ -1586,7 +1586,7 @@
                     OnSelect: =Set(FormContainerVisble,false);
                     Text: ="Close"
                     Width: =96
-                    X: =215
+                    X: =96
                     Y: =0
                     ZIndex: =1
 
@@ -1680,7 +1680,7 @@
                         EditForm(AssetEditForm);
                     Text: ="Save"
                     Width: =96
-                    X: =119
+                    X: =0
                     Y: =0
                     ZIndex: =2
 
