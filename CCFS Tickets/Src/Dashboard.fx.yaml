@@ -901,6 +901,76 @@
                             Y: =11
                             ZIndex: =4
 
+                    PartsItemDesc As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =78
+                        Width: =519
+                        WidthFit: =true
+                        X: =0
+                        Y: =3
+                        ZIndex: =1
+
+                        "TextInputCanvas2_1 As 'Text input'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =74
+                            Mode: ='TextInputCanvas.Mode'.Multiline
+                            Width: =Parent.Width *60%
+                            X: =194
+                            Y: =5
+                            ZIndex: =1
+
+                        Label9_3 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =28
+                            Size: =13
+                            Text: |-
+                                ="Description: "
+                            Width: =194
+                            X: =5
+                            Y: =5
+                            ZIndex: =2
+
+                    PartsItemQty As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =32
+                        Width: =Parent.Width
+                        WidthFit: =true
+                        X: =0
+                        Y: =4
+                        ZIndex: =1
+
+                        "TextInputCanvas2_2 As 'Text input'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            Width: =120
+                            X: =194
+                            Y: =8
+                            ZIndex: =1
+
+                        Label9_4 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =28
+                            Size: =13
+                            Text: |-
+                                ="Qty:"
+                            Width: =194
+                            Y: =12
+                            ZIndex: =2
+
             SidebarContainer3_3 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
