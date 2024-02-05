@@ -542,7 +542,7 @@
       "MetaDataIDKey": "",
       "Name": "AssetEditForm",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1038,7 +1038,7 @@
       "MetaDataIDKey": "",
       "Name": "AttachmentContainer_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12679,7 +12679,7 @@
       "MetaDataIDKey": "",
       "Name": "Label18_15",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
