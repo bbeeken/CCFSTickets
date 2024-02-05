@@ -415,8 +415,8 @@
                         Sort(
                             Filter(
                                 Tickets_Master,
-                                (UserAdmin = 1 && Private <> "1" && Ticket_Status_ID <> "7") ||
-                                (UserAdmin <> 1 && (Assigned_Email = User().Email || Ticket_Contact_Email = User().Email) && Private <> "1" && Ticket_Status_ID <> "7")
+                                (UserAdmin = 1 && Private <> "1" && Ticket_Status_ID <> "7"  && Ticket_Status_ID <> "3") ||
+                                (UserAdmin <> 1 && (Assigned_Email = User().Email || Ticket_Contact_Email = User().Email) && Private <> "1" && Ticket_Status_ID <> "7" && Ticket_Status_ID <> "3")
                             ),
                             Ticket_ID,
                             SortOrder.Descending
@@ -434,7 +434,7 @@
                             {
                                 screenHeight: Dashboard.Height,
                                 screenWidth: Dashboard.Width,
-                                visibleItemCount: 4 // Number of items you want to be visible at once
+                                visibleItemCount: 2 // Number of items you want to be visible at once
                             },
                             If(
                                 Gallery7.AllItemsCount > 0,
