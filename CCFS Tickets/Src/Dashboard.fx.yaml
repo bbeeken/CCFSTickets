@@ -791,7 +791,7 @@
                     BorderColor: =RGBA(0, 89, 178, 1)
                     DataSource: =Tickets_Master
                     LayoutMinHeight: =250
-                    LayoutMinWidth: =400
+                    LayoutMinWidth: =Parent.Width - 20
                     ZIndex: =2
 
                     OrderType As typedDataCard.blankCard:
@@ -811,7 +811,7 @@
                             Height: =32
                             Items: =["Fuel", "IT", "General"]
                             Width: =Parent.Width *60%
-                            X: =Label9.Width
+                            X: =193
                             Y: =0
                             ZIndex: =1
 
@@ -843,7 +843,7 @@
                             Height: =32
                             Items: =SitesLocalVariable
                             Width: =Parent.Width *60%
-                            X: =Label9_1.Width
+                            X: =192
                             Y: =8
                             ZIndex: =1
 
@@ -880,10 +880,12 @@
                         ZIndex: =1
 
                         "TextInputCanvas2 As 'Text input'":
+                            BasePaletteColor: =
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =32
                             Width: =Parent.Width *60%
-                            X: =207
+                            X: =194
                             Y: =11
                             ZIndex: =2
 
