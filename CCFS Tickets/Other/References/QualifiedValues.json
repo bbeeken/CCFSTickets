@@ -1,0 +1,18 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr269_sqltables_forms",
+      "Namespace": "SQLTables (Forms)",
+      "Values": {
+        "Information": "111f12a8-c40b-4d8b-b7b5-dafe1ec4b446"
+      }
+    },
+    {
+      "Kind": "default.cds_sharepointsite_forms",
+      "Namespace": "SharePoint Sites (Forms)",
+      "Values": {
+        "Information": "ba6522af-e71b-df11-aa01-00155d2a9006"
+      }
+    }
+  ]
+}

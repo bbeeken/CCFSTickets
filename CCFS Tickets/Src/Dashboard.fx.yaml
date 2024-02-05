@@ -1,0 +1,1303 @@
+"Dashboard As screen.'autoLayout_Sidebar_ver1.0'":
+    BackgroundImage: =
+    Fill: =RGBA(232, 232, 232, 1)
+    OnVisible: =
+
+    ScreenContainer4 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =8
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Header1 As Header:
+            BasePaletteColor: =
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            Height: =75
+            LayoutMinHeight: =75
+            LayoutMinWidth: =Parent.Width * .9
+            Logo: ='Updated Logo June 2022 (002)'
+            OnSelectLogo: =false
+            Title: =App.ActiveScreen.Name
+            UserEmail: =User().Email
+            UserImage: =User().Image
+            UserName: =User().FullName
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        Container1_4 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =Label8.Height+DropdownCanvas1_6.Height
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            Icon1_4 As icon.Home:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                Color: =RGBA(40, 134, 222, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Height: =32
+                Icon: =Icon.Home
+                OnSelect: |
+                    =Navigate(Dashboard)
+                Width: =32
+                ZIndex: =1
+
+            Container2 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                FillPortions: =0
+                Height: =Label8.Height+DropdownCanvas1_6.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =Label8.Height+DropdownCanvas1_6.Height
+                LayoutMinWidth: =DropdownCanvas1_6.Width
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =DropdownCanvas1_6.Width
+                ZIndex: =2
+
+                Label8 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Size: =9
+                    Text: ="Navigation"
+                    ZIndex: =1
+
+                DropdownCanvas1_6 As Dropdown.pcfdataset:
+                    BasePaletteColor: =RGBA(214, 221, 224, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    Items: =ScreenNavigationDropDownOptions
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =150
+                    OnChange: |-
+                        =Navigate(DropdownCanvas1_6.Selected.Screen);
+                        Reset(DropdownCanvas1_6);
+                    Width: =320
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                    Name4_6 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Name"
+                        FieldName: ="Name"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =11
+
+            Timer1_1 As timer:
+                AutoStart: =true
+                Color: =RGBA(0, 0, 0, 0)
+                Duration: =300000
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                OnTimerEnd: |-
+                    =Refresh(Tickets_Master);
+                    Reset(Timer1_1);
+                Repeat: =true
+                ZIndex: =3
+
+        BottomContainer2 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =SidebarContainer3_1.Height+SidebarContainer3_2.Height+MainContainer2.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =5
+            LayoutMinHeight: =200
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =3
+
+            SidebarContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =MainContainer1.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutMinHeight: =75
+                LayoutMinWidth: |-
+                    = If(
+                            Dashboard.Width <= 640,  // Small screens
+                            BottomContainer2.Width,
+                            // Add conditions for medium and large screens as needed
+                            BottomContainer2.Width / 8  // Example for larger screens
+                        )
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =1
+
+                Label18_20 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =16
+                    Text: ="Recently Updated"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =2
+
+                "Gallery7_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =2
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =700
+                    Items: |-
+                        =Sort(
+                            Filter(
+                                Gallery7.AllItems,
+                                DateValue(
+                                    Text(
+                                        LastModified,
+                                        DateTimeFormat.ShortDate
+                                    )
+                                ) > DateValue(
+                                    Text(
+                                        DateAdd(
+                                            Now(),
+                                            -1,
+                                            TimeUnit.Days
+                                        ),
+                                        DateTimeFormat.ShortDate
+                                    )
+                                )
+                            ),
+                            Ticket_ID,
+                            SortOrder.Descending
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =Gallery7_1.TemplateHeight * Gallery7_1.AllItemsCount
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =
+                    ShowNavigation: =true
+                    TemplatePadding: =1
+                    TemplateSize: |
+                        =// Dynamic TemplateSize for a vertical gallery with one item per line
+                        With(
+                            {
+                                screenHeight: Dashboard.Height,
+                                screenWidth: Dashboard.Width,
+                                visibleItemCount: 4 // Number of items you want to be visible at once
+                            },
+                            If(
+                                Gallery7.AllItemsCount > 0,
+                                If(
+                                    Gallery7.AllItemsCount < visibleItemCount,
+                                    screenHeight / Gallery7.AllItemsCount, // Adjust when fewer items than visible count
+                                    Min(
+                                        screenHeight / visibleItemCount, // Set the size based on visible item count
+                                       75 // Minimum size for an item, adjust as needed
+                                    )
+                                ),
+                                0 // Default size when there are no items
+                            )
+                        )
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+                    Title9_1 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =22
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: |-
+                            =ThisItem.Ticket_ID&": "& ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width-2
+                        Y: =22
+                        ZIndex: =1
+
+                    Separator8_1 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =5
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =5
+
+                    NextArrow1_5 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery7_1.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            
+                            EditForm(TicketDataEditForm);
+                            Navigate('Ticket Information');
+                        PaddingBottom: =15.33
+                        PaddingLeft: =15.33
+                        PaddingRight: =9.26
+                        PaddingTop: =9.26
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =Parent.TemplateWidth
+                        Y: =0.00
+                        ZIndex: =6
+
+                    TextCanvas9 As Text:
+                        AutoHeight: =true
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =32
+                        Size: =12
+                        Text: |-
+                            ="Modified:" & ThisItem.LastModified
+                        Width: =194
+                        X: =0
+                        Y: =44
+                        ZIndex: =7
+
+            MainContainer2 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                Height: =Gallery7.LayoutMinHeight
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =Gallery7.Height
+                LayoutMinWidth: |-
+                    = If(
+                            Dashboard.Width <= 640,  // Small screens
+                            BottomContainer2.Width,
+                            // Add conditions for medium and large screens as needed
+                            BottomContainer2.Width / 3 // Example for larger screens
+                        )
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =Parent.Width
+                Y: = If(Dashboard.Width <= 640, SidebarContainer3_2.Y + SidebarContainer3_2.Height, 0)
+                ZIndex: =2
+
+                Container4 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label18_1.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    Label18_1 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =32
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =18.46
+                        Text: |
+                            =If(
+                                UserAdmin = 1,
+                                "Open Tickets: " & CountRows(Gallery7.AllItems),
+                                "My Tickets: " & CountRows(Gallery7.AllItems)
+                            )
+                        Width: =Parent.Width - Icon1.Width - Icon1_2.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    Icon1 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_1.Fill
+                        Height: =Label18_1.Height
+                        Icon: =Icon.DocumentWithContent
+                        OnSelect: |-
+                            =Navigate('Ticket Information');
+                            NewForm(TicketDataEditForm);
+                        ZIndex: =2
+
+                    Icon1_2 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_1.Fill
+                        Height: =Label18_1.Height-.5
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(Tickets_Master);
+                        ZIndex: =3
+
+                "Gallery7 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =2
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =Parent.Height - Gallery7.Y
+                    Items: |
+                        =// Assuming 'Tickets_Master' is your data source and all fields used in filtering and sorting are delegable
+                        // 'UserAdmin', 'Private', and 'Ticket_Status_ID' need to be delegable fields in your data source
+                        
+                        Sort(
+                            Filter(
+                                Tickets_Master,
+                                (UserAdmin = 1 && Private <> "1" && Ticket_Status_ID <> "7") ||
+                                (UserAdmin <> 1 && (Assigned_Email = User().Email || Ticket_Contact_Email = User().Email) && Private <> "1" && Ticket_Status_ID <> "7")
+                            ),
+                            Ticket_ID,
+                            SortOrder.Descending
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =Gallery7.TemplateHeight * Gallery7.AllItemsCount
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =
+                    ShowNavigation: =true
+                    TemplateFill: =If(ThisItem.IsSelected, Color.LightGray, Gallery7.Fill)
+                    TemplateSize: |
+                        =// Dynamic TemplateSize for a vertical gallery with one item per line
+                        With(
+                            {
+                                screenHeight: Dashboard.Height,
+                                screenWidth: Dashboard.Width,
+                                visibleItemCount: 4 // Number of items you want to be visible at once
+                            },
+                            If(
+                                Gallery7.AllItemsCount > 0,
+                                If(
+                                    Gallery7.AllItemsCount < visibleItemCount,
+                                    screenHeight / Gallery7.AllItemsCount, // Adjust when fewer items than visible count
+                                    Min(
+                                        screenHeight / visibleItemCount, // Set the size based on visible item count
+                                        75 // Minimum size for an item, adjust as needed
+                                    )
+                                ),
+                                0 // Default size when there are no items
+                            )
+                        )
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+                    Title9 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =22
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            =ThisItem.Ticket_ID&": "& ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width-Rectangle5.Width-2
+                        X: =4
+                        Y: =10
+                        ZIndex: =1
+
+                    Rectangle5 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(0, 89, 178, 1)
+                        Height: =Parent.TemplateHeight/2
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =3
+
+                    Label16_1 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: |
+                            =If(
+                                Int(ThisItem.Ticket_Status_ID) = 1 ,
+                                RGBA(
+                                    187,
+                                    221,
+                                    140,
+                                    1
+                                ),
+                                If(
+                                    "Closed" in Label16_1.Text,
+                                    RGBA(
+                                        238,
+                                        204,
+                                        204,
+                                        1
+                                    ),
+                                    If(
+                                        "Progress" in Label16_1.Text,
+                                      RGBA(250, 155, 112, 1)
+                                    )
+                                )
+                            )
+                        FontWeight: =FontWeight.Lighter
+                        Height: =25
+                        OnSelect: =Select(Gallery7)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(TicketStatusLocalVariable,ID =Int(ThisItem.Ticket_Status_ID)).Label 
+                        Width: =Parent.Width-Rectangle5.Width
+                        Y: =32
+                        ZIndex: =4
+
+                    Separator8 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =5
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =5
+
+                    NextArrow1_4 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery7.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            EditForm(TicketDataEditForm);
+                            Navigate('Ticket Information');
+                        PaddingBottom: =15.33
+                        PaddingLeft: =15.33
+                        PaddingRight: =9.26
+                        PaddingTop: =9.26
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =Parent.TemplateWidth
+                        Y: =0.00
+                        ZIndex: =6
+
+            SidebarContainer3_2 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =MainContainer2.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =2
+                LayoutMinHeight: =75
+                LayoutMinWidth: |-
+                    = If(
+                            Dashboard.Width <= 640,  // Small screens
+                            BottomContainer2.Width,
+                            // Add conditions for medium and large screens as needed
+                            BottomContainer2.Width / 8  // Example for larger screens
+                        )
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Y: =If(Dashboard.Width <= 640, SidebarContainer3_1.Y + SidebarContainer3_1.Height, 0)
+                ZIndex: =3
+
+                Label18_21 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Text: ="Older Than 45 Days"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                "Gallery7_2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =2
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =700
+                    Items: |-
+                        =Sort(
+                            Filter(
+                                Gallery7.AllItems,
+                                DateValue(
+                                    Text(
+                                        Created_Date,
+                                        DateTimeFormat.ShortDate
+                                    )
+                                ) < DateValue(
+                                    Text(
+                                        DateAdd(
+                                            Now(),
+                                            -44,
+                                            TimeUnit.Days
+                                        ),
+                                        DateTimeFormat.ShortDate
+                                    )
+                                )
+                            ),
+                            Ticket_ID,
+                            SortOrder.Descending
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =
+                    TemplatePadding: =1
+                    TemplateSize: |-
+                        =// Dynamic TemplateSize for a vertical gallery with one item per line
+                        With(
+                            {
+                                screenHeight: Dashboard.Height,
+                                screenWidth: Dashboard.Width,
+                                visibleItemCount: 4 // Number of items you want to be visible at once
+                            },
+                            If(
+                                Gallery7.AllItemsCount > 0,
+                                If(
+                                    Gallery7.AllItemsCount < visibleItemCount,
+                                    screenHeight / Gallery7.AllItemsCount, // Adjust when fewer items than visible count
+                                    Min(
+                                        screenHeight / visibleItemCount, // Set the size based on visible item count
+                                        75 // Minimum size for an item, adjust as needed
+                                    )
+                                ),
+                                0 // Default size when there are no items
+                            )
+                        )
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Title9_2 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =22
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            =ThisItem.Ticket_ID&": "& ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width-Rectangle5_2.Width-2
+                        X: =4
+                        ZIndex: =1
+
+                    Rectangle5_2 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(0, 89, 178, 1)
+                        Height: =Parent.TemplateHeight/2
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =3
+
+                    Separator8_2 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =3
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =5
+
+                    NextArrow1_6 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery7_2.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            
+                            EditForm(TicketDataEditForm);
+                            Navigate('Ticket Information');
+                        PaddingBottom: =15.33
+                        PaddingLeft: =15.33
+                        PaddingRight: =9.26
+                        PaddingTop: =9.26
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =Parent.TemplateWidth
+                        Y: =0.00
+                        ZIndex: =6
+
+                    TextCanvas9_1 As Text:
+                        AutoHeight: =true
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =32
+                        Text: |-
+                            ="Modified:" & ThisItem.LastModified
+                        Width: =194
+                        X: =4
+                        Y: =22
+                        ZIndex: =7
+
+        BottomContainer2_3 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutMinHeight: =0
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            SidebarContainer3_4 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =2
+
+                Container4_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label18_24.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    Label18_24 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =30
+                        PaddingBottom: =7.67
+                        PaddingLeft: =7.67
+                        PaddingRight: =4.63
+                        PaddingTop: =4.63
+                        Size: =18.46
+                        Text: |
+                            =If(
+                                UserAdmin = 1,
+                                "Service Request" ,
+                                "Service Request"
+                            )
+                        Width: =Parent.Width - Icon1_1.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    Icon1_1 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_24.Fill
+                        Height: =Label18_24.Height
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(ServiceRequestMaster);
+                        ZIndex: =2
+
+                "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =Parent.Height-Label18_7.Height
+                    Items: |+
+                        =
+                        If(UserAdmin = 0, 
+                            Filter(ServiceRequestMaster, SiteID = Int(UserSite) And (ServiceCompleteDate = Blank())), 
+                            Filter(ServiceRequestMaster, ServiceCompleteDate = Blank())
+                        )
+                        
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =60
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Title6 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(153, 173, 194, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(Vendors,ID=ThisItem.VendorID).Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth 
+                        ZIndex: =1
+
+                    Subtitle6 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.ServiceRequestDate
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title6.Width
+                        X: =Title6.X
+                        Y: =Title6.Y + Title6.Height
+                        ZIndex: =2
+
+                    Separator9 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =4
+
+                Label18_7 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: ="Scheduled Services"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =3
+
+            MainContainer2_3 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Visible: =false
+                ZIndex: =3
+
+                Label18_6 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: ="Site Messages" 
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                "Gallery5_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Items: |-
+                        =
+                             If(
+                            UserAdmin = 0,
+                            Filter(
+                                StoreNotificationMessages,
+                                Site_ID = UserSite 
+                            ),
+                            
+                                StoreNotificationMessages
+                               
+                            
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =Parent.Height - Label18_6.Height
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: |-
+                        =If(Gallery5_1.AllItemsCount >0,
+                        
+                        If(Dashboard.Size >= 4,Gallery5_1.Height/Gallery5_1.AllItemsCount,Gallery5_1.Height/Gallery5_1.AllItemsCount),40)
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                    Container68_1 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.Light
+                        Fill: =RGBA(204, 214, 224, 1)
+                        Height: =Gallery5_1.TemplateHeight
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width
+                        ZIndex: =5
+
+                        Title2_1 As label:
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =RGBA(153, 173, 194, 1)
+                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                            Height: =Self.Size * 1.8
+                            OnSelect: =Select(Gallery5_1)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: |+
+                                =Text(ThisItem.StartDate, "[$-en-US]mm/dd/yyyy")&"-"&Text(ThisItem.EndDate, "[$-en-US]mm/dd/yyyy")&"-"&ThisItem.Title 
+                                
+                                
+                                
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Gallery5_1.TemplateWidth 
+                            X: =16
+                            Y: =(Gallery5_1.TemplateHeight - (Self.Size * 1.8 + Subtitle2_1.Size * 1.8)) / 2
+                            ZIndex: =1
+
+                        Subtitle2_1 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                            Height: =Self.Size * 1.8
+                            OnSelect: =Select(Gallery5_1)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =12
+                            Text: =ThisItem.Message
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Title2_1.Width
+                            X: =24
+                            Y: =34
+                            ZIndex: =2
+
+            SidebarContainer3_3 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =4
+
+                Label18_5 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: ="Forms/Links"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                LinkCanvas1_1 As Link:
+                    AccessibleLabel: ="Operations Survey"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Operations Survey"
+                    URL: |-
+                        ="https://forms.office.com/r/N9SsYNxxGH"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                LinkCanvas1_2 As Link:
+                    AccessibleLabel: ="Order Form"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Order Form"
+                    URL: |-
+                        ="https://forms.heinzcorps.com:8091/ccfsorderform.html"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =5
+
+                LinkCanvas1_3 As Link:
+                    AccessibleLabel: ="Operations Survey"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Store Supplies - Supplier Information"
+                    URL: |-
+                        ="https://heinzinc.sharepoint.com/:x:/s/Tickets/EcWnYEYqr3FEpF15i4b7LYIB9r1T_JC_NZOP5qUL9K5rlQ?e=8NohbV"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =6
+
+                LinkCanvas1_4 As Link:
+                    AccessibleLabel: ="Operations Survey"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Fuel Supplies - Inventory Tracking"
+                    URL: |-
+                        ="https://heinzinc.sharepoint.com/:x:/s/1021SummitTruckShop/EWdo0yxjQZxOnA5NuxtfkfgBU5IH_i9NjMJBctPW4CHPtg?e=61gHY4"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =7
+
+    UserRegisterationPopUp As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(214, 221, 224, 0.91)
+        Height: =Parent.Height/1.5
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =false || !UserRegistered
+        Width: =Parent.Width /1.5
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =2
+
+        Label18_3 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(204, 214, 224, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(102, 133, 163, 1)
+            Height: =30
+            PaddingBottom: =7.67
+            PaddingLeft: =7.67
+            PaddingRight: =4.63
+            PaddingTop: =4.63
+            Size: =18.46
+            Text: ="First Time User Registration"
+            Width: =Parent.Width
+            X: =0.00
+            ZIndex: =2
+
+        TextCanvas15 As Text:
+            AutoHeight: =false
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =true
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =32
+            Size: =24
+            Text: ="Hi " & User().FullName &"!" & " Quick Question"
+            Width: =Parent.Width/1.
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =30
+            ZIndex: =3
+
+        UserRegForm As form.PowerApps_CoreControls_Form:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            DataSource: =User_Configuration_1
+            DefaultMode: =FormMode.New
+            Height: =Parent.Height - TextCanvas15.Height - Label18_3.Height
+            UseFluentV9Cards: =true
+            Width: =Parent.Width
+            Y: =60
+            ZIndex: =4
+
+            DefaultSite_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="DefaultSite"
+                Default: =ThisItem.DefaultSite
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@User_Configuration_1],DataSourceInfo.DisplayName,"DefaultSite")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@User_Configuration_1], DataSourceInfo.MaxLength, "DefaultSite")
+                Required: =false
+                Update: =DataCardValue1.Selected.ID
+                Width: =350
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: ="Where is your Home Site?"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                ErrorMessage1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue1.Y + DataCardValue1.Height
+                    ZIndex: =3
+
+                StarVisible1 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey1.Y
+                    ZIndex: =4
+
+                DataCardValue1 As Combobox.pcfdataset:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Items: =SitesLocalVariable
+                    OnChange: |-
+                        =Patch(
+                            User_Configuration_1,
+                            Defaults(User_Configuration_1),
+                            {
+                                UserEmail: User().Email,
+                                Admin: 0,
+                                DefaultSite: DataCardValue1.Selected.ID,
+                                GetNewTicketNotifications: 0,
+                                GetNewHighTicketNotifications: 0
+                            }
+                        );
+                        Reset(DataCardValue1);
+                        Set(UserRegistered,true);
+                    Width: =320
+                    X: =24
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 4
+                    ZIndex: =5
+
+                    Label2 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =7
+
+                    ID1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =8
+
