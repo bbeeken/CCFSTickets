@@ -865,6 +865,14 @@
                                 Order: =1
                                 ZIndex: =12
 
+                            streetl1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="streetl"
+                                FieldName: ="streetl"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =2
+                                ZIndex: =13
+
                         Label9_1 As label:
                             BorderColor: =RGBA(0, 89, 178, 1)
                             Color: =RGBA(0, 0, 0, 1)
