@@ -2,10 +2,13 @@
   <doc title="Forms_QuickOrder_Link" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <object name="ManualTriggerInput" />
-      <string name="ResponseActionOutput_ok_def" />
+      <string name="ManualTriggerInput_text_def" />
+      <object name="ManualTriggerInput">
+        <property name="text" type="string" />
+      </object>
+      <string name="ResponseActionOutput_code_def" />
       <object name="ResponseActionOutput">
-        <property name="ok" type="string" />
+        <property name="code" type="string" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
@@ -19,7 +22,11 @@
           <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
             <doc title="The api version" />
           </param>
-          <representation mediaType="application/json" />
+          <representation mediaType="application/json">
+            <param style="plain" name="text" path="/text" type="xs:string" required="true">
+              <doc title="Input" />
+            </param>
+          </representation>
         </request>
         <response>
           <representation mediaType="application/json" element="service:ResponseActionOutput" />

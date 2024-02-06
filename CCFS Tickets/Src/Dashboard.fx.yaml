@@ -761,20 +761,27 @@
                         Fill: =Label18_24.Fill
                         Height: =Label18_24.Height
                         Icon: =Icon.Save
-                        OnSelect: |-
+                        OnSelect: |
                             =ClearCollect(
                                 QuickOrderCollectionSend,
                                 {
-                                    OrderType: DropdownCanvas1.Selected.Value,
-                                    PartsItemNumber: TextInputCanvas2.Value,
-                                    PartsItemDesc: TextInputCanvas2_1.Value,
-                                    TextInputCanvas2_1: TextInputCanvas2_2.Value,
-                                    OrderSite: DropdownCanvas1_1.Selected.
+                                    SiteLabel: DropdownCanvas1_1.Selected.Label,
+                                    // Ensuring this is a string
+                            OrderPersonsName: UserConfig,
+                                    // Default value if UserEmail is null
+                            SiteAddress: DropdownCanvas1_1.Selected.streetl,
+                                    // Default value if Street is null
+                            OrderType: DropdownCanvas1.Selected.Value,
+                                    Items: [
+                                        {
+                                            itemNumber: TextInputCanvas2.Value,
+                                            description: TextInputCanvas2_1.Value,
+                                            quantity: TextInputCanvas2_2.Value
+                                        }
+                                    ]
                                 }
                             );
-                            
-                            
-                            Forms_QuickOrder_Link.Run(QuickOrderCollectionSend);
+                            Forms_QuickOrder_Link.Run(JSON(QuickOrderCollectionSend));
                         ZIndex: =3
 
                     Icon1_11 As icon.Reload:
@@ -826,6 +833,48 @@
                             Text: |-
                                 ="Order Type:"
                             Width: =Parent.Width *40%
+                            ZIndex: =2
+
+                    OrderSite As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =35
+                        Width: =Parent.Width
+                        WidthFit: =true
+                        X: =0
+                        Y: =1
+                        ZIndex: =1
+
+                        DropdownCanvas1_1 As Dropdown.pcfdataset:
+                            DefaultSelectedItems: =LookUp(SitesLocalVariable,ID=UserSite)
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            Items: =SitesLocalVariable
+                            Width: =Parent.Width *60%
+                            X: =192
+                            Y: =8
+                            ZIndex: =1
+
+                            Label10 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Label"
+                                FieldName: ="Label"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =12
+
+                        Label9_1 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =31
+                            Size: =13
+                            Text: |-
+                                ="Order Site:"
+                            Width: =Parent.Width *40%
+                            Y: =9
                             ZIndex: =2
 
                     PartsItemNumber As typedDataCard.blankCard:
@@ -931,48 +980,6 @@
                                 ="Qty:"
                             Width: =194
                             Y: =12
-                            ZIndex: =2
-
-                    OrderSite As typedDataCard.blankCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =35
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =1
-                        ZIndex: =1
-
-                        DropdownCanvas1_1 As Dropdown.pcfdataset:
-                            DefaultSelectedItems: =LookUp(SitesLocalVariable,ID=UserSite)
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =32
-                            Items: =SitesLocalVariable
-                            Width: =Parent.Width *60%
-                            X: =192
-                            Y: =8
-                            ZIndex: =1
-
-                            Label10 As pcfDataField.textualColumn:
-                                FieldDisplayName: ="Label"
-                                FieldName: ="Label"
-                                FieldType: ="s"
-                                FieldVariantName: ="textualColumn"
-                                Order: =1
-                                ZIndex: =12
-
-                        Label9_1 As label:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =31
-                            Size: =13
-                            Text: |-
-                                ="Order Site:"
-                            Width: =Parent.Width *40%
-                            Y: =9
                             ZIndex: =2
 
             SidebarContainer3_3 As groupContainer.verticalAutoLayoutContainer:
