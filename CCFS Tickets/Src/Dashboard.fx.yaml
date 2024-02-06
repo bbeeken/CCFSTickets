@@ -761,7 +761,20 @@
                         Fill: =Label18_24.Fill
                         Height: =Label18_24.Height
                         Icon: =Icon.Save
-                        OnSelect: =Forms_QuickOrder_Link.Run();
+                        OnSelect: |-
+                            =ClearCollect(
+                                QuickOrderCollectionSend,
+                                {
+                                    OrderType: DropdownCanvas1.Selected.Value,
+                                    PartsItemNumber: TextInputCanvas2.Text,
+                                    PartsItemDesc: TextInputCanvas2_1.Text,
+                                    TextInputCanvas2_1: TextInputCanvas2_2.Text,
+                                    OrderSite: DropdownCanvas1_1.Selected.Value
+                                }
+                            );
+                            
+                            
+                            Forms_QuickOrder_Link.Run(QuickOrderCollectionSend);
                         ZIndex: =3
 
                     Icon1_11 As icon.Reload:
