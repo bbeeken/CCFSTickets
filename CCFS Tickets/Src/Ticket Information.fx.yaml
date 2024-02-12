@@ -347,9 +347,9 @@
                                                 NotificationType.Error
                                             ),
                                             Notify(
-                                                "Ticket Saved.",
+                                                "Last Ticket Saved.",
                                                 NotificationType.Success,
-                                                5
+                                              30
                                             )
                                         );
                                         
@@ -3946,95 +3946,6 @@
             Y: =(Parent.Height - (ServiceRequestForm.Height -Label18_12.Height-16)) / 2 
             ZIndex: =3
 
-            VendorServiceTicketNumber_DataCard3 As typedDataCard.fluentV9TextualEditCard:
-                BorderColor: =RGBA(0, 89, 178, 1)
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="VendorServiceTicketNumber"
-                Default: =ThisItem.VendorServiceTicketNumber
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@ServiceRequestMaster],DataSourceInfo.DisplayName,"VendorServiceTicketNumber")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =70
-                MaxLength: =DataSourceInfo([@ServiceRequestMaster], DataSourceInfo.MaxLength, "VendorServiceTicketNumber")
-                Required: =false
-                Update: =DataCardValue71.Value
-                Width: =348
-                WidthFit: =false
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey93 As Text:
-                    DisplayMode: =DisplayMode.Edit
-                    Font: =""
-                    FontColor: =
-                    FontItalic: =false
-                    FontStrikethrough: =false
-                    FontUnderline: =false
-                    Height: =22
-                    Text: |-
-                        ="Vendor Ticket #"
-                    Weight: ='TextCanvas.Weight'.Semibold
-                    Width: =Parent.Width - 48
-                    Wrap: =true
-                    X: =24
-                    Y: =10
-                    ZIndex: =1
-
-                "DataCardValue71 As 'Text input'":
-                    AccessibleLabel: =Parent.DisplayName
-                    Align: ="Start"
-                    BasePaletteColor: =
-                    DisplayMode: =Parent.DisplayMode
-                    Font: =""
-                    FontColor: =
-                    FontItalic: =false
-                    FontSize: =0
-                    FontStrikethrough: =false
-                    FontUnderline: =false
-                    FontWeight: =""
-                    Height: =32
-                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                    Required: =Parent.Required
-                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                    Value: =Parent.Default
-                    Width: =320
-                    X: =24
-                    Y: =DataCardKey93.Y + DataCardKey93.Height + 4
-                    ZIndex: =2
-
-                ErrorMessage66 As Text:
-                    DisplayMode: =DisplayMode.Edit
-                    Font: =""
-                    FontColor: =
-                    FontItalic: =false
-                    FontStrikethrough: =false
-                    FontUnderline: =false
-                    Height: =30
-                    Text: =Parent.Error
-                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =Parent.Width - 48
-                    Wrap: =true
-                    X: =24
-                    Y: =DataCardValue71.Y + DataCardValue71.Height
-                    ZIndex: =3
-
-                StarVisible65 As Text:
-                    Align: ='TextCanvas.Align'.Center
-                    DisplayMode: =DisplayMode.Edit
-                    Font: =""
-                    FontColor: =
-                    FontItalic: =false
-                    FontStrikethrough: =false
-                    FontUnderline: =false
-                    Height: =30
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    X: =0
-                    Y: =DataCardKey93.Y
-                    ZIndex: =4
-
             SRFormButtons As typedDataCard.blankCard:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -4180,13 +4091,13 @@
                             If(
                                     Int(SRReturn.response) <> 200,
                                     Notify(
-                                        "There was an issue uploading the data.",
+                                        "Service Request Change unSuccessful",
                                         NotificationType.Error,
                                         900
                                     ),
                                     
                                     Notify(
-                                        "Service Request Action Successful!",
+                                        "Service Request Change Successful!",
                                         NotificationType.Success,
                                         900
                                     );
@@ -4227,6 +4138,95 @@
                         X: =592
                         Y: =40
                         ZIndex: =3
+
+            VendorServiceTicketNumber_DataCard3 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="VendorServiceTicketNumber"
+                Default: =ThisItem.VendorServiceTicketNumber
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@ServiceRequestMaster],DataSourceInfo.DisplayName,"VendorServiceTicketNumber")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@ServiceRequestMaster], DataSourceInfo.MaxLength, "VendorServiceTicketNumber")
+                Required: =false
+                Update: =DataCardValue71.Value
+                Width: =348
+                WidthFit: =false
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey93 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: |-
+                        ="Vendor Ticket #"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue71 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =320
+                    X: =24
+                    Y: =DataCardKey93.Y + DataCardKey93.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage66 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue71.Y + DataCardValue71.Height
+                    ZIndex: =3
+
+                StarVisible65 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey93.Y
+                    ZIndex: =4
 
             VendorID_DataCard3 As typedDataCard.fluentV9NumberEditCard:
                 BorderColor: =RGBA(0, 89, 178, 1)
