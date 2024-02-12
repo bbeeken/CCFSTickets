@@ -4522,7 +4522,16 @@
                     ZIndex: =4
 
                 AssetCombo_Servicerequestform As Combobox.pcfdataset:
-                    DefaultSelectedItems: =If(IsBlank(Parent.Default),DataCardValue57.Selected,LookUp(Assets,ID=Int(Parent.Default)))
+                    DefaultSelectedItems: |
+                        =If(
+                            IsBlank(Parent.Default),
+                            If(
+                                IsBlank(DataCardValue57.Selected),
+                                LookUp(Assets, ID=624),
+                                DataCardValue57.Selected
+                            ),
+                            LookUp(Assets, ID=Int(Parent.Default))
+                        )
                     DisplayMode: =DisplayMode.Edit
                     Font: =""
                     FontItalic: =false
