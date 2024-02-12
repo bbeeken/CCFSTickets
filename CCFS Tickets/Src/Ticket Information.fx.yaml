@@ -4035,6 +4035,348 @@
                     Y: =DataCardKey93.Y
                     ZIndex: =4
 
+            SRFormButtons As typedDataCard.blankCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =SRSaveButton.Height
+                Width: =Parent.Width
+                WidthFit: =
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                SRSaveButton As Button:
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    OnSelect: |
+                        =// Check if required fields are filled
+                        If(
+                            IsBlank(AssetCombo_Servicerequestform.Selected.ID) || IsBlank(DataCardValue31.Text) || IsBlank(VendorComboServiceRquestForm1.Selected.ID) || IsBlank(ServiceRequestDate_DataCard3.Update) || IsBlank(DataCardValue67.Value) || IsBlank(DataCardValue53.Value),
+                            // Notify which fields need to be filled in
+                            Notify(
+                                Concatenate(
+                                    "Please fill in the following required fields: ",
+                                    If(
+                                        IsBlank(AssetCombo_Servicerequestform.Selected.ID),
+                                        "Serviced Asset ID, ",
+                                        ""
+                                    ),
+                                    If(
+                                        IsBlank(DataCardValue31.Text),
+                                        "Ticket ID, ",
+                                        ""
+                                    ),
+                                    If(
+                                        IsBlank(VendorComboServiceRquestForm1.Selected.ID),
+                                        "Vendor ID, ",
+                                        ""
+                                    ),
+                                    If(
+                                        IsBlank(DataCardValue67.Value),
+                                        "Service Notes, ",
+                                        ""
+                                    ),
+                                    If(
+                                        IsBlank(DataCardValue53.Value),
+                                        "Site ID",
+                                        ""
+                                    )
+                                ),
+                                NotificationType.Warning,
+                                1500
+                            ),
+                            Set(
+                                IsNewTicket,
+                                ServiceRequestForm.Mode = FormMode.New
+                            );
+                            ClearCollect(
+                                ServiceRequestFormProcess,
+                                {
+                                    Ticket_ID: If(
+                                        !IsBlank(DataCardValue31.Text),
+                                        DataCardValue31.Text
+                                    ),
+                                    Service_ID: If(
+                                        !IsBlank(DataCardValue65.Value),
+                                        DataCardValue65.Value
+                                    ),
+                                    Serviced_Asset_ID: If(
+                                        !IsBlank(AssetCombo_Servicerequestform.Selected.ID),
+                                        AssetCombo_Servicerequestform.Selected.ID
+                                    ),
+                                    Vendor_ID: If(
+                                        !IsBlank(VendorComboServiceRquestForm1.Selected.ID),
+                                        VendorComboServiceRquestForm1.Selected.ID
+                                    ),
+                                    Vendor_Service_Ticket: If(
+                                        !IsBlank(DataCardValue71.Value),
+                                        DataCardValue71.Value
+                                    ),
+                                    ServiceDate: If(
+                                        !IsBlank(ServiceRequestDate_DataCard3.Update),
+                                        ServiceRequestDate_DataCard3.Update
+                                    ),
+                                    ServiceCompletionDate: If(
+                                        !IsBlank(ServiceCompleteDate_DataCard3.Update),
+                                        ServiceCompleteDate_DataCard3.Update
+                                    ),
+                                    ServiceNotes: If(
+                                        !IsBlank(DataCardValue67.Value),
+                                        DataCardValue67.Value
+                                    ),
+                                    Site_ID: DataCardValue53.Value,
+                                    NewServiceRequest: IsNewTicket,
+                                    Parts_Serviced: Concat(
+                                        VendorComboServiceRquestForm1_1.SelectedItems,
+                                        ID,
+                                        ","
+                                    )
+                                }
+                            );
+                            
+                        // Check if the collection was successfully created and notify the user if not
+                        If(
+                                IsEmpty(ServiceRequestFormProcess),
+                                Notify(
+                                    "There was an issue with this action.",
+                                    NotificationType.Error,
+                                    900
+                                ),
+                                Set(
+                                    SRReturn,
+                                    Process_Service_Form_Data.Run(JSON(ServiceRequestFormProcess))
+                                );
+                            );
+                            ////////////////////////////////////////////////////////////////////////
+                        If(
+                                Int(SRReturn.response) <> 200,
+                                Notify(
+                                    "There was an issue uploading the data.",
+                                    NotificationType.Error,
+                                    900
+                                ),
+                                
+                                Notify(
+                                    "Service Request Action Successful!",
+                                    NotificationType.Success,
+                                    900
+                                );
+                                Refresh(ServiceRequestMaster);
+                         Set(SRFormPopUpVisble,false);
+                        ResetForm(ServiceRequestForm);
+                            );
+                            
+                        );
+                    Text: ="Save"
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                SRCancelButton As icon.Cancel:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(0, 89, 178, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Height: =SRSaveButton.Height
+                    Icon: =Icon.Cancel
+                    OnSelect: |-
+                        =Set(SRFormPopUpVisble,false);
+                        ResetForm(ServiceRequestForm);
+                    X: =96
+                    ZIndex: =2
+
+                Container46_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Height: =TicketResetFormbtn_1.Height *2.1
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =2
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width*.8
+                    ZIndex: =3
+
+                    TicketFormSaveBtn_1 As Button:
+                        AlignInContainer: =AlignInContainer.Center
+                        BasePaletteColor: =RGBA(72, 163, 62, 1)
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =TicketResetFormbtn_1.Height
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |+
+                            =// Check if required fields are filled
+                            If(
+                                IsBlank(AssetCombo_Servicerequestform.Selected.ID) || IsBlank(DataCardValue31.Text) || IsBlank(VendorComboServiceRquestForm1.Selected.ID) || IsBlank(ServiceRequestDate_DataCard3.Update) || IsBlank(DataCardValue67.Value) || IsBlank(DataCardValue53.Value),
+                                // Notify which fields need to be filled in
+                                Notify(
+                                    Concatenate(
+                                        "Please fill in the following required fields: ",
+                                        If(
+                                            IsBlank(AssetCombo_Servicerequestform.Selected.ID),
+                                            "Serviced Asset ID, ",
+                                            ""
+                                        ),
+                                        If(
+                                            IsBlank(DataCardValue31.Text),
+                                            "Ticket ID, ",
+                                            ""
+                                        ),
+                                        If(
+                                            IsBlank(VendorComboServiceRquestForm1.Selected.ID),
+                                            "Vendor ID, ",
+                                            ""
+                                        ),
+                                        If(
+                                            IsBlank(DataCardValue67.Value),
+                                            "Service Notes, ",
+                                            ""
+                                        ),
+                                        If(
+                                            IsBlank(DataCardValue53.Value),
+                                            "Site ID",
+                                            ""
+                                        )
+                                    ),
+                                    NotificationType.Warning,
+                                    1500
+                                ),
+                                Set(
+                                    IsNewTicket,
+                                    ServiceRequestForm.Mode = FormMode.New
+                                );
+                                ClearCollect(
+                                    ServiceRequestFormProcess,
+                                    {
+                                        Ticket_ID: If(
+                                            !IsBlank(DataCardValue31.Text),
+                                            DataCardValue31.Text
+                                        ),
+                                        Service_ID: If(
+                                            !IsBlank(DataCardValue65.Value),
+                                            DataCardValue65.Value
+                                        ),
+                                        Serviced_Asset_ID: If(
+                                            !IsBlank(AssetCombo_Servicerequestform.Selected.ID),
+                                            AssetCombo_Servicerequestform.Selected.ID
+                                        ),
+                                        Vendor_ID: If(
+                                            !IsBlank(VendorComboServiceRquestForm1.Selected.ID),
+                                            VendorComboServiceRquestForm1.Selected.ID
+                                        ),
+                                        Vendor_Service_Ticket: If(
+                                            !IsBlank(DataCardValue71.Value),
+                                            DataCardValue71.Value
+                                        ),
+                                        ServiceDate: If(
+                                            !IsBlank(ServiceRequestDate_DataCard3.Update),
+                                            ServiceRequestDate_DataCard3.Update
+                                        ),
+                                        ServiceCompletionDate: If(
+                                            !IsBlank(ServiceCompleteDate_DataCard3.Update),
+                                            ServiceCompleteDate_DataCard3.Update
+                                        ),
+                                        ServiceNotes: If(
+                                            !IsBlank(DataCardValue67.Value),
+                                            DataCardValue67.Value
+                                        ),
+                                        Site_ID: DataCardValue53.Value,
+                                        NewServiceRequest: IsNewTicket,
+                                        Parts_Serviced: Concat(
+                                            VendorComboServiceRquestForm1_1.SelectedItems,
+                                            ID,
+                                            ","
+                                        )
+                                    }
+                                );
+                                
+                            // Check if the collection was successfully created and notify the user if not
+                            If(
+                                    IsEmpty(ServiceRequestFormProcess),
+                                    Notify(
+                                        "There was an issue with this action.",
+                                        NotificationType.Error,
+                                        900
+                                    ),
+                                    Set(
+                                        SRReturn,
+                                        Process_Service_Form_Data.Run(JSON(ServiceRequestFormProcess))
+                                    );
+                                );
+                                ////////////////////////////////////////////////////////////////////////
+                            If(
+                                    Int(SRReturn.response) <> 200,
+                                    Notify(
+                                        "There was an issue uploading the data.",
+                                        NotificationType.Error,
+                                        900
+                                    ),
+                                    
+                                    Notify(
+                                        "Service Request Action Successful!",
+                                        NotificationType.Success,
+                                        900
+                                    );
+                                    Refresh(ServiceRequestMaster);
+                             Set(SRFormPopUpVisble,false);
+                            ResetForm(ServiceRequestForm);
+                                );
+                                
+                            );
+                            
+                        Text: ="Save"
+                        Width: =96
+                        X: =40
+                        Y: =40
+                        ZIndex: =2
+
+                    TicketResetFormbtn_1 As Button:
+                        AlignInContainer: =AlignInContainer.Center
+                        Appearance: ='ButtonCanvas.Appearance'.Primary
+                        BasePaletteColor: =RGBA(247, 116, 38, 1)
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =150
+                        OnSelect: |-
+                            =
+                            ResetForm(ServiceRequestForm);
+                        Text: ="Reset Form"
+                        Width: =96
+                        X: =592
+                        Y: =40
+                        ZIndex: =3
+
             VendorID_DataCard3 As typedDataCard.fluentV9NumberEditCard:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -4847,166 +5189,6 @@
                     X: =0
                     Y: =DataCardKey91.Y
                     ZIndex: =4
-
-            SRFormButtons As typedDataCard.blankCard:
-                BorderColor: =RGBA(0, 89, 178, 1)
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =SRSaveButton.Height
-                Width: =SRSaveButton.Width +SRCancelButton.Width
-                X: =1
-                Y: =5
-                ZIndex: =1
-
-                SRSaveButton As Button:
-                    BasePaletteColor: =
-                    DisplayMode: =DisplayMode.Edit
-                    Font: =""
-                    FontColor: =
-                    FontItalic: =false
-                    FontSize: =0
-                    FontStrikethrough: =false
-                    FontUnderline: =false
-                    FontWeight: =""
-                    Height: =32
-                    OnSelect: |
-                        =// Check if required fields are filled
-                        If(
-                            IsBlank(AssetCombo_Servicerequestform.Selected.ID) || IsBlank(DataCardValue31.Text) || IsBlank(VendorComboServiceRquestForm1.Selected.ID) || IsBlank(ServiceRequestDate_DataCard3.Update) || IsBlank(DataCardValue67.Value) || IsBlank(DataCardValue53.Value),
-                            // Notify which fields need to be filled in
-                            Notify(
-                                Concatenate(
-                                    "Please fill in the following required fields: ",
-                                    If(
-                                        IsBlank(AssetCombo_Servicerequestform.Selected.ID),
-                                        "Serviced Asset ID, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(DataCardValue31.Text),
-                                        "Ticket ID, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(VendorComboServiceRquestForm1.Selected.ID),
-                                        "Vendor ID, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(DataCardValue67.Value),
-                                        "Service Notes, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(DataCardValue53.Value),
-                                        "Site ID",
-                                        ""
-                                    )
-                                ),
-                                NotificationType.Warning,
-                                1500
-                            ),
-                            Set(
-                                IsNewTicket,
-                                ServiceRequestForm.Mode = FormMode.New
-                            );
-                            ClearCollect(
-                                ServiceRequestFormProcess,
-                                {
-                                    Ticket_ID: If(
-                                        !IsBlank(DataCardValue31.Text),
-                                        DataCardValue31.Text
-                                    ),
-                                    Service_ID: If(
-                                        !IsBlank(DataCardValue65.Value),
-                                        DataCardValue65.Value
-                                    ),
-                                    Serviced_Asset_ID: If(
-                                        !IsBlank(AssetCombo_Servicerequestform.Selected.ID),
-                                        AssetCombo_Servicerequestform.Selected.ID
-                                    ),
-                                    Vendor_ID: If(
-                                        !IsBlank(VendorComboServiceRquestForm1.Selected.ID),
-                                        VendorComboServiceRquestForm1.Selected.ID
-                                    ),
-                                    Vendor_Service_Ticket: If(
-                                        !IsBlank(DataCardValue71.Value),
-                                        DataCardValue71.Value
-                                    ),
-                                    ServiceDate: If(
-                                        !IsBlank(ServiceRequestDate_DataCard3.Update),
-                                        ServiceRequestDate_DataCard3.Update
-                                    ),
-                                    ServiceCompletionDate: If(
-                                        !IsBlank(ServiceCompleteDate_DataCard3.Update),
-                                        ServiceCompleteDate_DataCard3.Update
-                                    ),
-                                    ServiceNotes: If(
-                                        !IsBlank(DataCardValue67.Value),
-                                        DataCardValue67.Value
-                                    ),
-                                    Site_ID: DataCardValue53.Value,
-                                    NewServiceRequest: IsNewTicket,
-                                    Parts_Serviced: Concat(
-                                        VendorComboServiceRquestForm1_1.SelectedItems,
-                                        ID,
-                                        ","
-                                    )
-                                }
-                            );
-                            
-                        // Check if the collection was successfully created and notify the user if not
-                        If(
-                                IsEmpty(ServiceRequestFormProcess),
-                                Notify(
-                                    "There was an issue with this action.",
-                                    NotificationType.Error,
-                                    900
-                                ),
-                                Set(
-                                    SRReturn,
-                                    Process_Service_Form_Data.Run(JSON(ServiceRequestFormProcess))
-                                );
-                            );
-                            ////////////////////////////////////////////////////////////////////////
-                        If(
-                                Int(SRReturn.response) <> 200,
-                                Notify(
-                                    "There was an issue uploading the data.",
-                                    NotificationType.Error,
-                                    900
-                                ),
-                                
-                                Notify(
-                                    "Service Request Action Successful!",
-                                    NotificationType.Success,
-                                    900
-                                );
-                                Refresh(ServiceRequestMaster);
-                         Set(SRFormPopUpVisble,false);
-                        ResetForm(ServiceRequestForm);
-                            );
-                            
-                        );
-                    Text: ="Save"
-                    Width: =96
-                    X: =0
-                    Y: =0
-                    ZIndex: =1
-
-                SRCancelButton As icon.Cancel:
-                    BorderColor: =RGBA(0, 89, 178, 1)
-                    Color: =RGBA(0, 89, 178, 1)
-                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                    DisabledColor: =RGBA(244, 244, 244, 1)
-                    Height: =SRSaveButton.Height
-                    Icon: =Icon.Cancel
-                    OnSelect: |-
-                        =Set(SRFormPopUpVisble,false);
-                        ResetForm(ServiceRequestForm);
-                    X: =96
-                    ZIndex: =2
 
             VendorInfoCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(0, 89, 178, 1)
