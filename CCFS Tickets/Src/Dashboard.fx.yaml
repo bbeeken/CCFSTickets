@@ -1236,6 +1236,39 @@
                         Y: =Parent.TemplateHeight - Self.Height
                         ZIndex: =4
 
+                    Icon5 As icon.ArrowRight:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ArrowRight
+                        OnSelect: |-
+                            =Set(
+                                SRFormDATA,
+                                Gallery5_1.Selected
+                            );
+                            Set(
+                                SRFormPopUpVisble,
+                                true
+                            );
+                            EditForm(ServiceRequestForm);
+                            
+                            Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery5_1.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            EditForm(TicketDataEditForm);
+                            Navigate('Ticket Information');
+                            EditForm(ServiceRequestForm);
+                        Width: =Parent.Width
+                        ZIndex: =5
+
                 Label18_27 As label:
                     Align: =Align.Center
                     BorderColor: =RGBA(0, 89, 178, 1)
@@ -1262,10 +1295,10 @@
         RadiusBottomRight: =4
         RadiusTopLeft: =4
         RadiusTopRight: =4
-        Visible: =false || !UserRegistered
+        Visible: =!UserRegistered
         Width: =Parent.Width /1.5
-        X: =(Parent.Width - Self.Width) / 2
-        Y: =(Parent.Height - Self.Height) / 2
+        X: =If(!UserRegistered, (Parent.Width - Self.Width) / 2, 0)
+        Y: =If(!UserRegistered, (Parent.Height - Self.Height) / 2, 0)
         ZIndex: =2
 
         Label18_3 As label:
