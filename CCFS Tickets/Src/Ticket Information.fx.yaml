@@ -3922,7 +3922,7 @@
             Color: =RGBA(0, 89, 178, 1)
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledColor: =RGBA(244, 244, 244, 1)
-            Height: =SRSaveButton.Height
+            Height: =32
             Icon: =Icon.Cancel
             OnSelect: |-
                 =Set(SRFormPopUpVisble,false);
@@ -3961,7 +3961,7 @@
                 Width: =348
                 WidthFit: =false
                 X: =0
-                Y: =0
+                Y: =1
                 ZIndex: =1
 
                 DataCardKey93 As Text:
@@ -4040,161 +4040,12 @@
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =SRSaveButton.Height
+                Height: =TicketFormSaveBtn_1.Height
                 Width: =Parent.Width
                 WidthFit: =
                 X: =0
                 Y: =0
                 ZIndex: =1
-
-                SRSaveButton As Button:
-                    BasePaletteColor: =
-                    DisplayMode: =DisplayMode.Edit
-                    Font: =""
-                    FontColor: =
-                    FontItalic: =false
-                    FontSize: =0
-                    FontStrikethrough: =false
-                    FontUnderline: =false
-                    FontWeight: =""
-                    Height: =32
-                    OnSelect: |
-                        =// Check if required fields are filled
-                        If(
-                            IsBlank(AssetCombo_Servicerequestform.Selected.ID) || IsBlank(DataCardValue31.Text) || IsBlank(VendorComboServiceRquestForm1.Selected.ID) || IsBlank(ServiceRequestDate_DataCard3.Update) || IsBlank(DataCardValue67.Value) || IsBlank(DataCardValue53.Value),
-                            // Notify which fields need to be filled in
-                            Notify(
-                                Concatenate(
-                                    "Please fill in the following required fields: ",
-                                    If(
-                                        IsBlank(AssetCombo_Servicerequestform.Selected.ID),
-                                        "Serviced Asset ID, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(DataCardValue31.Text),
-                                        "Ticket ID, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(VendorComboServiceRquestForm1.Selected.ID),
-                                        "Vendor ID, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(DataCardValue67.Value),
-                                        "Service Notes, ",
-                                        ""
-                                    ),
-                                    If(
-                                        IsBlank(DataCardValue53.Value),
-                                        "Site ID",
-                                        ""
-                                    )
-                                ),
-                                NotificationType.Warning,
-                                1500
-                            ),
-                            Set(
-                                IsNewTicket,
-                                ServiceRequestForm.Mode = FormMode.New
-                            );
-                            ClearCollect(
-                                ServiceRequestFormProcess,
-                                {
-                                    Ticket_ID: If(
-                                        !IsBlank(DataCardValue31.Text),
-                                        DataCardValue31.Text
-                                    ),
-                                    Service_ID: If(
-                                        !IsBlank(DataCardValue65.Value),
-                                        DataCardValue65.Value
-                                    ),
-                                    Serviced_Asset_ID: If(
-                                        !IsBlank(AssetCombo_Servicerequestform.Selected.ID),
-                                        AssetCombo_Servicerequestform.Selected.ID
-                                    ),
-                                    Vendor_ID: If(
-                                        !IsBlank(VendorComboServiceRquestForm1.Selected.ID),
-                                        VendorComboServiceRquestForm1.Selected.ID
-                                    ),
-                                    Vendor_Service_Ticket: If(
-                                        !IsBlank(DataCardValue71.Value),
-                                        DataCardValue71.Value
-                                    ),
-                                    ServiceDate: If(
-                                        !IsBlank(ServiceRequestDate_DataCard3.Update),
-                                        ServiceRequestDate_DataCard3.Update
-                                    ),
-                                    ServiceCompletionDate: If(
-                                        !IsBlank(ServiceCompleteDate_DataCard3.Update),
-                                        ServiceCompleteDate_DataCard3.Update
-                                    ),
-                                    ServiceNotes: If(
-                                        !IsBlank(DataCardValue67.Value),
-                                        DataCardValue67.Value
-                                    ),
-                                    Site_ID: DataCardValue53.Value,
-                                    NewServiceRequest: IsNewTicket,
-                                    Parts_Serviced: Concat(
-                                        VendorComboServiceRquestForm1_1.SelectedItems,
-                                        ID,
-                                        ","
-                                    )
-                                }
-                            );
-                            
-                        // Check if the collection was successfully created and notify the user if not
-                        If(
-                                IsEmpty(ServiceRequestFormProcess),
-                                Notify(
-                                    "There was an issue with this action.",
-                                    NotificationType.Error,
-                                    900
-                                ),
-                                Set(
-                                    SRReturn,
-                                    Process_Service_Form_Data.Run(JSON(ServiceRequestFormProcess))
-                                );
-                            );
-                            ////////////////////////////////////////////////////////////////////////
-                        If(
-                                Int(SRReturn.response) <> 200,
-                                Notify(
-                                    "There was an issue uploading the data.",
-                                    NotificationType.Error,
-                                    900
-                                ),
-                                
-                                Notify(
-                                    "Service Request Action Successful!",
-                                    NotificationType.Success,
-                                    900
-                                );
-                                Refresh(ServiceRequestMaster);
-                         Set(SRFormPopUpVisble,false);
-                        ResetForm(ServiceRequestForm);
-                            );
-                            
-                        );
-                    Text: ="Save"
-                    Width: =96
-                    X: =0
-                    Y: =0
-                    ZIndex: =1
-
-                SRCancelButton As icon.Cancel:
-                    BorderColor: =RGBA(0, 89, 178, 1)
-                    Color: =RGBA(0, 89, 178, 1)
-                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                    DisabledColor: =RGBA(244, 244, 244, 1)
-                    Height: =SRSaveButton.Height
-                    Icon: =Icon.Cancel
-                    OnSelect: |-
-                        =Set(SRFormPopUpVisble,false);
-                        ResetForm(ServiceRequestForm);
-                    X: =96
-                    ZIndex: =2
 
                 Container46_1 As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light
@@ -4392,7 +4243,7 @@
                 Width: =Parent.Width/3
                 WidthFit: =false
                 X: =1
-                Y: =0
+                Y: =1
                 ZIndex: =1
 
                 DataCardKey92 As Text:
@@ -4482,7 +4333,7 @@
                 Visible: =false
                 Width: =348
                 X: =2
-                Y: =0
+                Y: =1
                 ZIndex: =1
 
                 DataCardKey90 As Text:
@@ -4566,7 +4417,7 @@
                 Visible: =false
                 Width: =348
                 X: =0
-                Y: =1
+                Y: =2
                 ZIndex: =1
 
                 DataCardKey85 As Text:
@@ -4619,7 +4470,7 @@
                 Width: =348
                 WidthFit: =false
                 X: =1
-                Y: =1
+                Y: =2
                 ZIndex: =1
 
                 DataCardKey87 As Text:
@@ -4712,7 +4563,7 @@
                     )
                 Width: =348
                 X: =2
-                Y: =1
+                Y: =2
                 ZIndex: =1
 
                 ErrorMessage52 As Text:
@@ -4804,7 +4655,7 @@
                 Width: =348
                 WidthFit: =true
                 X: =0
-                Y: =2
+                Y: =3
                 ZIndex: =1
 
                 DataCardKey89 As Text:
@@ -4908,7 +4759,7 @@
                 Width: =348
                 WidthFit: =true
                 X: =0
-                Y: =3
+                Y: =4
                 ZIndex: =1
 
                 DataCardKey86 As Text:
@@ -5029,7 +4880,7 @@
                 Width: =348
                 WidthFit: =true
                 X: =0
-                Y: =4
+                Y: =5
                 ZIndex: =1
 
                 DataCardKey88 As Text:
@@ -5117,7 +4968,7 @@
                 Visible: =false
                 Width: =348
                 X: =0
-                Y: =5
+                Y: =6
                 ZIndex: =1
 
                 DataCardKey91 As Text:
@@ -5201,7 +5052,7 @@
                     =Parent.Width -25
                 WidthFit: =true
                 X: =0
-                Y: =6
+                Y: =7
                 ZIndex: =1
 
                 TextCanvas3 As Text:
@@ -5279,7 +5130,7 @@
                 Visible: =false
                 Width: =348
                 X: =0
-                Y: =7
+                Y: =8
                 ZIndex: =1
 
                 DataCardKey76 As Text:

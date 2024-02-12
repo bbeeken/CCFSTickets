@@ -4084,96 +4084,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRSaveButton.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRSaveButton.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information",
-                "type": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRSaveButton"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRCancelButton.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRCancelButton.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information",
-                "type": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRCancelButton"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRCancelButton.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRCancelButton.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Ticket Information",
-                "type": "'Ticket Information'.ServiceRequestFormPopUp.ServiceRequestForm.SRFormButtons.SRCancelButton"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7.AccessibleLabel"
                 }
               ],
@@ -6447,7 +6357,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Ticket Information\" is 360, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Ticket Information\" is 358, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
