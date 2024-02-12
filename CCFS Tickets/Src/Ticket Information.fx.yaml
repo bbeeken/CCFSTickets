@@ -3120,86 +3120,6 @@
                 Width: =Parent.Width 
                 ZIndex: =1
 
-                MessageEntry As groupContainer.manualLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    BorderColor: =RGBA(214, 221, 224, 1)
-                    BorderThickness: =1
-                    DropShadow: =DropShadow.Semilight
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    Visible: =NewMessageContianerVisible
-                    ZIndex: =1
-
-                    "TextInputCanvas1 As 'Text input'":
-                        Align: ="Start"
-                        BasePaletteColor: =
-                        DisplayMode: =DisplayMode.Edit
-                        Font: =""
-                        FontColor: =
-                        FontItalic: =false
-                        FontSize: =0
-                        FontStrikethrough: =false
-                        FontUnderline: =false
-                        FontWeight: =""
-                        Height: =Parent.Height -ButtonCanvas2.Height 
-                        Mode: ='TextInputCanvas.Mode'.Multiline
-                        Width: =Parent.Width
-                        X: =0
-                        Y: =0
-                        ZIndex: =1
-
-                    ButtonCanvas2 As Button:
-                        BasePaletteColor: =
-                        DisplayMode: =DisplayMode.Edit
-                        Font: =""
-                        FontColor: =
-                        FontItalic: =false
-                        FontSize: =0
-                        FontStrikethrough: =false
-                        FontUnderline: =false
-                        FontWeight: =""
-                        Height: =32
-                        OnSelect: |
-                            =Patch(
-                                Ticket_Messages,/*2.*/
-                                Defaults(Ticket_Messages),/*3.*/
-                                {
-                                    Ticket_ID: Int(varTicketID.Ticket_ID),
-                                    Message: Text(TextInputCanvas1),
-                                    SenderUserCode: User().Email,
-                                    SenderUserName: User().FullName,
-                                    DateTimeStamp: Now()
-                                }
-                            );
-                            Refresh(Ticket_Messages);
-                            Reset(TextInputCanvas1);
-                            Set(
-                                NewMessageContianerVisible,
-                                false
-                            );
-                        Text: ="Save"
-                        Width: =96
-                        X: =0
-                        Y: =TextInputCanvas1.Y + TextInputCanvas1.Height+2
-                        ZIndex: =2
-
-                    Icon15 As icon.Cancel:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        Color: =RGBA(0, 89, 178, 1)
-                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                        DisabledColor: =RGBA(244, 244, 244, 1)
-                        Height: =ButtonCanvas2.Height
-                        Icon: =Icon.Cancel
-                        OnSelect: =Set(NewMessageContianerVisible,false)
-                        Width: =ButtonCanvas2.Width
-                        X: =ButtonCanvas2.X+ButtonCanvas2.Width+5
-                        Y: =TextInputCanvas1.Y + TextInputCanvas1.Height+2
-                        ZIndex: =3
-
                 Label18_8 As label:
                     Align: =Align.Center
                     BorderColor: =RGBA(0, 89, 178, 1)
@@ -5208,4 +5128,103 @@
                     X: =0
                     Y: =DataCardKey76.Y
                     ZIndex: =4
+
+    MessageEntry As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderThickness: =1
+        DropShadow: =DropShadow.Semilight
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =366
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =NewMessageContianerVisible
+        Width: =Parent.Width/2
+        X: =(App.Width - MessageEntry.Width) /2
+        Y: =(App.Height- MessageEntry.Height) /2
+        ZIndex: =4
+
+        "TextInputCanvas1 As 'Text input'":
+            Align: ="Start"
+            BasePaletteColor: =
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(180, 214, 250, 1)
+            FontItalic: =false
+            FontSize: =0
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =287
+            Mode: ='TextInputCanvas.Mode'.Multiline
+            Width: =Parent.Width
+            X: =0
+            Y: =Label18_28.Y + Label18_28.Height +5
+            ZIndex: =1
+
+        ButtonCanvas2 As Button:
+            BasePaletteColor: =
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontSize: =0
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =32
+            OnSelect: |
+                =Patch(
+                    Ticket_Messages,/*2.*/
+                    Defaults(Ticket_Messages),/*3.*/
+                    {
+                        Ticket_ID: Int(varTicketID.Ticket_ID),
+                        Message: Text(TextInputCanvas1),
+                        SenderUserCode: User().Email,
+                        SenderUserName: User().FullName,
+                        DateTimeStamp: Now()
+                    }
+                );
+                Refresh(Ticket_Messages);
+                Reset(TextInputCanvas1);
+                Set(
+                    NewMessageContianerVisible,
+                    false
+                );
+            Text: ="Save"
+            Width: =96
+            X: =5
+            Y: =TextInputCanvas1.Y + TextInputCanvas1.Height + 5
+            ZIndex: =2
+
+        Label18_28 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(204, 214, 224, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(102, 133, 163, 1)
+            Height: =30
+            PaddingBottom: =7.67
+            PaddingLeft: =7.67
+            PaddingRight: =4.63
+            PaddingTop: =4.63
+            Size: = Min('Asset Dashboard'.Width / 40,18)
+            Text: ="Messages"
+            Width: =Parent.Width
+            X: =0.00
+            ZIndex: =3
+
+        Icon15 As icon.Cancel:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(102, 133, 163, 1)
+            Height: =Label18_28.Height
+            Icon: =Icon.Cancel
+            OnSelect: =Set(NewMessageContianerVisible,false)
+            Width: =ButtonCanvas2.Width
+            X: =587
+            ZIndex: =4
 
