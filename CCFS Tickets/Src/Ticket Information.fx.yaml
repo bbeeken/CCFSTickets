@@ -3112,6 +3112,7 @@
                     100)
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
                 RadiusBottomLeft: =8
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
@@ -3289,6 +3290,7 @@
                 )
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
             RadiusBottomLeft: =4
             RadiusBottomRight: =4
             RadiusTopLeft: =4
@@ -3457,6 +3459,7 @@
             LayoutMinHeight: =Parent.Height/5
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
             RadiusBottomLeft: =4
             RadiusBottomRight: =4
             RadiusTopLeft: =4
