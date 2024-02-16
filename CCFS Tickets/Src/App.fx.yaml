@@ -230,7 +230,7 @@ App As appinfo:
             Param("NavigateScreen"),
             "TicketScreen",
             'Ticket Information',
-           Dashboard
+           Dashboard_1
         )
     Theme: =PowerAppsTheme
 
