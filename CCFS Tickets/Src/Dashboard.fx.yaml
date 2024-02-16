@@ -397,7 +397,7 @@
                             Filter(
                                 Tickets_Master,
                                 (UserAdmin = 1 && Private <> "1" && Ticket_Status_ID <> "7"  && Ticket_Status_ID <> "3") ||
-                                (UserAdmin <> 1 && (Assigned_Email = User().Email || Ticket_Contact_Email = User().Email) && Private <> "1" && Ticket_Status_ID <> "7" && Ticket_Status_ID <> "3")
+                                (UserAdmin <> 1 && (Assigned_Email = User().Email || Ticket_Contact_Email = User().Email || Site_ID = UserSite)  && Private <> "1" && Ticket_Status_ID <> "7" && Ticket_Status_ID <> "3")
                             ),
                             Ticket_ID,
                             SortOrder.Descending
@@ -1295,7 +1295,7 @@
         RadiusBottomRight: =4
         RadiusTopLeft: =4
         RadiusTopRight: =4
-        Visible: =!UserRegistered
+        Visible: =false
         Width: =Parent.Width /1.5
         X: =If(!UserRegistered, (Parent.Width - Self.Width) / 2, 0)
         Y: =If(!UserRegistered, (Parent.Height - Self.Height) / 2, 0)
