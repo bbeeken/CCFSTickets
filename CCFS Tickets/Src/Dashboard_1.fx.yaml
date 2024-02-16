@@ -801,200 +801,216 @@
                         OnSelect: =ResetForm(QuickOrderForm1_1)
                         ZIndex: =4
 
-                QuickOrderForm1_1 As form:
-                    BorderColor: =RGBA(0, 89, 178, 1)
-                    DataSource: =Tickets_Master
-                    DefaultMode: =FormMode.New
-                    LayoutMinHeight: =150
-                    LayoutMinWidth: =Parent.Width - 20
-                    ZIndex: =2
+                Container5 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =10
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =15
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =3
 
-                    OrderType_1 As typedDataCard.blankCard:
+                    QuickOrderForm1_1 As form:
                         BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =35
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =0
+                        DataSource: =Tickets_Master
+                        DefaultMode: =FormMode.New
+                        LayoutMinHeight: =150
+                        LayoutMinWidth: =Parent.Width - 20
                         ZIndex: =1
 
-                        DropdownCanvas1_2 As Dropdown.pcfdataset:
+                        OrderType_1 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            BorderStyle: =BorderStyle.Solid
                             DisplayMode: =DisplayMode.Edit
-                            Height: =32
-                            Items: =["Fuel", "IT", "General"]
-                            Width: =Parent.Width *60%
-                            X: =193
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =26
+                            Width: =507
+                            WidthFit: =true
+                            X: =0
                             Y: =0
                             ZIndex: =1
 
-                        Label9_5 As label:
+                            DropdownCanvas1_2 As Dropdown.pcfdataset:
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =32
+                                Items: =["Fuel", "IT", "General"]
+                                Width: =Parent.Width /3
+                                X: =107
+                                Y: =0
+                                ZIndex: =1
+
+                            Label9_5 As label:
+                                BorderColor: =RGBA(0, 89, 178, 1)
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Height: =32
+                                Size: =12
+                                Text: |-
+                                    ="Order Type:"
+                                Width: =107
+                                ZIndex: =2
+
+                        OrderSite_1 As typedDataCard.blankCard:
                             BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =31
-                            Size: =13
-                            Text: |-
-                                ="Order Type:"
-                            Width: =Parent.Width *40%
-                            ZIndex: =2
-
-                    OrderSite_1 As typedDataCard.blankCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =35
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =1
-                        ZIndex: =1
-
-                        DropdownCanvas1_3 As Dropdown.pcfdataset:
-                            DefaultSelectedItems: =LookUp(SitesLocalVariable,ID=UserSite)
+                            BorderStyle: =BorderStyle.Solid
                             DisplayMode: =DisplayMode.Edit
-                            Height: =32
-                            Items: =SitesLocalVariable
-                            Width: =Parent.Width *60%
-                            X: =192
-                            Y: =8
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =35
+                            Width: =Parent.Width
+                            WidthFit: =true
+                            X: =0
+                            Y: =1
                             ZIndex: =1
 
-                            Label10_1 As pcfDataField.textualColumn:
-                                FieldDisplayName: ="Label"
-                                FieldName: ="Label"
-                                FieldType: ="s"
-                                FieldVariantName: ="textualColumn"
-                                Order: =1
-                                ZIndex: =12
+                            DropdownCanvas1_3 As Dropdown.pcfdataset:
+                                DefaultSelectedItems: =LookUp(SitesLocalVariable,ID=UserSite)
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =32
+                                Items: =SitesLocalVariable
+                                Width: =Parent.Width /3
+                                X: =107
+                                Y: =8
+                                ZIndex: =1
 
-                            streetl1_1 As pcfDataField.textualColumn:
-                                FieldDisplayName: ="streetl"
-                                FieldName: ="streetl"
-                                FieldType: ="s"
-                                FieldVariantName: ="textualColumn"
-                                Order: =2
-                                ZIndex: =13
+                                Label10_1 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Label"
+                                    FieldName: ="Label"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =1
+                                    ZIndex: =12
 
-                        Label9_6 As label:
+                                streetl1_1 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="streetl"
+                                    FieldName: ="streetl"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =2
+                                    ZIndex: =13
+
+                            Label9_6 As label:
+                                BorderColor: =RGBA(0, 89, 178, 1)
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Height: =31
+                                Size: =12
+                                Text: |-
+                                    ="Order Site:"
+                                Width: =103
+                                Y: =9
+                                ZIndex: =2
+
+                        PartsItemNumber_1 As typedDataCard.blankCard:
                             BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =31
-                            Size: =13
-                            Text: |-
-                                ="Order Site:"
-                            Width: =Parent.Width *40%
-                            Y: =9
-                            ZIndex: =2
-
-                    PartsItemNumber_1 As typedDataCard.blankCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =43
-                        Width: =173
-                        WidthFit: =true
-                        X: =0
-                        Y: =2
-                        ZIndex: =1
-
-                        "TextInputCanvas2_3 As 'Text input'":
-                            BasePaletteColor: =
+                            BorderStyle: =BorderStyle.Solid
                             DisplayMode: =DisplayMode.Edit
-                            FontColor: =
-                            Height: =32
-                            Width: =Parent.Width *60%
-                            X: =194
-                            Y: =11
-                            ZIndex: =2
-
-                        Label9_7 As label:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =28
-                            Size: =13
-                            Text: |-
-                                ="Part #: "
-                            Width: =194
-                            Y: =11
-                            ZIndex: =4
-
-                    PartsItemDesc_1 As typedDataCard.blankCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =78
-                        Width: =519
-                        WidthFit: =true
-                        X: =0
-                        Y: =3
-                        ZIndex: =1
-
-                        "TextInputCanvas2_4 As 'Text input'":
-                            BasePaletteColor: =
-                            DisplayMode: =DisplayMode.Edit
-                            FontColor: =
-                            Height: =74
-                            Mode: ='TextInputCanvas.Mode'.Multiline
-                            Width: =Parent.Width *60%
-                            X: =194
-                            Y: =5
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =43
+                            Width: =173
+                            WidthFit: =true
+                            X: =0
+                            Y: =2
                             ZIndex: =1
 
-                        Label9_8 As label:
+                            "TextInputCanvas2_3 As 'Text input'":
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontColor: =
+                                Height: =32
+                                Width: =Parent.Width /3
+                                X: =107
+                                Y: =11
+                                ZIndex: =2
+
+                            Label9_7 As label:
+                                BorderColor: =RGBA(0, 89, 178, 1)
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Height: =32
+                                Size: =12
+                                Text: |-
+                                    ="Part #: "
+                                Width: =99
+                                Y: =11
+                                ZIndex: =4
+
+                        PartsItemDesc_1 As typedDataCard.blankCard:
                             BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =28
-                            Size: =13
-                            Text: |-
-                                ="Description: "
-                            Width: =194
-                            X: =5
-                            Y: =5
-                            ZIndex: =2
-
-                    PartsItemQty_1 As typedDataCard.blankCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DisplayMode: =DisplayMode.Edit
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =32
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =4
-                        ZIndex: =1
-
-                        "TextInputCanvas2_5 As 'Text input'":
-                            BasePaletteColor: =
+                            BorderStyle: =BorderStyle.Solid
                             DisplayMode: =DisplayMode.Edit
-                            FontColor: =
-                            Height: =32
-                            Type: ='TextInputCanvas.Type'.Text
-                            Width: =120
-                            X: =194
-                            Y: =8
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =78
+                            Width: =519
+                            WidthFit: =true
+                            X: =0
+                            Y: =3
                             ZIndex: =1
 
-                        Label9_9 As label:
+                            "TextInputCanvas2_4 As 'Text input'":
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontColor: =
+                                Height: =74
+                                Mode: ='TextInputCanvas.Mode'.Multiline
+                                Width: =Parent.Width /3
+                                X: =107
+                                Y: =5
+                                ZIndex: =1
+
+                            Label9_8 As label:
+                                BorderColor: =RGBA(0, 89, 178, 1)
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Height: =31
+                                Size: =12
+                                Text: |-
+                                    ="Description: "
+                                Width: =102
+                                X: =5
+                                Y: =5
+                                ZIndex: =2
+
+                        PartsItemQty_1 As typedDataCard.blankCard:
                             BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =28
-                            Size: =13
-                            Text: |-
-                                ="Qty:"
-                            Width: =194
-                            Y: =12
-                            ZIndex: =2
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =32
+                            Width: =Parent.Width
+                            WidthFit: =true
+                            X: =0
+                            Y: =4
+                            ZIndex: =1
+
+                            "TextInputCanvas2_5 As 'Text input'":
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontColor: =
+                                Height: =32
+                                Type: ='TextInputCanvas.Type'.Text
+                                Width: =120
+                                X: =194
+                                Y: =8
+                                ZIndex: =1
+
+                            Label9_9 As label:
+                                BorderColor: =RGBA(0, 89, 178, 1)
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Height: =28
+                                Size: =13
+                                Text: |-
+                                    ="Qty:"
+                                Width: =194
+                                Y: =12
+                                ZIndex: =2
 
             SidebarContainer3_9 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.Light
@@ -1037,7 +1053,7 @@
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     LayoutOverflowY: =LayoutOverflow.Scroll
-                    PaddingLeft: =10
+                    PaddingLeft: =12
                     RadiusBottomLeft: =4
                     RadiusBottomRight: =4
                     RadiusTopLeft: =4
