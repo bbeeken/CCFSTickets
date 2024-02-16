@@ -9,10 +9,6 @@ App As appinfo:
         If(
             !IsBlank(Param("TicketID")),
             Set(
-                varNavigateToTicket,
-                true
-            );
-            Set(
                 varTicketID,
                 First(
                     Filter(
@@ -20,10 +16,6 @@ App As appinfo:
                         Ticket_ID = Int(Param("TicketID"))
                     )
                 )
-            ),
-            Set(
-                varNavigateToTicket,
-                false
             )
         );
         ClearCollect(

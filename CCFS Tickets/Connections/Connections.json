@@ -87,7 +87,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
         "appVer": "3.24015.12",
-        "modifiedOn": "2024-02-16 20:39:43",
+        "modifiedOn": "2024-02-16 20:53:46",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[dbo].[tickets_master]\":[\"post\",\"patch\",\"get\"],\"[dbo].[sites]\":[\"get\"],\"[dbo].[asset_type_parts_types]\":[\"get\"],\"[dbo].[assets]\":[\"post\",\"patch\",\"get\"],\"[dbo].[priority_levels]\":[\"get\"],\"[dbo].[vendors]\":[\"post\",\"patch\",\"get\"],\"[dbo].[servicerequestmaster]\":[\"post\",\"patch\",\"get\"],\"[dbo].[storenotificationmessages]\":[\"post\",\"patch\",\"get\"],\"[dbo].[ticket_status]\":[\"get\"],\"[dbo].[ticket_messages]\":[\"post\",\"patch\",\"get\"],\"[dbo].[ticket_categories]\":[\"get\"],\"[dbo].[ticket_attachments]\":[\"get\"],\"[dbo].[user_configuration]\":[\"post\",\"patch\",\"get\"],\"[dbo].[asset_categories]\":[\"get\"],\"[dbo].[asset_types]\":[\"get\"],\"[dbo].[assets_images]\":[\"get\"]}}",
         "version": 1
       },
@@ -119,9 +119,6 @@
           },
           "Priority_Levels": {
             "tableName": "[dbo].[Priority_Levels]"
-          },
-          "Service_Request_Parts_Serviced": {
-            "tableName": "[dbo].[Service_Request_Parts_Serviced]"
           },
           "ServiceRequestMaster": {
             "tableName": "[dbo].[ServiceRequestMaster]"
@@ -172,8 +169,7 @@
       "User_Configuration_1",
       "Asset_Categories",
       "Asset_Types",
-      "Assets_Images",
-      "Service_Request_Parts_Serviced"
+      "Assets_Images"
     ],
     "dependencies": {},
     "dependents": [
