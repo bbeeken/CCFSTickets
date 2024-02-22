@@ -984,12 +984,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Status_ID")
                         Required: =false
                         Update: =DataCardValue30.Selected.ID
-                        Visible: |-
-                            =If(
-                                UserAdmin = 1,
-                                true,
-                                false
-                            )
+                        Visible: =true
                         Width: =329
                         WidthFit: =false
                         X: =1
@@ -1159,7 +1154,6 @@
                             FontUnderline: =false
                             FontWeight: =""
                             Height: =25
-                            StartYear: =2023
                             Visible: =Int(DataCardValue38.Selected.PriorityLevel) = 5
                             Width: =DataCardValue38.Width
                             X: =30
@@ -2166,7 +2160,7 @@
                             FontUnderline: =false
                             FontWeight: =""
                             Height: =32
-                            SelectedDate: =DateValue10
+                            SelectedDate: =DateValue10.SelectedDate
                             Width: =320
                             X: =0
                             Y: =0
@@ -5095,7 +5089,7 @@
                     Defaults(Ticket_Messages),/*3.*/
                     {
                         Ticket_ID: Int(varTicketID.Ticket_ID),
-                        Message: Text(TextInputCanvas1),
+                        Message: Text(TextInputCanvas1.Value),
                         SenderUserCode: User().Email,
                         SenderUserName: User().FullName,
                         DateTimeStamp: Now()
