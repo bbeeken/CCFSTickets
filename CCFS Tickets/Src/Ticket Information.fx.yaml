@@ -486,6 +486,113 @@
                                 Y: =0
                                 ZIndex: =4
 
+                            TicketFormSaveBtn_2 As Button:
+                                AlignInContainer: =AlignInContainer.Center
+                                BasePaletteColor: =RGBA(246, 142, 104, 1)
+                                DisplayMode: =DisplayMode.Edit
+                                FillPortions: =1
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontSize: =0
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =TicketResetFormbtn.Height
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                OnSelect: |
+                                    =// Determine the mode of the TicketDataEditForm and set the NewTicket flag accordingly
+                                    Set(
+                                        IsNewTicket,
+                                        TicketDataEditForm.Mode = FormMode.New
+                                    );
+                                    // Clear and collect data into TicketDataFormProcess based on the mode
+                                    ClearCollect(
+                                        TicketDataFormProcess,
+                                        {
+                                            Ticket_ID: Text(varTicketID.Ticket_ID),
+                                            NewTicket: IsNewTicket,
+                                            Subject: DataCardValue36.Value,
+                                            TicketBody: Text(DataCardValue35.Value),
+                                            SiteID: Int(DataCardValue37.Selected.ID),
+                                            TicketCategoryID: Int(DataCardValue34.Selected.ID),
+                                            TicketStatusID: 3,
+                                            Private: If(
+                                                CheckboxCanvas_Private.Checked,
+                                                1,
+                                                0
+                                            ),
+                                            SeverityID: DataCardValue38.Selected.ID,
+                                            AssetID: DataCardValue57.Selected.ID,
+                                            TicketContactName: Text(DataCardValue32.Selected.displayName),
+                                            TicketContactEmail: Text(DataCardValue32.Selected.mail),
+                                            AssignedName: Text(DataCardValue55.Selected.displayName),
+                                            AssignedEmail: Text(DataCardValue55.Selected.mail),
+                                            Ticket_Status_Id: If(
+                                                IsBlank(DataCardValue30.Selected.ID),
+                                                1,
+                                                Int(DataCardValue30.Selected.ID)
+                                            ),
+                                            Followers: Concat(
+                                                DataCardValue20.SelectedItems,
+                                                displayName,
+                                                ","
+                                            ),
+                                            EstimatedCompletionDate: EsitmatedCompleteDate.SelectedDate,
+                                            CreatedDate: If(
+                                                IsNewTicket,
+                                                Now(),
+                                                Created_Date_DataCard1.Default
+                                            ),
+                                            LastModifiedBy: User().FullName,
+                                            LastModifiedDate: Now(),
+                                            ClosedDate: Closed_Date_DataCard1.Update,
+                                            Version: If(
+                                                IsNewTicket,
+                                                1,
+                                                Version_DataCard2.Default + 1
+                                            ),
+                                            CreatedBy: If(
+                                                IsNewTicket,
+                                                User().FullName,
+                                                LastCreatedBy_DataCard1.Default
+                                            )
+                                        }
+                                    );
+                                    // Notify if there was an issue with the action
+                                    If(
+                                        IsBlank(TicketDataFormProcess),
+                                        Notify(
+                                            "There was an issue with this action.",
+                                            NotificationType.Error
+                                        ),
+                                        Set(
+                                            returnID,
+                                            Process_Ticket_Form_Data.Run(JSON(TicketDataFormProcess))
+                                        );
+                                        If(
+                                            IsBlank(returnID),
+                                            Notify(
+                                                "There was an issue with saving the ticket.",
+                                                NotificationType.Error
+                                            ),
+                                            Notify(
+                                                "Last Ticket Saved.",
+                                                NotificationType.Success,
+                                              30
+                                            )
+                                        );
+                                        
+                                    );
+                                    Refresh(Tickets_Master);
+                                    Navigate('Ticket Dashboard');
+                                Text: ="Close Ticket"
+                                Width: =96
+                                X: =40
+                                Y: =40
+                                ZIndex: =5
+
                     Site_ID_DataCard3 As typedDataCard.numberEditCard:
                         BorderColor: =RGBA(0, 89, 178, 1)
                         BorderStyle: =BorderStyle.Solid
@@ -1024,7 +1131,8 @@
 
                         DataCardValue30 As Dropdown.pcfdataset:
                             DefaultSelectedItems: =LookUp(TicketStatusLocalVariable,ID=Int(Parent.Default))
-                            DisplayMode: =DisplayMode.Edit
+                            DisplayMode: |
+                                =If(UserAdmin = 1, DisplayMode.Edit, DisplayMode.View)
                             Height: =32
                             Items: =Sort(TicketStatusLocalVariable,Label)
                             Required: =true

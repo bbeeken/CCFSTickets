@@ -6604,6 +6604,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Ticket Information'.ScreenContainer2.BottomContainer1.MainContainer1.TicketDataEditForm.ButtonMenu.Container46.TicketFormSaveBtn_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information'.ScreenContainer2.BottomContainer1.MainContainer1.TicketDataEditForm.ButtonMenu.Container46.TicketFormSaveBtn_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information",
+                "type": "'Ticket Information'.ScreenContainer2.BottomContainer1.MainContainer1.TicketDataEditForm.ButtonMenu.Container46.TicketFormSaveBtn_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.OnStart"
                 }
               ],
@@ -7493,7 +7523,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Ticket Information\" is 360, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Ticket Information\" is 361, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
