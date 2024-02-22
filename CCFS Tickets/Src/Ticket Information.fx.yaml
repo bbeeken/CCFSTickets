@@ -529,11 +529,7 @@
                                             TicketContactEmail: Text(DataCardValue32.Selected.mail),
                                             AssignedName: Text(DataCardValue55.Selected.displayName),
                                             AssignedEmail: Text(DataCardValue55.Selected.mail),
-                                            Ticket_Status_Id: If(
-                                                IsBlank(DataCardValue30.Selected.ID),
-                                                1,
-                                                Int(DataCardValue30.Selected.ID)
-                                            ),
+                                            Ticket_Status_Id: 3,
                                             Followers: Concat(
                                                 DataCardValue20.SelectedItems,
                                                 displayName,
