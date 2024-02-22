@@ -5167,7 +5167,7 @@
             BasePaletteColor: =
             DisplayMode: =DisplayMode.Edit
             Font: =""
-            FontColor: =RGBA(180, 214, 250, 1)
+            FontColor: =RGBA(0, 0, 0, 1)
             FontItalic: =false
             FontSize: =0
             FontStrikethrough: =false
