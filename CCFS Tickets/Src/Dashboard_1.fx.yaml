@@ -252,7 +252,7 @@
                             SortOrder.Descending
                         )
                     Layout: =Layout.Vertical
-                    LayoutMinHeight: =((Gallery7_4.TemplateHeight * Gallery7_4.AllItemsCount) - Container4_3.Height) 
+                    LayoutMinHeight: =((Gallery7_4.TemplateHeight * Gallery7_4.AllItemsCount + 180) - Container4_3.Height) 
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: =
@@ -279,7 +279,7 @@
                         Text: |-
                             =ThisItem.Ticket_ID&": "& ThisItem.Subject
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =782
+                        Width: =660
                         Y: =10
                         ZIndex: =1
 
@@ -329,7 +329,7 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Text: =LookUp(TicketStatusLocalVariable,ID =Int(ThisItem.Ticket_Status_ID)).Label 
-                        Width: =490
+                        Width: =660
                         Y: =32
                         ZIndex: =4
 
@@ -417,7 +417,9 @@
                     BorderThickness: =2
                     DelayItemLoading: =true
                     Fill: =RGBA(204, 214, 224, 1)
-                    Height: =(Gallery7_3.TemplateHeight * Gallery7_3.AllItemsCount) + Gallery7_3.TemplateHeight
+                    FillPortions: =0
+                    Height: |
+                        =(Gallery7_3.TemplateHeight * Gallery7_3.AllItemsCount) + Gallery7_3.TemplateHeight + 265
                     Items: |-
                         =Sort(
                             Filter(
@@ -458,7 +460,7 @@
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         DisplayMode: =DisplayMode.View
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =22
+                        Height: =150
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -486,7 +488,7 @@
                         Color: =RGBA(0, 0, 0, 0)
                         DisabledBorderColor: =RGBA(166, 166, 166, 1)
                         DisabledColor: =RGBA(244, 244, 244, 1)
-                        Height: =Parent.TemplateHeight
+                        Height: =Parent.TemplateHeight + 150
                         Icon: =Icon.ChevronRight
                         OnSelect: |-
                             =Set(
