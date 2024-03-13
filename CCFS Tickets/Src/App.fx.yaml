@@ -3,7 +3,7 @@ App As appinfo:
     OnStart: |
         =Set(
             UserRegistered,
-            false
+            true
         );
         // Enhanced Switch statement for navigation
         If(

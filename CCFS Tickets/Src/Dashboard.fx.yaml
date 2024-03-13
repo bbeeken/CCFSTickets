@@ -1303,7 +1303,7 @@
         RadiusBottomRight: =4
         RadiusTopLeft: =4
         RadiusTopRight: =4
-        Visible: =false
+        Visible: =!UserRegistered
         Width: =Parent.Width /1.5
         X: =If(!UserRegistered, (Parent.Width - Self.Width) / 2, 0)
         Y: =If(!UserRegistered, (Parent.Height - Self.Height) / 2, 0)
