@@ -337,7 +337,7 @@
                     RadiusBottomRight: =4
                     RadiusTopLeft: =4
                     RadiusTopRight: =4
-                    Width: =785
+                    Width: =Parent.Width
                     ZIndex: =1
 
                     "'OT Label' As label":
