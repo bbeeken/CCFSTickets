@@ -3231,7 +3231,7 @@
                     PaddingRight: =4.63
                     PaddingTop: =4.63
                     Size: = Min('Asset Dashboard'.Width / 40,18)
-                    Text: ="Messages"
+                    Text: ="Ticket Updates"
                     Width: =Parent.Width
                     X: =0.00
                     Y: =0.00
