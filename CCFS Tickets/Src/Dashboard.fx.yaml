@@ -152,7 +152,7 @@
             "'Recently Updated' As groupContainer.verticalAutoLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(214, 221, 224, 1)
                 Height: =MainContainer1.Height
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =5
@@ -227,6 +227,7 @@
                     ShowNavigation: =true
                     TemplatePadding: =1
                     TemplateSize: =75
+                    Visible: =If('RU Body'.AllItemsCount = 0 ,false, true)
                     Width: =Parent.Width
                     ZIndex: =3
 
@@ -528,7 +529,7 @@
             "'Older Than 45 Days' As groupContainer.verticalAutoLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(214, 221, 224, 1)
                 Height: ='Open Tickets'.Height
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =2
@@ -603,6 +604,7 @@
                     OnSelect: =
                     TemplatePadding: =1
                     TemplateSize: =75
+                    Visible: =If('RU Body'.AllItemsCount = 0 ,false, true)
                     Width: =Parent.Width
                     ZIndex: =2
 
