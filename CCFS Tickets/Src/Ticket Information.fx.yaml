@@ -1221,7 +1221,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Ticket Priorty"
+                            Text: ="Ticket Priority"
                             Width: =98
                             X: =30
                             Y: =5
