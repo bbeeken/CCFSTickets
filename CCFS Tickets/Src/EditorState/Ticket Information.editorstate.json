@@ -27873,7 +27873,7 @@
       "MetaDataIDKey": "",
       "Name": "Gallery10",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28132,7 +28132,7 @@
       "MetaDataIDKey": "",
       "Name": "Gallery10_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -37974,7 +37974,7 @@
       "MetaDataIDKey": "",
       "Name": "NewAttachmentsBtn_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -38150,7 +38150,7 @@
       "MetaDataIDKey": "",
       "Name": "NewmessageBtn_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -52000,7 +52000,7 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas2_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

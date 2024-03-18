@@ -109,7 +109,7 @@ App As appinfo:
                 },
                 {
                     ID: 15,
-                    Name: "MY Site",
+                    Name: "My Site",
                     Logo: Icon.Tag
                 },
                 {
