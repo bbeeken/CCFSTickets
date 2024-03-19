@@ -5308,6 +5308,7 @@
 
             ButtonCanvas2_3 As addMedia:
                 BorderColor: =RGBA(0, 89, 178, 1)
+                ChangePictureText: ="It's Uploading - Please Wait until this windows Closes"
                 Color: =RGBA(0, 0, 0, 1)
                 Fill: =RGBA(40, 134, 222, 1)
                 Height: =MessageEntry_3.Height-Label18_29.Height
