@@ -233,8 +233,8 @@
                         BorderStyle: =BorderStyle.Solid
                         DisplayMode: =DisplayMode.Edit
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =TicketResetFormbtn.Height *2
-                        Width: =Parent.Width
+                        Height: =TicketFormSaveBtn.Height
+                        Width: =1320
                         WidthFit: =true
                         X: =0
                         Y: =0
@@ -242,21 +242,19 @@
 
                         Container46 As groupContainer.horizontalAutoLayoutContainer:
                             DropShadow: =DropShadow.Light
-                            Height: =TicketResetFormbtn.Height *2.1
-                            LayoutAlignItems: =LayoutAlignItems.Center
+                            Height: =TicketResetFormbtn.Height 
+                            LayoutAlignItems: =LayoutAlignItems.End
                             LayoutGap: =2
-                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
                             LayoutMode: =LayoutMode.Auto
                             LayoutWrap: =true
                             RadiusBottomLeft: =4
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
-                            Width: =Parent.Width*.8
+                            Width: =Parent.Width-.2
                             ZIndex: =4
 
                             TicketFormSaveBtn As Button:
-                                AlignInContainer: =AlignInContainer.Center
                                 BasePaletteColor: =RGBA(72, 163, 62, 1)
                                 DisplayMode: =DisplayMode.Edit
                                 FillPortions: =1
@@ -269,7 +267,7 @@
                                 FontWeight: =""
                                 Height: =TicketResetFormbtn.Height
                                 LayoutMinHeight: =32
-                                LayoutMinWidth: =96
+                                LayoutMinWidth: =40
                                 OnSelect: |
                                     =// Determine the mode of the TicketDataEditForm and set the NewTicket flag accordingly
                                     Set(
@@ -363,7 +361,6 @@
                                 ZIndex: =2
 
                             TicketResetFormbtn As Button:
-                                AlignInContainer: =AlignInContainer.Center
                                 Appearance: ='ButtonCanvas.Appearance'.Primary
                                 BasePaletteColor: =RGBA(247, 116, 38, 1)
                                 DisplayMode: =DisplayMode.Edit
@@ -377,7 +374,7 @@
                                 FontWeight: =""
                                 Height: =32
                                 LayoutMinHeight: =32
-                                LayoutMinWidth: =150
+                                LayoutMinWidth: =40
                                 OnSelect: =ResetForm(TicketDataEditForm)
                                 Text: ="Reset Form"
                                 Width: =96
@@ -398,7 +395,7 @@
                                 FontWeight: =""
                                 Height: =32
                                 LayoutMinHeight: =32
-                                LayoutMinWidth: =240
+                                LayoutMinWidth: =40
                                 OnSelect: |+
                                     =// Determine the mode of the TicketDataEditForm and set the NewTicket flag accordingly
                                     Set(
@@ -487,7 +484,6 @@
                                 ZIndex: =4
 
                             TicketFormSaveBtn_2 As Button:
-                                AlignInContainer: =AlignInContainer.Center
                                 BasePaletteColor: =RGBA(246, 142, 104, 1)
                                 DisplayMode: =DisplayMode.Edit
                                 FillPortions: =1
@@ -500,7 +496,7 @@
                                 FontWeight: =""
                                 Height: =TicketResetFormbtn.Height
                                 LayoutMinHeight: =32
-                                LayoutMinWidth: =96
+                                LayoutMinWidth: =40
                                 OnSelect: |
                                     =// Determine the mode of the TicketDataEditForm and set the NewTicket flag accordingly
                                     Set(
