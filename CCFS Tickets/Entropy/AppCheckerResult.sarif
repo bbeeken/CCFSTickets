@@ -94,486 +94,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container2_5.DropdownCanvas1_11.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container2_5.DropdownCanvas1_11.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container2_5.DropdownCanvas1_11"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.EnableTicketFilterChk_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.EnableTicketFilterChk_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.EnableTicketFilterChk_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.TextInputCanvas_KeywordSearch_Assets_keyword_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.TextInputCanvas_KeywordSearch_Assets_keyword_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.TextInputCanvas_KeywordSearch_Assets_keyword_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Category_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Category_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Category_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Sites_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Sites_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Sites_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.NewTicketBtn1_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.NewTicketBtn1_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.NewTicketBtn1_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.NextArrow1_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.NextArrow1_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.NextArrow1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ID_DataCard2.DataCardValue23.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ID_DataCard2.DataCardValue23.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ID_DataCard2.DataCardValue23"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas5_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas5_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas5_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas4_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas4_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Vendor Dashboard",
-                "type": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas4_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Ticket Information'.ScreenContainer2.BottomContainer1.Container1_8.Container3_2.Icon1_8.AccessibleLabel"
                 }
               ],
@@ -5117,6 +4637,486 @@
                 "member": "AccessibleLabel",
                 "module": "Site Message Dashboard",
                 "type": "'Site Message Dashboard'.MessageFormContainer_1.StoreMessageForm.DataCard1.ButtonCanvas4_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon1_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container3_4.Icon3_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container2_5.DropdownCanvas1_11.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container2_5.DropdownCanvas1_11.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.Container1_10.Container2_5.DropdownCanvas1_11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.EnableTicketFilterChk_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.EnableTicketFilterChk_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.EnableTicketFilterChk_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.TextInputCanvas_KeywordSearch_Assets_keyword_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.TextInputCanvas_KeywordSearch_Assets_keyword_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.TextInputCanvas_KeywordSearch_Assets_keyword_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Category_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Category_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Category_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Sites_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Sites_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.SidebarContainer4_3.ComboboxCanvas_Assets_Sites_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.NewTicketBtn1_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.NewTicketBtn1_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.NewTicketBtn1_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.NextArrow1_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.NextArrow1_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.ScreenContainer5_2.BottomContainer3_2.MainContainer3_2.Gallery_Vendors.NextArrow1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ID_DataCard2.DataCardValue23.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ID_DataCard2.DataCardValue23.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ID_DataCard2.DataCardValue23"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas5_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas5_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas4_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas4_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Vendor Dashboard",
+                "type": "'Vendor Dashboard'.VendorFormContainer_1.VendorEditForm.ButtonsVendorForm.ButtonCanvas4_1"
               }
             }
           ],
