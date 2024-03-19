@@ -1,6 +1,6 @@
 "'Ticket Information' As screen.'autoLayout_Sidebar_ver1.0'":
     Fill: =RGBA(232, 232, 232, 1)
-    OnVisible: |+
+    OnVisible: |
         =Set(
             IsNewTicket,
             TicketDataEditForm.Mode = FormMode.New
@@ -21,7 +21,10 @@
             );
             
         );
-        
+        If(!IsBlank(varTicketID.Asset_ID),
+        Set(CurrentSelection2,LookUp(Assets,ID=Int(varTicketID.Asset_ID))),
+        Set(CurrentSelection2, LookUp(Assets, ID=624)) // Example initialization
+        )
 
     ScreenContainer2 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -1269,7 +1272,7 @@
                             ZIndex: =6
 
                         DataCardValue57 As Combobox.pcfdataset:
-                            DefaultSelectedItems: =LookUp(Assets,ID=Int(Parent.Default))
+                            DefaultSelectedItems: =CurrentSelection2
                             DisplayMode: =DisplayMode.Edit
                             Font: =""
                             FontItalic: =false
@@ -1279,6 +1282,8 @@
                             Height: =32
                             InputTextPlaceholder: ="Select asset if applicable"
                             Items: =Sort(Assets,Label)
+                            OnChange: |
+                                =Set(CurrentSelection2, DataCardValue57.Selected)
                             Width: =320
                             X: =30
                             Y: =DataCardKey75.Y + DataCardKey75.Height + 5
@@ -4354,17 +4359,13 @@
                     ZIndex: =4
 
                 AssetCombo_Servicerequestform As Combobox.pcfdataset:
-                    DefaultSelectedItems: |
+                    DefaultSelectedItems: =CurrentSelection2
+                    DisplayMode: |
                         =If(
-                            IsBlank(Parent.Default),
-                            If(
-                                IsBlank(DataCardValue57.Selected),
-                                LookUp(Assets, ID=624),
-                                DataCardValue57.Selected
-                            ),
-                            LookUp(Assets, ID=Int(Parent.Default))
+                            IsBlank( DataCardValue57.Selected.ID),
+                            DisplayMode.Edit,
+                            DisplayMode.View
                         )
-                    DisplayMode: =DisplayMode.Edit
                     Font: =""
                     FontItalic: =false
                     FontStrikethrough: =false
@@ -4372,6 +4373,7 @@
                     FontWeight: =""
                     Height: =32
                     Items: =Sort(Assets,Label,SortOrder.Ascending)
+                    OnChange: =Set(CurrentSelection2, AssetCombo_Servicerequestform.Selected)
                     Width: =320
                     X: =24
                     Y: =38
@@ -4758,8 +4760,8 @@
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48
-                    X: =24
-                    Y: =30
+                    X: =28
+                    Y: =12
                     ZIndex: =2
 
                 ErrorMessage61 As Text:
@@ -5132,10 +5134,10 @@
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledColor: =RGBA(244, 244, 244, 1)
             Fill: =RGBA(102, 133, 163, 1)
-            Height: =Label18_28.Height
+            Height: =30
             Icon: =Icon.Cancel
             OnSelect: =Set(NewMessageContianerVisible,false)
-            Width: =ButtonCanvas2.Width
+            Width: =28
             ZIndex: =4
 
     MessageEntry_3 As groupContainer.manualLayoutContainer:
