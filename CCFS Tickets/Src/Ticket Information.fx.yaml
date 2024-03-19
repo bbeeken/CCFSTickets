@@ -677,6 +677,8 @@
 
                         CheckboxCanvas_Private As Checkbox:
                             BasePaletteColor: =
+                            Checked: |
+                                =DataCardValue34.Selected.ID = 7
                             DisplayMode: =DisplayMode.Edit
                             Font: =""
                             FontColor: =
@@ -1040,6 +1042,7 @@
                             DisplayMode: =DisplayMode.Edit
                             Height: =32
                             Items: =Sort(TicketCategoriesLocalVariable,Label)
+                            OnChange: =
                             Required: =true
                             Width: =Parent.Width*.9
                             X: =30
