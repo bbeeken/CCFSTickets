@@ -1337,14 +1337,14 @@
                         DisplayMode: =Parent.DisplayMode
                         DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Asset_ID")
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =50
+                        Height: =81
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Asset_ID")
                         Required: =false
                         Update: =DataCardValue57_1.Selected.ID
-                        Width: =260
+                        Width: =265
                         WidthFit: =false
-                        X: =0
-                        Y: =3
+                        X: =3
+                        Y: =2
                         ZIndex: =1
 
                         ErrorMessage50_1 As label:
@@ -1426,7 +1426,7 @@
                         Width: =1320
                         WidthFit: =true
                         X: =0
-                        Y: =4
+                        Y: =3
                         ZIndex: =1
 
                         TextCanvas10_1 As Text:
@@ -1475,7 +1475,7 @@
                         Width: =360
                         WidthFit: =false
                         X: =0
-                        Y: =5
+                        Y: =4
                         ZIndex: =1
 
                         ErrorMessage34_1 As label:
@@ -1558,7 +1558,7 @@
                         Width: =Parent.Width
                         WidthFit: =true
                         X: =0
-                        Y: =6
+                        Y: =5
                         ZIndex: =1
 
                         ErrorMessage33_1 As label:
@@ -1649,7 +1649,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey72_1 As label:
@@ -1736,7 +1736,7 @@
                         Visible: =false
                         Width: =329
                         X: =1
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey67_1 As label:
@@ -1783,7 +1783,7 @@
                         Visible: =false
                         Width: =329
                         X: =2
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey63_1 As label:
@@ -1948,7 +1948,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey57_1 As label:
@@ -2038,7 +2038,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey74_1 As label:
@@ -2126,7 +2126,7 @@
                         Visible: =false
                         Width: =329
                         X: =1
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey70_1 As label:
@@ -2308,7 +2308,7 @@
                         Visible: =false
                         Width: =329
                         X: =2
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey66_1 As label:
@@ -2416,7 +2416,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey71_1 As label:
@@ -2580,7 +2580,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         DataCardKey42_1 As label:
@@ -2669,7 +2669,7 @@
                         Width: =329
                         WidthFit: =true
                         X: =1
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         DataCardKey69_1 As label:
@@ -2735,7 +2735,7 @@
                         Width: =329
                         WidthFit: =false
                         X: =2
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         ErrorMessage43_1 As label:
@@ -2816,7 +2816,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         DataCardKey64_1 As label:
@@ -2903,7 +2903,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey44_1 As label:
@@ -2951,7 +2951,7 @@
                         Visible: =false
                         Width: =329
                         X: =1
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey46_1 As label:
@@ -3040,7 +3040,7 @@
                         Visible: =false
                         Width: =329
                         X: =2
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey65_1 As label:
@@ -3129,7 +3129,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey58_1 As label:
