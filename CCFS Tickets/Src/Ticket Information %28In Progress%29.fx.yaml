@@ -620,7 +620,7 @@
                         Height: =50
                         Required: =false
                         Update: =DataCardValue37_1.Selected.ID
-                        Width: =329
+                        Width: =260
                         WidthFit: =false
                         X: =0
                         Y: =1
@@ -710,7 +710,7 @@
                             OnCheck: =false
                             OnUncheck: =false
                             Width: =117
-                            X: =188
+                            X: =125
                             Y: =5
                             ZIndex: =7
 
@@ -726,7 +726,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Contact_Name")
                         Required: =false
                         Update: =DataCardValue32_1.Selected.displayName
-                        Width: =329
+                        Width: =260
                         WidthFit: =false
                         X: =1
                         Y: =1
@@ -815,7 +815,7 @@
                                 displayName,
                                 ","
                             )
-                        Width: =329
+                        Width: =260
                         X: =2
                         Y: =1
                         ZIndex: =1
@@ -935,7 +935,7 @@
                             =If(
                                 UserAdmin = 0,
                                 0,
-                                329
+                                260
                             )
                         WidthFit: =false
                         X: =3
@@ -1019,7 +1019,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Category_ID")
                         Required: =false
                         Update: =DataCardValue34_1.Selected.ID
-                        Width: =329
+                        Width: =260
                         WidthFit: =false
                         X: =0
                         Y: =2
@@ -1108,7 +1108,7 @@
                         Required: =false
                         Update: =DataCardValue30_1.Selected.ID
                         Visible: =true
-                        Width: =329
+                        Width: =280
                         WidthFit: =false
                         X: =1
                         Y: =2
@@ -1195,7 +1195,7 @@
                         Height: =110
                         Required: =false
                         Update: =DataCardValue38_1.Selected.ID
-                        Width: =329
+                        Width: =280
                         WidthFit: =false
                         X: =2
                         Y: =2
@@ -1338,7 +1338,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Asset_ID")
                         Required: =false
                         Update: =DataCardValue57_1.Selected.ID
-                        Width: =Parent.Width
+                        Width: =260
                         WidthFit: =true
                         X: =0
                         Y: =3
@@ -3717,7 +3717,8 @@
         SidebarContainer2_2 As groupContainer.verticalAutoLayoutContainer:
             DropShadow: =DropShadow.Semilight
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =Parent.Height/3
+            FillPortions: =0
+            Height: =Parent.Height/20
             LayoutMinHeight: =75
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
