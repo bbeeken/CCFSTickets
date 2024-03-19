@@ -677,6 +677,8 @@
 
                         CheckboxCanvas_Private As Checkbox:
                             BasePaletteColor: =
+                            Checked: |
+                                =DataCardValue34.Selected.ID = 7
                             DisplayMode: =DisplayMode.Edit
                             Font: =""
                             FontColor: =
@@ -1040,6 +1042,7 @@
                             DisplayMode: =DisplayMode.Edit
                             Height: =32
                             Items: =Sort(TicketCategoriesLocalVariable,Label)
+                            OnChange: =
                             Required: =true
                             Width: =Parent.Width*.9
                             X: =30
@@ -5154,7 +5157,6 @@
         RadiusTopRight: =4
         Visible: =NewMessageContianerVisible
         Width: =Parent.Width/2
-        X: =(App.Width - MessageEntry.Width) /2
         Y: =(App.Height- MessageEntry.Height) /2
         ZIndex: =4
 
@@ -5238,7 +5240,6 @@
             Icon: =Icon.Cancel
             OnSelect: =Set(NewMessageContianerVisible,false)
             Width: =ButtonCanvas2.Width
-            X: =587
             ZIndex: =4
 
     MessageEntry_3 As groupContainer.manualLayoutContainer:
@@ -5252,8 +5253,7 @@
         RadiusTopLeft: =4
         RadiusTopRight: =4
         Visible: =NewAttachementContainerVisble
-        Width: =Parent.Width/2
-        X: =(App.Width - MessageEntry_3.Width) /2
+        Width: =Parent.Width /2
         Y: =(App.Height- MessageEntry_3.Height) /2
         ZIndex: =5
 
@@ -5263,7 +5263,7 @@
             Color: =RGBA(204, 214, 224, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             Fill: =RGBA(102, 133, 163, 1)
-            Height: =30
+            Height: =35
             PaddingBottom: =7.67
             PaddingLeft: =7.67
             PaddingRight: =4.63
@@ -5284,7 +5284,6 @@
             Icon: =Icon.Cancel
             OnSelect: =Set(NewAttachementContainerVisble,false)
             Width: =32
-            X: =651
             ZIndex: =4
 
         AddMediaWithImage1_2 As group:
@@ -5302,14 +5301,14 @@
                 Image: =If(IsBlank(ButtonCanvas2_3.Media), SampleImage, ButtonCanvas2_3.Media)
                 ImagePosition: =ImagePosition.Fill
                 OnSelect: =
-                Width: =683
+                Width: =Parent.Width
                 Y: =Label18_29.Y + Label18_29.Height +5
                 ZIndex: =5
 
             ButtonCanvas2_3 As addMedia:
                 BorderColor: =RGBA(0, 89, 178, 1)
                 ChangePictureText: ="It's Uploading - Please Wait until this windows Closes"
-                Color: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(214, 221, 224, 1)
                 Fill: =RGBA(40, 134, 222, 1)
                 Height: =MessageEntry_3.Height-Label18_29.Height
                 OnChange: |
@@ -5341,9 +5340,9 @@
                         false
                     );
                     Reset(ButtonCanvas2_3);
-                Size: =10
+                Size: =16
                 UseMobileCamera: =true
-                Width: =683
+                Width: =Parent.Width
                 Y: =Label18_29.Y + Label18_29.Height +5
                 ZIndex: =6
 
