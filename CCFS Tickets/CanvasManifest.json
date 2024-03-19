@@ -137,8 +137,11 @@
   },
   "ScreenOrder": [
     "Dashboard",
+    "Dashboard (In Progress)",
     "Ticket Dashboard",
     "Ticket Information",
+    "Ticket Information (In Progress)",
+    "Ticket Information_2",
     "Asset Dashboard",
     "Site Message Dashboard",
     "Vendor Dashboard"
