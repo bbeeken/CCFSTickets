@@ -5237,7 +5237,6 @@
             Icon: =Icon.Cancel
             OnSelect: =Set(NewMessageContianerVisible,false)
             Width: =ButtonCanvas2.Width
-            X: =587
             ZIndex: =4
 
     MessageEntry_3 As groupContainer.manualLayoutContainer:
@@ -5282,7 +5281,6 @@
             Icon: =Icon.Cancel
             OnSelect: =Set(NewAttachementContainerVisble,false)
             Width: =32
-            X: =643
             ZIndex: =4
 
         AddMediaWithImage1_2 As group:
