@@ -3400,7 +3400,10 @@
                         ZIndex: =5
 
             Attachments As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
