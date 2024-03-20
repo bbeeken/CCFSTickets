@@ -1454,8 +1454,8 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Body")
                         Required: =false
                         Update: =DataCardValue35_1.Value
-                        Width: =Parent.Width
-                        WidthFit: =true
+                        Width: =Parent.Width*.5
+                        WidthFit: =false
                         X: =0
                         Y: =5
                         ZIndex: =1
