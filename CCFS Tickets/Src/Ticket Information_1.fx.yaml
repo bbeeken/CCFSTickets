@@ -516,7 +516,7 @@
                         Height: =50
                         Required: =false
                         Update: =DataCardValue37_1.Selected.ID
-                        Width: =329
+                        Width: =240
                         WidthFit: =false
                         X: =0
                         Y: =1
@@ -565,8 +565,8 @@
                             Items: =Sort(SitesLocalVariable,Label)
                             Required: =true
                             Width: =Parent.Width*.9
-                            X: =33
-                            Y: =52
+                            X: =20
+                            Y: =42
                             ZIndex: =5
 
                             Label33_1 As pcfDataField.textualColumn:
@@ -586,7 +586,7 @@
                             FontUnderline: =false
                             Height: =32
                             Text: ="Site"
-                            Width: =96
+                            Width: =90
                             X: =30
                             Y: =5
                             ZIndex: =6
@@ -608,7 +608,7 @@
                             OnCheck: =false
                             OnUncheck: =false
                             Width: =117
-                            X: =188
+                            X: =138
                             Y: =5
                             ZIndex: =7
 
@@ -624,7 +624,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Contact_Name")
                         Required: =false
                         Update: =DataCardValue32_1.Selected.displayName
-                        Width: =329
+                        Width: =240
                         WidthFit: =false
                         X: =1
                         Y: =1
@@ -684,7 +684,7 @@
                             Items: =Sort(StaffLocalVariable,displayName,SortOrder.Ascending)
                             Required: =true
                             Width: =Parent.Width*.9
-                            X: =30
+                            X: =20
                             Y: =42
                             ZIndex: =7
 
@@ -713,7 +713,7 @@
                                 displayName,
                                 ","
                             )
-                        Width: =329
+                        Width: =240
                         X: =2
                         Y: =1
                         ZIndex: =1
@@ -778,7 +778,7 @@
                             Items: =Sort(StaffLocalVariable,displayName,SortOrder.Ascending)
                             SelectMultiple: =true
                             Width: =Parent.Width*.9
-                            X: =30
+                            X: =20
                             Y: =DataCardKey31_1.Y + DataCardKey31_1.Height + 5
                             ZIndex: =6
 
@@ -833,7 +833,7 @@
                             =If(
                                 UserAdmin = 0,
                                 0,
-                                329
+                                240
                             )
                         WidthFit: =false
                         X: =3
@@ -879,7 +879,7 @@
                             Height: =32
                             Items: =Sort(StaffLocalVariable,displayName)
                             Width: =Parent.Width*.9
-                            X: =30
+                            X: =20
                             Y: =DataCardKey73_1.Y + DataCardKey73_1.Height + 5
                             ZIndex: =5
 
@@ -917,7 +917,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Category_ID")
                         Required: =false
                         Update: =DataCardValue34_1.Selected.ID
-                        Width: =329
+                        Width: =240
                         WidthFit: =false
                         X: =0
                         Y: =2
@@ -961,7 +961,7 @@
                             OnChange: =
                             Required: =true
                             Width: =Parent.Width*.9
-                            X: =30
+                            X: =20
                             Y: =DataCardKey47_1.Y + DataCardKey47_1.Height + 5
                             ZIndex: =5
 
@@ -1002,12 +1002,12 @@
                         DisplayMode: =Parent.DisplayMode
                         DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Ticket_Status_ID")
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =50
+                        Height: =84
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Status_ID")
                         Required: =false
                         Update: =DataCardValue30_1.Selected.ID
                         Visible: =true
-                        Width: =329
+                        Width: =240
                         WidthFit: =false
                         X: =1
                         Y: =2
@@ -1052,7 +1052,7 @@
                             Items: =Sort(TicketStatusLocalVariable,Label)
                             Required: =true
                             Width: =Parent.Width*.9
-                            X: =30
+                            X: =20
                             Y: =DataCardKey43_1.Y + DataCardKey43_1.Height + 5
                             ZIndex: =5
 
@@ -1091,10 +1091,10 @@
                         DisplayMode: =Parent.DisplayMode
                         DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Severity_ID")
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =110
+                        Height: =84
                         Required: =false
                         Update: =DataCardValue38_1.Selected.ID
-                        Width: =329
+                        Width: =240
                         WidthFit: =false
                         X: =2
                         Y: =2
@@ -1154,7 +1154,7 @@
                             OnChange: =Reset(CustomCompletionDate_1);
                             Required: =true
                             Width: =DataCardValue30_1.Width
-                            X: =30
+                            X: =20
                             Y: =DataCardKey52_1.Y + DataCardKey52_1.Height + 5
                             ZIndex: =6
 
@@ -1237,10 +1237,10 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Asset_ID")
                         Required: =false
                         Update: =DataCardValue57_1.Selected.ID
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =3
+                        Width: =300
+                        WidthFit: =false
+                        X: =3
+                        Y: =2
                         ZIndex: =1
 
                         ErrorMessage50_1 As label:
@@ -1301,8 +1301,8 @@
                             Items: =Sort(Assets,Label)
                             OnChange: |
                                 =Set(CurrentSelection2, DataCardValue57_1.Selected)
-                            Width: =320
-                            X: =30
+                            Width: =280
+                            X: =20
                             Y: =DataCardKey75_1.Y + DataCardKey75_1.Height + 5
                             ZIndex: =7
 
@@ -1324,7 +1324,7 @@
                         Width: =1320
                         WidthFit: =true
                         X: =0
-                        Y: =4
+                        Y: =3
                         ZIndex: =1
 
                         TextCanvas10_1 As Text:
@@ -1373,7 +1373,7 @@
                         Width: =Parent.Width
                         WidthFit: =true
                         X: =0
-                        Y: =5
+                        Y: =4
                         ZIndex: =1
 
                         ErrorMessage34_1 As label:
@@ -1456,7 +1456,7 @@
                         Width: =Parent.Width
                         WidthFit: =true
                         X: =0
-                        Y: =6
+                        Y: =5
                         ZIndex: =1
 
                         ErrorMessage33_1 As label:
@@ -1547,7 +1547,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey72_1 As label:
@@ -1634,7 +1634,7 @@
                         Visible: =false
                         Width: =329
                         X: =1
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey67_1 As label:
@@ -1681,7 +1681,7 @@
                         Visible: =false
                         Width: =329
                         X: =2
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey63_1 As label:
@@ -1846,7 +1846,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =7
+                        Y: =6
                         ZIndex: =1
 
                         DataCardKey57_1 As label:
@@ -1936,7 +1936,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey74_1 As label:
@@ -2024,7 +2024,7 @@
                         Visible: =false
                         Width: =329
                         X: =1
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey70_1 As label:
@@ -2206,7 +2206,7 @@
                         Visible: =false
                         Width: =329
                         X: =2
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey66_1 As label:
@@ -2314,7 +2314,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =8
+                        Y: =7
                         ZIndex: =1
 
                         DataCardKey71_1 As label:
@@ -2478,7 +2478,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         DataCardKey42_1 As label:
@@ -2567,7 +2567,7 @@
                         Width: =329
                         WidthFit: =true
                         X: =1
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         DataCardKey69_1 As label:
@@ -2633,7 +2633,7 @@
                         Width: =329
                         WidthFit: =false
                         X: =2
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         ErrorMessage43_1 As label:
@@ -2714,7 +2714,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =9
+                        Y: =8
                         ZIndex: =1
 
                         DataCardKey64_1 As label:
@@ -2801,7 +2801,7 @@
                         Visible: =false
                         Width: =329
                         X: =0
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey44_1 As label:
@@ -2849,7 +2849,7 @@
                         Visible: =false
                         Width: =329
                         X: =1
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey46_1 As label:
@@ -2938,7 +2938,7 @@
                         Visible: =false
                         Width: =329
                         X: =2
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey65_1 As label:
@@ -3027,7 +3027,7 @@
                         Visible: =false
                         Width: =329
                         X: =3
-                        Y: =10
+                        Y: =9
                         ZIndex: =1
 
                         DataCardKey58_1 As label:
