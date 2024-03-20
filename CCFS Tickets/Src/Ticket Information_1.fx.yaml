@@ -244,10 +244,11 @@
                     Item: =varTicketID
                     LayoutMinHeight: =300
                     LayoutMinWidth: =Parent.Width
-                    NumberOfColumns: =4
+                    NumberOfColumns: =6
                     OnFailure: =Notify("Didnt work",NotificationType.Error)
                     OnReset: =Notify("reset",NotificationType.Information)
                     OnSuccess: =Notify("Submited",NotificationType.Success)
+                    SnapToColumns: =false
                     ZIndex: =3
 
                     ButtonMenu_1 As typedDataCard.blankCard:
@@ -256,7 +257,7 @@
                         DisplayMode: =DisplayMode.Edit
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =TicketFormSaveBtn_3.Height
-                        Width: =1320
+                        Width: =1170
                         WidthFit: =true
                         X: =0
                         Y: =0
@@ -518,7 +519,7 @@
                         Update: =DataCardValue37_1.Selected.ID
                         Width: =240
                         WidthFit: =false
-                        X: =0
+                        X: =2
                         Y: =1
                         ZIndex: =1
 
@@ -607,10 +608,93 @@
                             Label: ="Private"
                             OnCheck: =false
                             OnUncheck: =false
-                            Width: =117
-                            X: =138
+                            Width: =95
+                            X: =120
                             Y: =5
                             ZIndex: =7
+
+                    Subject_DataCard1_1 As typedDataCard.textualEditCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Subject"
+                        Default: =ThisItem.Subject
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Subject")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Subject")
+                        Required: =false
+                        Update: =DataCardValue36_1.Value
+                        Width: =340
+                        WidthFit: =false
+                        X: =1
+                        Y: =1
+                        ZIndex: =1
+
+                        ErrorMessage34_1 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(168, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FontWeight: =FontWeight.Semibold
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue36_1.Y + DataCardValue36_1.Height
+                            ZIndex: =3
+
+                        StarVisible33_1 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(0, 89, 178, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =DataCardKey49_1.Height
+                            Size: =13
+                            Text: ="*"
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey49_1.Y
+                            ZIndex: =4
+
+                        DataCardKey49_1 As Text:
+                            AutoHeight: =false
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            Text: ="Subject"
+                            Width: =213
+                            X: =30
+                            Y: =10
+                            ZIndex: =5
+
+                        "DataCardValue36_1 As 'Text input'":
+                            Align: ="Start"
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =32
+                            Mode: ='TextInputCanvas.Mode'.Multiline
+                            Value: =Trim(Parent.Default)
+                            Width: |
+                                =Parent.Width*.93
+                            X: =20
+                            Y: =42
+                            ZIndex: =6
 
                     Ticket_Contact_Name_DataCard1_1 As typedDataCard.textualEditCard:
                         BorderColor: =RGBA(0, 89, 178, 1)
@@ -626,7 +710,7 @@
                         Update: =DataCardValue32_1.Selected.displayName
                         Width: =240
                         WidthFit: =false
-                        X: =1
+                        X: =2
                         Y: =1
                         ZIndex: =1
 
@@ -669,7 +753,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Site Contact"
+                            Text: ="On Behalf of"
                             Width: =213
                             X: =30
                             Y: =5
@@ -714,7 +798,7 @@
                                 ","
                             )
                         Width: =240
-                        X: =2
+                        X: =3
                         Y: =1
                         ZIndex: =1
 
@@ -757,7 +841,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Followers"
+                            Text: ="Collaborators"
                             Width: =96
                             X: =30
                             Y: =5
@@ -836,7 +920,7 @@
                                 240
                             )
                         WidthFit: =false
-                        X: =3
+                        X: =4
                         Y: =1
                         ZIndex: =1
 
@@ -981,7 +1065,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Ticket Category"
+                            Text: ="Category"
                             Width: =151
                             X: =30
                             Y: =5
@@ -1072,7 +1156,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Ticket Status"
+                            Text: ="Status"
                             Width: =96
                             X: =30
                             Y: =5
@@ -1140,7 +1224,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Ticket Priority"
+                            Text: ="Priority"
                             Width: =98
                             X: =30
                             Y: =5
@@ -1237,7 +1321,7 @@
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Asset_ID")
                         Required: =false
                         Update: =DataCardValue57_1.Selected.ID
-                        Width: =300
+                        Width: =260
                         WidthFit: =false
                         X: =3
                         Y: =2
@@ -1282,7 +1366,7 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
-                            Text: ="Relating Asset"
+                            Text: ="Related Asset"
                             Width: =96
                             X: =30
                             Y: =5
@@ -1301,7 +1385,7 @@
                             Items: =Sort(Assets,Label)
                             OnChange: |
                                 =Set(CurrentSelection2, DataCardValue57_1.Selected)
-                            Width: =280
+                            Width: =240
                             X: =20
                             Y: =DataCardKey75_1.Y + DataCardKey75_1.Height + 5
                             ZIndex: =7
@@ -1321,10 +1405,10 @@
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =53
                         Visible: =!IsBlank(DataCardValue57_1.Selected.ID)
-                        Width: =1320
-                        WidthFit: =true
-                        X: =0
-                        Y: =3
+                        Width: =300
+                        WidthFit: =false
+                        X: =4
+                        Y: =2
                         ZIndex: =1
 
                         TextCanvas10_1 As Text:
@@ -1337,9 +1421,9 @@
                             FontUnderline: =false
                             Height: =25
                             Text: |-
-                                ="Preferred:" & DataCardValue57_1.Selected.Prefered_Vendor
+                                ="Vendor:" & DataCardValue57_1.Selected.Prefered_Vendor
                             Width: =226
-                            X: =0
+                            X: =10
                             Y: =0
                             ZIndex: =1
 
@@ -1354,92 +1438,9 @@
                             Text: |-
                                 ="Model: " & DataCardValue57_1.Selected.Model
                             Width: =226
-                            X: =0
+                            X: =10
                             Y: =25
                             ZIndex: =2
-
-                    Subject_DataCard1_1 As typedDataCard.textualEditCard:
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        BorderStyle: =BorderStyle.Solid
-                        DataField: ="Subject"
-                        Default: =ThisItem.Subject
-                        DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Subject")
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =50
-                        MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Subject")
-                        Required: =false
-                        Update: =DataCardValue36_1.Value
-                        Width: =Parent.Width
-                        WidthFit: =true
-                        X: =0
-                        Y: =4
-                        ZIndex: =1
-
-                        ErrorMessage34_1 As label:
-                            AutoHeight: =true
-                            Color: =RGBA(168, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            FontWeight: =FontWeight.Semibold
-                            Height: =10
-                            Live: =Live.Assertive
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: =Parent.Error
-                            Visible: =Parent.DisplayMode=DisplayMode.Edit
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardValue36_1.Y + DataCardValue36_1.Height
-                            ZIndex: =3
-
-                        StarVisible33_1 As label:
-                            Align: =Align.Center
-                            Color: =RGBA(0, 89, 178, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Height: =DataCardKey49_1.Height
-                            Size: =13
-                            Text: ="*"
-                            Width: =30
-                            Wrap: =false
-                            Y: =DataCardKey49_1.Y
-                            ZIndex: =4
-
-                        DataCardKey49_1 As Text:
-                            AutoHeight: =false
-                            DisplayMode: =DisplayMode.Edit
-                            Font: =""
-                            FontColor: =
-                            FontItalic: =false
-                            FontStrikethrough: =false
-                            FontUnderline: =false
-                            Height: =32
-                            Text: ="Subject"
-                            Width: =213
-                            X: =30
-                            Y: =10
-                            ZIndex: =5
-
-                        "DataCardValue36_1 As 'Text input'":
-                            Align: ="Start"
-                            BasePaletteColor: =
-                            DisplayMode: =DisplayMode.Edit
-                            Font: =""
-                            FontColor: =
-                            FontItalic: =false
-                            FontSize: =0
-                            FontStrikethrough: =false
-                            FontUnderline: =false
-                            FontWeight: =""
-                            Height: =Parent.Height*.5
-                            Mode: ='TextInputCanvas.Mode'.Multiline
-                            Value: =Trim(Parent.Default)
-                            Width: |
-                                =Parent.Width*.73
-                            X: =30
-                            Y: =DataCardKey49_1.Y + DataCardKey49_1.Height + 5
-                            ZIndex: =6
 
                     Ticket_Body_DataCard1_1 As typedDataCard.textualEditCard:
                         BorderColor: =RGBA(0, 89, 178, 1)
