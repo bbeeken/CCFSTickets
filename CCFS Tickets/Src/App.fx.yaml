@@ -221,7 +221,7 @@ App As appinfo:
         =Switch(
             Param("NavigateScreen"),
             "TicketScreen",
-            'Ticket Information X',
+            'Ticket Information (X)',
            Dashboard
         )
     Theme: =PowerAppsTheme
