@@ -373,7 +373,7 @@
                         Height: ='OT Label'.Height
                         Icon: =Icon.DocumentWithContent
                         OnSelect: |-
-                            =Navigate('Ticket Information (X)');
+                            =Navigate('Ticket Information 2');
                             NewForm(TicketDataEditForm);
                         ZIndex: =2
 
