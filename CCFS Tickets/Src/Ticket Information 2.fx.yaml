@@ -34,7 +34,6 @@
         LayoutDirection: =LayoutDirection.Vertical
         LayoutGap: =8
         LayoutMode: =LayoutMode.Auto
-        LayoutOverflowY: =LayoutOverflow.Scroll
         PaddingLeft: =16
         PaddingRight: =16
         PaddingTop: =16
@@ -3107,9 +3106,14 @@
 
         Container1 As groupContainer.horizontalAutoLayoutContainer:
             DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: ='Ticket Information 2'.Height -'Edit Ticket Container'.Height
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
             RadiusBottomLeft: =4
             RadiusBottomRight: =4
             RadiusTopLeft: =4
@@ -3119,11 +3123,26 @@
             "'Ticket Updates Container' As groupContainer.verticalAutoLayoutContainer":
                 DropShadow: =DropShadow.Light
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: |-
-                    =If(
-                        IsEmpty(Gallery10_3.AllItems),
-                        150,
-                        Parent.Height / 4
+                LayoutMinHeight: |
+                    =With(
+                        {
+                            minHeight: 150, // Minimum height to ensure usability
+                            maxHeight: Min('Ticket Information 2'.Height * 0.8, 600), // Maximum height, the lesser of 80% screen height or 600 pixels
+                            contentBasedHeight: CountRows(Gallery10_3.AllItems) * 80 + 20, // Corrected to multiply the count of items by the estimated item height and add padding
+                            availableHeight: Parent.Height - 50 // Available height in the parent container
+                        },
+                        If(
+                            IsEmpty(Gallery10_3.AllItems),
+                            minHeight, // Use minHeight if the gallery is empty
+                            Max(
+                                minHeight, // Ensure it's at least minHeight
+                                Min(
+                                    contentBasedHeight, // Dynamically calculated based on content
+                                    maxHeight, // Ensures it doesn't exceed the maximum height
+                                    availableHeight // Ensures it doesn't exceed the available space in the parent
+                                )
+                            )
+                        )
                     )
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
@@ -3132,7 +3151,7 @@
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
                 Visible: =TicketDataEditForm_1.Mode <> 1
-                ZIndex: =1
+                ZIndex: =4
 
                 MessageContainer_1 As groupContainer.verticalAutoLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
@@ -3274,8 +3293,7 @@
                             Icon: =Icon.HorizontalLine
                             OnSelect: =Select(Parent)
                             Width: =Parent.TemplateWidth
-                            X: =10
-                            Y: =Body7_1.Y + Body7_1.Height + 16
+                            Y: =45
                             ZIndex: =5
 
                         Title12_6 As label:
@@ -3313,325 +3331,342 @@
                         Y: =0
                         ZIndex: =5
 
-            Container4 As groupContainer.verticalAutoLayoutContainer:
+            "'Attachments Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
-                LayoutMinHeight: =100
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: |
+                    =With(
+                        { minHeight: 150, maxHeight: 'Ticket Information 2'.Height * 0.8, defaultHeight: Parent.Height - 50 },
+                        If(
+                            IsEmpty(Gallery10_4.AllItems),
+                            minHeight,
+                            Min(defaultHeight, maxHeight)
+                        )
+                    )
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: |-
+                    =If(
+                        IsEmpty(Gallery10_4.AllItems),
+                        5,
+                        Parent.Height / 6
+                    )
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                ZIndex: =3
+                Visible: =TicketDataEditForm_1.Mode <> 1
+                Width: =Parent.Width/2
+                ZIndex: =5
 
-                "'Attachments Container' As groupContainer.verticalAutoLayoutContainer":
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    DropShadow: =DropShadow.Light
-                    Height: =260
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutMinHeight: |-
-                        =If(
-                            IsEmpty(Gallery10_4.AllItems),
-                            5,
-                            Parent.Height / 6
-                        )
-                    LayoutMinWidth: =250
-                    LayoutMode: =LayoutMode.Auto
-                    LayoutOverflowY: =LayoutOverflow.Scroll
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    Visible: =TicketDataEditForm_1.Mode <> 1
-                    Width: =Parent.Width/2
-                    ZIndex: =1
-
-                    Label18_33 As label:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        Color: =RGBA(204, 214, 224, 1)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        Fill: =RGBA(102, 133, 163, 1)
-                        Height: =30
-                        PaddingBottom: =7.67
-                        PaddingLeft: =7.67
-                        PaddingRight: =4.63
-                        PaddingTop: =4.63
-                        Size: = Min('Asset Dashboard'.Width / 40,18)
-                        Text: ="Attachments"
-                        Width: =Parent.Width
-                        X: =0.00
-                        Y: =0.00
-                        ZIndex: =2
-
-                    NewAttachmentsBtn_3 As Button:
-                        BasePaletteColor: =
-                        DisplayMode: =DisplayMode.Edit
-                        Font: =""
-                        FontColor: =
-                        FontItalic: =false
-                        FontSize: =0
-                        FontStrikethrough: =false
-                        FontUnderline: =false
-                        FontWeight: =""
-                        Height: =20
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        OnSelect: =Set(NewAttachementContainerVisble,true)
-                        Text: ="New"
-                        Visible: =true
-                        Width: =96
-                        X: =0
-                        Y: =0
-                        ZIndex: =3
-
-                    TextCanvas2_5 As Text:
-                        Align: ='TextCanvas.Align'.Center
-                        AutoHeight: =true
-                        DisplayMode: =DisplayMode.Edit
-                        Font: =""
-                        FontColor: =
-                        FontItalic: =false
-                        FontStrikethrough: =false
-                        FontUnderline: =false
-                        Height: =32
-                        LayoutMinHeight: =5
-                        LayoutMinWidth: =96
-                        Text: ="No Attachments"
-                        Visible: =IsEmpty(Gallery10_4.AllItems)
-                        Width: =Parent.Width
-                        X: =0
-                        Y: =0
-                        ZIndex: =4
-
-                    "Gallery10_4 As gallery.'BrowseLayout_Flexible_SocialFeed_ver5.0'":
-                        AlignInContainer: =AlignInContainer.SetByContainer
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        DelayItemLoading: =true
-                        Fill: =RGBA(240, 221, 221, 0)
-                        Items: =Sort(Filter(Ticket_Attachments,Ticket_ID=varTicketID.Ticket_ID),UploadDateTime,SortOrder.Descending)
-                        Layout: =Layout.Vertical
-                        LayoutMinHeight: |
-                            =Gallery10_4.TemplateHeight*Gallery10_4.AllItemsCount + 25
-                        LayoutMinWidth: =320
-                        LoadingSpinner: =LoadingSpinner.Data
-                        ShowNavigation: =true
-                        TemplatePadding: =4
-                        TemplateSize: =Image7_2.Height+Title12_9.Height+Title12_8.Height+divider_4.Height+8
-                        Visible: |-
-                            =
-                            
-                            
-                            !IsEmpty(Gallery10_4.AllItems)
-                        Width: =Parent.Width
-                        ZIndex: =5
-
-                        Title12_8 As label:
-                            Color: =RGBA(50, 49, 48, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Semibold)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Size: =9
-                            Text: =ThisItem.UploadDateTime
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Parent.TemplateWidth /2
-                            ZIndex: =1
-
-                        Title12_9 As label:
-                            Color: =RGBA(50, 49, 48, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Semibold)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Size: =10
-                            Text: =ThisItem.Name
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Parent.TemplateWidth /2
-                            X: =657
-                            ZIndex: =2
-
-                        divider_4 As icon.HorizontalLine:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 89, 178, 1)
-                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                            DisabledColor: =RGBA(244, 244, 244, 1)
-                            Fill: =RGBA(255, 255, 255, 1)
-                            Height: =5
-                            Icon: =Icon.HorizontalLine
-                            OnSelect: =Select(Parent)
-                            Width: =Parent.TemplateWidth
-                            Y: =105
-                            ZIndex: =3
-
-                        Image7_2 As image:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                            DisabledFill: =RGBA(244, 244, 244, 1)
-                            Height: =63
-                            Image: |-
-                                =If(
-                                    Or(
-                                        EndsWith(
-                                            ThisItem.Name,
-                                            ".docx"
-                                        ),
-                                        EndsWith(
-                                            ThisItem.Name,
-                                            ".pdf"
-                                        ),
-                                        EndsWith(
-                                            ThisItem.Name,
-                                            ".xlsx"
-                                        )
-                                        // ... add other document types as needed
-                                    ),
-                                    DocumentPlaceHolder,// Replace with the actual reference to your temporary image
-                                    ThisItem.WebURl// Replace with the actual field name if different
-                                )
-                            OnSelect: |
-                                =Launch(ThisItem.WebURl)
-                            Width: =109
-                            Y: =42
-                            ZIndex: =4
-
-                "'Service Request Container' As groupContainer.verticalAutoLayoutContainer":
-                    DropShadow: =DropShadow.Light
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutMinHeight: =Parent.Height/5
-                    LayoutMinWidth: =250
-                    LayoutMode: =LayoutMode.Auto
-                    LayoutOverflowY: =LayoutOverflow.Scroll
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    Visible: =TicketDataEditForm_1.Mode <> 1
+                Label18_33 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Text: ="Attachments"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
                     ZIndex: =2
 
-                    Label18_34 As label:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 89, 178, 1)
-                        Color: =RGBA(204, 214, 224, 1)
+                NewAttachmentsBtn_3 As Button:
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =20
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: =Set(NewAttachementContainerVisble,true)
+                    Text: ="New"
+                    Visible: =true
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                TextCanvas2_5 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    AutoHeight: =true
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =32
+                    LayoutMinHeight: =5
+                    LayoutMinWidth: =96
+                    Text: ="No Attachments"
+                    Visible: =IsEmpty(Gallery10_4.AllItems)
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                "Gallery10_4 As gallery.'BrowseLayout_Flexible_SocialFeed_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Fill: =RGBA(240, 221, 221, 0)
+                    Items: =Sort(Filter(Ticket_Attachments,Ticket_ID=varTicketID.Ticket_ID),UploadDateTime,SortOrder.Descending)
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: |
+                        =Gallery10_4.TemplateHeight*Gallery10_4.AllItemsCount + 25
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowNavigation: =true
+                    TemplatePadding: =4
+                    TemplateSize: =Image7_2.Height+Title12_9.Height+Title12_8.Height+divider_4.Height+8
+                    Visible: |-
+                        =
+                        
+                        
+                        !IsEmpty(Gallery10_4.AllItems)
+                    Width: =Parent.Width
+                    ZIndex: =5
+
+                    Title12_8 As label:
+                        Color: =RGBA(50, 49, 48, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
-                        Fill: =RGBA(102, 133, 163, 1)
-                        Height: =30
-                        PaddingBottom: =7.67
-                        PaddingLeft: =7.67
-                        PaddingRight: =4.63
-                        PaddingTop: =4.63
-                        Size: = Min('Asset Dashboard'.Width / 40,18)
-                        Text: ="Service Requests"
-                        Width: =Parent.Width
-                        X: =0.00
-                        Y: =0.00
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Semibold)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =9
+                        Text: =ThisItem.UploadDateTime
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth /2
                         ZIndex: =1
 
-                    NewSRBtn_1 As Button:
-                        BasePaletteColor: =
-                        DisplayMode: =DisplayMode.Edit
-                        Font: =""
-                        FontColor: =
-                        FontItalic: =false
-                        FontSize: =0
-                        FontStrikethrough: =false
-                        FontUnderline: =false
-                        FontWeight: =""
-                        Height: =20
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        OnSelect: |
-                            =Set(
-                                SRFormPopUpVisble,
-                                true
-                            );
-                            NewForm(ServiceRequestForm_1);
-                        Text: ="New"
-                        Visible: =true
-                        Width: =96
-                        X: =0
-                        Y: =0
+                    Title12_9 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Semibold)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth /2
+                        X: =163
                         ZIndex: =2
 
-                    "Gallery5_4 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
-                        AlignInContainer: =AlignInContainer.SetByContainer
+                    divider_4 As icon.HorizontalLine:
                         BorderColor: =RGBA(0, 89, 178, 1)
-                        DelayItemLoading: =true
-                        Fill: =RGBA(204, 214, 224, 1)
-                        Height: =Parent.Height-Label18_34.Height
-                        Items: =Filter(ServiceRequestMaster,Ticket_ID = varTicketID.Ticket_ID)
-                        Layout: =Layout.Vertical
-                        LayoutMinHeight: =287
-                        LayoutMinWidth: =320
-                        LoadingSpinner: =LoadingSpinner.Data
-                        TemplatePadding: =0
-                        TemplateSize: =60
-                        Width: =Parent.Width
+                        Color: =RGBA(0, 89, 178, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =5
+                        Icon: =Icon.HorizontalLine
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =105
                         ZIndex: =3
 
-                        Title6_4 As label:
-                            Color: =RGBA(50, 49, 48, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =RGBA(153, 173, 194, 1)
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: =LookUp(Vendors,ID=ThisItem.VendorID).Name
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Parent.TemplateWidth 
-                            ZIndex: =1
+                    Image7_2 As image:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =63
+                        Image: |-
+                            =If(
+                                Or(
+                                    EndsWith(
+                                        ThisItem.Name,
+                                        ".docx"
+                                    ),
+                                    EndsWith(
+                                        ThisItem.Name,
+                                        ".pdf"
+                                    ),
+                                    EndsWith(
+                                        ThisItem.Name,
+                                        ".xlsx"
+                                    )
+                                    // ... add other document types as needed
+                                ),
+                                DocumentPlaceHolder,// Replace with the actual reference to your temporary image
+                                ThisItem.WebURl// Replace with the actual field name if different
+                            )
+                        OnSelect: |
+                            =Launch(ThisItem.WebURl)
+                        Width: =109
+                        Y: =42
+                        ZIndex: =4
 
-                        Subtitle6_4 As label:
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Size: =12
-                            Text: =ThisItem.ServiceRequestDate
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Title6_4.Width
-                            X: =Title6_4.X
-                            Y: =Title6_4.Y + Title6_4.Height
-                            ZIndex: =2
+            "'Service Request Container' As groupContainer.verticalAutoLayoutContainer":
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: |-
+                    =If(
+                        IsEmpty(Gallery10_4.AllItems),
+                        150,
+                         Parent.Height/4
+                    )
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: |
+                    =With(
+                        { minHeight: 150, maxHeight: 'Ticket Information 2'.Height * 0.8, defaultHeight: Parent.Height - 50 },
+                        If(
+                            IsEmpty(Gallery5_4.AllItems),
+                            minHeight,
+                            Min(defaultHeight, maxHeight)
+                        )
+                    )
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Visible: =TicketDataEditForm_1.Mode <> 1
+                ZIndex: =6
 
-                        Separator9_4 As rectangle:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            Fill: =RGBA(255, 255, 255, 1)
-                            Height: =8
-                            OnSelect: =Select(Parent)
-                            Width: =Parent.TemplateWidth
-                            Y: =Parent.TemplateHeight - Self.Height
-                            ZIndex: =4
+                Label18_34 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Text: ="Service Requests"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
 
-                        Icon17_1 As icon.ArrowRight:
-                            BorderColor: =RGBA(0, 89, 178, 1)
-                            Color: =RGBA(0, 0, 0, 0)
-                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                            DisabledColor: =RGBA(244, 244, 244, 1)
-                            Height: =Parent.TemplateHeight
-                            Icon: =Icon.ArrowRight
-                            OnSelect: |-
-                                =Set(SRFormDATA,Gallery5_4.Selected);
-                                Set(SRFormPopUpVisble,true);
-                                
-                                EditForm(ServiceRequestForm_1);
-                            Width: =Parent.Width
-                            ZIndex: =5
+                NewSRBtn_1 As Button:
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =20
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: |
+                        =Set(
+                            SRFormPopUpVisble,
+                            true
+                        );
+                        NewForm(ServiceRequestForm_1);
+                    Text: ="New"
+                    Visible: =true
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                "Gallery5_4 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =Parent.Height-Label18_34.Height
+                    Items: =Filter(ServiceRequestMaster,Ticket_ID = varTicketID.Ticket_ID)
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: |-
+                        =If(
+                            IsEmpty(Gallery5_4.AllItems),
+                            150,
+                            Parent.Height )
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =60
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+                    Title6_4 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(153, 173, 194, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(Vendors,ID=ThisItem.VendorID).Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth 
+                        ZIndex: =1
+
+                    Subtitle6_4 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.ServiceRequestDate
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title6_4.Width
+                        X: =Title6_4.X
+                        Y: =Title6_4.Y + Title6_4.Height
+                        ZIndex: =2
+
+                    Separator9_4 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =4
+
+                    Icon17_1 As icon.ArrowRight:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ArrowRight
+                        OnSelect: |-
+                            =Set(SRFormDATA,Gallery5_4.Selected);
+                            Set(SRFormPopUpVisble,true);
+                            
+                            EditForm(ServiceRequestForm_1);
+                        Width: =Parent.Width
+                        ZIndex: =5
 
         SidebarContainer2_2 As groupContainer.verticalAutoLayoutContainer:
             DropShadow: =DropShadow.Semilight

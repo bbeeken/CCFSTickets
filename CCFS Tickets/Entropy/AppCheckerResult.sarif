@@ -2814,19 +2814,259 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.NewmessageBtn_3.AccessibleLabel"
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.Icon17_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.NewmessageBtn_3.AccessibleLabel",
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.Icon17_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.Icon17_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.Icon17_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.Icon17_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.NewmessageBtn_3"
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.Icon17_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Gallery5_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.Image7_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.Image7_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.Image7_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.NewSRBtn_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.NewSRBtn_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.NewSRBtn_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.Image7_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.Image7_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.Image7_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Gallery10_4"
               }
             }
           ],
@@ -2874,6 +3114,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.NewmessageBtn_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.NewmessageBtn_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.NewmessageBtn_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.NewAttachmentsBtn_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.NewAttachmentsBtn_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.NewAttachmentsBtn_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.Gallery10_3.TabIndex"
                 }
               ],
@@ -2887,306 +3187,6 @@
                 "member": "TabIndex",
                 "module": "Ticket Information 2",
                 "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.Gallery10_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.NewAttachmentsBtn_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.NewAttachmentsBtn_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.NewAttachmentsBtn_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.Image7_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.Image7_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.Image7_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.Image7_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.Image7_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Gallery10_4.Image7_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.NewSRBtn_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.NewSRBtn_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.NewSRBtn_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.Icon17_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.Icon17_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.Icon17_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.Icon17_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.Icon17_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Gallery5_4.Icon17_1"
               }
             }
           ],
@@ -8093,6 +8093,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Label18_34.Size"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Label18_34.Size",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Size",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.Label18_34"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Label18_33.Size"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Label18_33.Size",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Size",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Label18_33"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.Label18_21.Size"
                 }
               ],
@@ -8106,66 +8166,6 @@
                 "member": "Size",
                 "module": "Ticket Information 2",
                 "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.Label18_21"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Label18_33.Size"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Label18_33.Size",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Size",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Attachments Container'.Label18_33"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Label18_34.Size"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Label18_34.Size",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Size",
-                "module": "Ticket Information 2",
-                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.Container4.'Service Request Container'.Label18_34"
               }
             }
           ],
@@ -8845,7 +8845,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Ticket Information 2\" is 363, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Ticket Information 2\" is 362, which exceeds the maximum threshold recommended (300)."
               }
             },
             {
