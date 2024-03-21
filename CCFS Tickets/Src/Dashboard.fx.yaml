@@ -277,7 +277,7 @@
                                 )
                             );
                             
-                            EditForm(TicketDataEditForm);
+                            EditForm(TicketDataEditForm_1);
                             Navigate('Ticket Information 2');
                         PaddingBottom: =15.33
                         PaddingLeft: =15.33
@@ -374,7 +374,7 @@
                         Icon: =Icon.DocumentWithContent
                         OnSelect: |-
                             =Navigate('Ticket Information 2');
-                            NewForm(TicketDataEditForm);
+                            NewForm(TicketDataEditForm_1);
                         ZIndex: =2
 
                     "'Refresh Icon' As icon.Reload":
@@ -514,7 +514,7 @@
                                     )
                                 )
                             );
-                            EditForm(TicketDataEditForm);
+                            EditForm(TicketDataEditForm_1);
                             Navigate('Ticket Information 2');
                         PaddingBottom: =15.33
                         PaddingLeft: =15.33
@@ -662,7 +662,7 @@
                                 )
                             );
                             
-                            EditForm(TicketDataEditForm);
+                            EditForm(TicketDataEditForm_1);
                             Navigate('Ticket Information 2');
                         PaddingBottom: =15.33
                         PaddingLeft: =15.33
