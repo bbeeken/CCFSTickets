@@ -3123,23 +3123,29 @@
             "'Ticket Updates Container' As groupContainer.verticalAutoLayoutContainer":
                 DropShadow: =DropShadow.Light
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: |
+                LayoutMinHeight: |-
                     =With(
                         {
-                            minHeight: 150, // Minimum height to ensure usability
-                            maxHeight: Min('Ticket Information 2'.Height * 0.8, 600), // Maximum height, the lesser of 80% screen height or 600 pixels
-                            contentBasedHeight: CountRows(Gallery10_3.AllItems) * 80 + 20, // Corrected to multiply the count of items by the estimated item height and add padding
-                            availableHeight: Parent.Height - 50 // Available height in the parent container
+                            minHeight: 100,
+                            // Minimum height to ensure usability
+                    maxHeight: Min(
+                                'Ticket Information 2'.Height * 0.8,
+                                600
+                            ),
+                            // Maximum height, the lesser of 80% screen height or 600 pixels
+                    contentBasedHeight: CountRows(Gallery10_3.AllItems) * 80 + 5,
+                            // Corrected to multiply the count of items by the estimated item height and add padding
+                    availableHeight: Parent.Height - 50// Available height in the parent container
                         },
                         If(
                             IsEmpty(Gallery10_3.AllItems),
-                            minHeight, // Use minHeight if the gallery is empty
+                            minHeight,// Use minHeight if the gallery is empty
                             Max(
-                                minHeight, // Ensure it's at least minHeight
+                                minHeight,// Ensure it's at least minHeight
                                 Min(
-                                    contentBasedHeight, // Dynamically calculated based on content
-                                    maxHeight, // Ensures it doesn't exceed the maximum height
-                                    availableHeight // Ensures it doesn't exceed the available space in the parent
+                                    contentBasedHeight,// Dynamically calculated based on content
+                                    maxHeight,// Ensures it doesn't exceed the maximum height
+                                    availableHeight// Ensures it doesn't exceed the available space in the parent
                                 )
                             )
                         )
@@ -3335,21 +3341,33 @@
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: |
-                    =With(
-                        { minHeight: 150, maxHeight: 'Ticket Information 2'.Height * 0.8, defaultHeight: Parent.Height - 50 },
-                        If(
-                            IsEmpty(Gallery10_4.AllItems),
-                            minHeight,
-                            Min(defaultHeight, maxHeight)
-                        )
-                    )
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: |-
-                    =If(
-                        IsEmpty(Gallery10_4.AllItems),
-                        5,
-                        Parent.Height / 6
+                    =With(
+                        {
+                            minHeight: 100,
+                            // Minimum height to ensure usability
+                    maxHeight: Min(
+                                'Ticket Information 2'.Height * 0.8,
+                                600
+                            ),
+                            // Maximum height, the lesser of 80% screen height or 600 pixels
+                    contentBasedHeight: CountRows(Gallery10_4.AllItems) * 80 + 20,
+                            // Corrected to multiply the count of items by the estimated item height and add padding
+                    availableHeight: Parent.Height - 50// Available height in the parent container
+                        },
+                        If(
+                            IsEmpty(Gallery10_4.AllItems),
+                            minHeight,// Use minHeight if the gallery is empty
+                            Max(
+                                minHeight,// Ensure it's at least minHeight
+                                Min(
+                                    contentBasedHeight,// Dynamically calculated based on content
+                                    maxHeight,// Ensures it doesn't exceed the maximum height
+                                    availableHeight// Ensures it doesn't exceed the available space in the parent
+                                )
+                            )
+                        )
                     )
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
@@ -3527,13 +3545,31 @@
                          Parent.Height/4
                     )
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: |
+                LayoutMinHeight: |-
                     =With(
-                        { minHeight: 150, maxHeight: 'Ticket Information 2'.Height * 0.8, defaultHeight: Parent.Height - 50 },
+                        {
+                            minHeight: 150,
+                            // Minimum height to ensure usability
+                    maxHeight: Min(
+                                'Ticket Information 2'.Height * 0.8,
+                                600
+                            ),
+                            // Maximum height, the lesser of 80% screen height or 600 pixels
+                    contentBasedHeight: CountRows(Gallery5_4.AllItems) * 80 + 20,
+                            // Corrected to multiply the count of items by the estimated item height and add padding
+                    availableHeight: Parent.Height - 50// Available height in the parent container
+                        },
                         If(
                             IsEmpty(Gallery5_4.AllItems),
-                            minHeight,
-                            Min(defaultHeight, maxHeight)
+                            minHeight,// Use minHeight if the gallery is empty
+                            Max(
+                                minHeight,// Ensure it's at least minHeight
+                                Min(
+                                    contentBasedHeight,// Dynamically calculated based on content
+                                    maxHeight,// Ensures it doesn't exceed the maximum height
+                                    availableHeight// Ensures it doesn't exceed the available space in the parent
+                                )
+                            )
                         )
                     )
                 LayoutMinWidth: =250
@@ -3813,7 +3849,6 @@
         RadiusTopRight: =4
         Visible: =SRFormPopUpVisble
         Width: =App.Width * 0.85
-        X: =(App.Width - ServiceRequestFormPopUp_1.Width) / 2
         Y: =(App.Height- ServiceRequestFormPopUp_1.Height) / 2
         ZIndex: =3
 
