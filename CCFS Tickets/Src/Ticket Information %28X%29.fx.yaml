@@ -1432,11 +1432,11 @@
                         DisplayMode: =Parent.DisplayMode
                         DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Ticket_Body")
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =DataCardKey48.Height + DataCardValue35.Height
+                        Height: =294
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Body")
                         Required: =false
                         Update: =DataCardValue35.Value
-                        Width: =Parent.Width
+                        Width: =1320
                         WidthFit: =true
                         X: =0
                         Y: =6
