@@ -1,0 +1,2148 @@
+"'Asset Dashboard' As screen.'autoLayout_Sidebar_ver1.0'":
+    Fill: =RGBA(232, 232, 232, 1)
+    OnVisible: =Set(FormContainerVisble,false);
+
+    ScreenContainer5_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =!FormContainerVisble
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Header1_3 As Header:
+            BasePaletteColor: =
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            Height: =75
+            LayoutMinHeight: =75
+            LayoutMinWidth: =Parent.Width * .9
+            Logo: ='Updated Logo June 2022 (002)'
+            OnSelectLogo: =false
+            Title: =App.ActiveScreen.Name
+            UserEmail: =User().Email
+            UserImage: =User().Image
+            UserName: =User().FullName
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        BottomContainer3_1 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            Container1_7 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =Icon3_5.Height+Icon1_7.Height
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =1
+
+                Container3_1 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Container2_2.Height
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =Container2_2.Height + 25
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =32
+                    ZIndex: =1
+
+                    Icon1_7 As icon.Home:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(40, 134, 222, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =32
+                        Icon: =Icon.Home
+                        OnSelect: |
+                            =Navigate(Dashboard)
+                        Width: =32
+                        ZIndex: =1
+
+                    Icon3_5 As icon.BackArrow:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(71, 158, 245, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =32
+                        Icon: =Icon.BackArrow
+                        OnSelect: =Back()
+                        Width: =32
+                        ZIndex: =2
+
+                Container2_2 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label8_2.Height+DropdownCanvas1_8.Height
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =Label8_2.Height+DropdownCanvas1_8.Height
+                    LayoutMinWidth: =DropdownCanvas1_8.Width
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =DropdownCanvas1_8.Width
+                    ZIndex: =4
+
+                    Label8_2 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Size: =9
+                        Text: ="Navigation"
+                        ZIndex: =1
+
+                    DropdownCanvas1_8 As Dropdown.pcfdataset:
+                        BasePaletteColor: =RGBA(214, 221, 224, 1)
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        Items: =ScreenNavigationDropDownOptions
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =150
+                        OnChange: |-
+                            =Navigate(DropdownCanvas1_8.Selected.Screen);
+                            Reset(DropdownCanvas1_8);
+                        Width: =320
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        Name4_8 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Name"
+                            FieldName: ="Name"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =11
+
+            SidebarContainer4_2 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(209, 209, 209, 1)
+                LayoutGap: =3
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =50
+                LayoutMinWidth: =Parent.Width
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                LayoutWrap: =true
+                PaddingLeft: =2
+                PaddingRight: =2
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =Parent.Width
+                ZIndex: =3
+
+                Label18_13 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: ="Filter"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                EnableTicketFilterChk_2 As Checkbox:
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =35
+                    Label: ="Enable Filters"
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =50
+                    OnCheck: =false
+                    OnUncheck: = Reset(ComboboxCanvas_Assets_Sites);Reset(TextInputCanvas_KeywordSearch_Assets_keyword);Reset(ComboboxCanvas_Assets_Category);
+                    Width: =Parent.Width/5
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                "TextInputCanvas_KeywordSearch_Assets_keyword As 'Text input'":
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =3
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =EnableTicketFilterChk_2.Height
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =75
+                    Placeholder: ="Keywords"
+                    Width: =Parent.Width/2
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                ComboboxCanvas_Assets_Category As Combobox.pcfdataset:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =EnableTicketFilterChk_2.Height
+                    InputTextPlaceholder: ="Category"
+                    Items: |-
+                        =
+                        
+                        Sort(Asset_Categories,Label,SortOrder.Ascending)
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Width: =320
+                    X: =0
+                    Y: =0
+                    ZIndex: =7
+
+                    Label3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =11
+
+                    ID4 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =12
+
+                ComboboxCanvas_Assets_Sites As Combobox.pcfdataset:
+                    DefaultSelectedItems: =Filter(SitesLocalVariable,ID=UserSite)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =EnableTicketFilterChk_2.Height
+                    InputTextPlaceholder: ="Site"
+                    Items: =Sort(SitesLocalVariable,Label,SortOrder.Descending)
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Width: =320
+                    X: =0
+                    Y: =0
+                    ZIndex: =8
+
+                    Label4 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =13
+
+                    ID5 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =14
+
+            MainContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(241, 241, 241, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =4
+
+                NewTicketBtn1_1 As Button:
+                    Appearance: ='ButtonCanvas.Appearance'.Primary
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: |-
+                        =ResetForm(AssetEditForm);
+                        NewForm(AssetEditForm);
+                        
+                        Set(FormContainerVisble,true);
+                    Text: ="New Asset"
+                    Width: =Parent.Width/3
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                Label18_14 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: =ComboboxCanvas_Assets_Sites.Selected.Label & " Assets"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =2
+
+                TextCanvas8_1 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    AlignInContainer: =AlignInContainer.Start
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Text: ="No Assets Found"
+                    Visible: =IsEmpty(Gallery_Assets.AllItems)
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                "Gallery_Assets As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Items: |-
+                        =With(
+                            {
+                                keyword: TextInputCanvas_KeywordSearch_Assets_keyword.Value,
+                                category: Int(ComboboxCanvas_Assets_Category.Selected.ID),
+                                site: Int(ComboboxCanvas_Assets_Sites.Selected.ID)
+                            },
+                            Filter(
+                                Assets,
+                                // If the filter checkbox is not checked, ignore keyword and category filters
+                                !EnableTicketFilterChk_2.Checked || ((IsBlank(keyword) || keyword in Label) && (IsBlank(category) || category = Asset_Category_ID)),
+                                // Site Filter
+                                IsBlank(site) || site = Site_ID
+                            )
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =55
+                    ZIndex: =5
+
+                    Image1 As image:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =59
+                        Image: =GenAsset
+                        OnSelect: =Select(Parent)
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =64
+                        X: =4
+                        ZIndex: =1
+
+                    Title1 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.Label 
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth - 173
+                        X: =68
+                        ZIndex: =2
+
+                    NextArrow1 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(166, 166, 166, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |
+                            =Select(Parent);
+                            EditForm(AssetEditForm);
+                            Set(
+                            AssetFormItem,
+                            Gallery_Assets.Selected
+                            
+                            );
+                            Set(
+                                FormContainerVisble,
+                                true
+                            );
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =Parent.Width
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =4
+
+                    Separator3 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle1 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(0, 89, 178, 1)
+                        Height: =Parent.TemplateHeight - Separator3.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+                    Label1 As label:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =29
+                        OnSelect: =Select(Parent)
+                        Size: =12
+                        Text: =ThisItem.Manufacturer & " - " & ThisItem.Model
+                        Width: =431
+                        X: =68
+                        Y: =23
+                        ZIndex: =7
+
+    AssetFormContainer As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =Parent.Height
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =FormContainerVisble
+        Width: =Parent.Width
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =2
+
+        AssetEditForm As form.PowerApps_CoreControls_Form:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            DataSource: =Assets
+            DefaultMode: =FormMode.New
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height - Label18_15.Height-AttachmentContainer_1.Height
+            Item: =AssetFormItem
+            OnFailure: =Notify(AssetEditForm.Error,NotificationType.Error)
+            OnSuccess: =Notify("sucessful")
+            UseFluentV9Cards: =true
+            Width: =Parent.Width
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =30
+            ZIndex: =1
+
+            Buttons As typedDataCard.blankCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =32
+                Width: =266
+                WidthFit: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                ButtonCanvas4 As Button:
+                    Appearance: ='ButtonCanvas.Appearance'.Primary
+                    BasePaletteColor: =RGBA(255, 191, 0, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    OnSelect: =Set(FormContainerVisble,false);
+                    Text: ="Close"
+                    Width: =96
+                    X: =96
+                    Y: =0
+                    ZIndex: =1
+
+                ButtonCanvas5 As Button:
+                    BasePaletteColor: =RGBA(54, 176, 75, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    OnSelect: |
+                        =// Determine the mode of the AssetEditForm and set the IsNewAsset flag accordingly
+                        Set(
+                            IsNewAsset,
+                            AssetEditForm.Mode = FormMode.New
+                        );
+                        
+                        // Clear and collect data into AssetFormProcess based on the mode
+                        ClearCollect(
+                            AssetFormProcess,
+                            {
+                                Asset_ID: If(
+                                    IsNewAsset,
+                                    "",
+                                    Text(ID_DataCard1.Default)
+                                ),
+                                NewAsset: IsNewAsset,
+                                Site_ID: Site_ID_DataCard1.Update,
+                                Serial_Number: Serial_Number_DataCard1.Update,
+                                Label: Label_DataCard1.Update,
+                                Manufacturer: Manufacturer_DataCard1.Update,
+                                Model: Model_DataCard1.Update,
+                                Asset_Category_ID_MS: Asset_Category_ID_MS_DataCard1.Update,
+                                AssetType: AssetType_DataCard1.Update,
+                                Number_Service_Request: If(
+                                    IsNewAsset,
+                                    0,
+                                    Number_Service_Request_DataCard1.Default
+                                ),
+                                Prefered_Vendor: Prefered_Vendor_DataCard1.Update,
+                                Purchase_Price: Value(Purchase_Price_DataCard1.Update),
+                                Ticket_Category_ID: Ticket_Category_ID_DataCard2.Update,
+                                Asset_Category_ID: Int(Asset_Category_ID_MS_DataCard1.Update),
+                                PDIItemID: PDIItemID_DataCard1.Update,
+                                LastModifiedBy: User().FullName,
+                                LastModifiedDate: Now(),
+                                CreatedBy: If(
+                                    IsNewAsset,
+                                    User().FullName,
+                                    LastCreatedBy_DataCard1.Default
+                                ),
+                                Version: If(
+                                    IsNewAsset,
+                                    1,
+                                    Version_DataCard2.Default + 1
+                                )
+                                // ... include other data cards as needed
+                            }
+                        );
+                        
+                        // Notify if there was an issue with the action
+                        If(
+                            IsEmpty(AssetFormProcess),
+                            Notify(
+                                "There was an issue with this action.",
+                                NotificationType.Error
+                            ),
+                            Set(
+                                returnID,
+                                Process_Asset_Form_Data.Run(JSON(AssetFormProcess))
+                            );
+                            If(
+                                IsBlank(returnID),
+                                Notify(
+                                    "There was an issue with saving the asset.",
+                                    NotificationType.Error
+                                ),
+                                Notify(
+                                    "Asset Saved.",
+                                    NotificationType.Success,
+                                    5
+                                )
+                            )
+                        );
+                        
+                        // Refresh the asset data source and reset the form
+                        Refresh(Assets);
+                        EditForm(AssetEditForm);
+                    Text: ="Save"
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+            ID_DataCard1 As typedDataCard.fluentV9TextualViewCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="ID"
+                Default: =ThisItem.ID
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"ID")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Visible: =true
+                Width: =Parent.Width/2
+                WidthFit: =true
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey5 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue5 As 'Text input'":
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.View
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey5.Y + DataCardKey5.Height + 4
+                    ZIndex: =2
+
+            Site_ID_DataCard1 As typedDataCard.fluentV9NumberEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Site_ID"
+                Default: =ThisItem.Site_ID
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Site_ID")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =Int(ComboboxAssetForm.Selected.ID)
+                Width: =Parent.Width/2
+                WidthFit: =true
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey15 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: ="Site"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                ErrorMessage16 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =ComboboxAssetForm.Y + ComboboxAssetForm.Height
+                    ZIndex: =3
+
+                StarVisible16 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey15.Y
+                    ZIndex: =4
+
+                ComboboxAssetForm As Combobox.pcfdataset:
+                    DefaultSelectedItems: =LookUp(SitesLocalVariable,ID = ThisItem.Site_ID)
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    Items: =Sort(SitesLocalVariable,Label)
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey15.Y + DataCardKey15.Height + 4
+                    ZIndex: =5
+
+                    Label7 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =21
+
+                    ID8 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =22
+
+            Serial_Number_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Serial_Number"
+                Default: =ThisItem.Serial_Number
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Serial_Number")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@Assets], DataSourceInfo.MaxLength, "Serial_Number")
+                Required: =false
+                Update: =DataCardValue13.Value
+                Width: =Parent.Width/2
+                WidthFit: =true
+                X: =2
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey13 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue13 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey13.Y + DataCardKey13.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage13 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue13.Y + DataCardValue13.Height
+                    ZIndex: =3
+
+                StarVisible13 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey13.Y
+                    ZIndex: =4
+
+            Label_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Label"
+                Default: =ThisItem.Label
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Label")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@Assets], DataSourceInfo.MaxLength, "Label")
+                Required: =true
+                Update: =DataCardValue6.Value
+                Width: =Parent.Width
+                WidthFit: =true
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey6 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue6 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey6.Y + DataCardKey6.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage5 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue6.Y + DataCardValue6.Height
+                    ZIndex: =3
+
+                StarVisible5 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey6.Y
+                    ZIndex: =4
+
+            Manufacturer_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Manufacturer"
+                Default: =ThisItem.Manufacturer
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Manufacturer")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@Assets], DataSourceInfo.MaxLength, "Manufacturer")
+                Required: =false
+                Update: =DataCardValue7.Value
+                Width: =266
+                WidthFit: =true
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey7 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue7 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey7.Y + DataCardKey7.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage6 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue7.Y + DataCardValue7.Height
+                    ZIndex: =3
+
+                StarVisible6 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey7.Y
+                    ZIndex: =4
+
+            Model_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Model"
+                Default: =ThisItem.Model
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Model")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@Assets], DataSourceInfo.MaxLength, "Model")
+                Required: =false
+                Update: =DataCardValue8.Value
+                Width: =266
+                WidthFit: =true
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey8 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue8 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey8.Y + DataCardKey8.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage8 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue8.Y + DataCardValue8.Height
+                    ZIndex: =3
+
+                StarVisible8 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey8.Y
+                    ZIndex: =4
+
+            Asset_Category_ID_MS_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Asset_Category_ID_MS"
+                Default: =ThisItem.Asset_Category_ID_MS
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Asset_Category_ID_MS")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@Assets], DataSourceInfo.MaxLength, "Asset_Category_ID_MS")
+                Required: =false
+                Update: =Int( DataCardValue3.Selected.ID)
+                Width: =266
+                WidthFit: =true
+                X: =0
+                Y: =5
+                ZIndex: =1
+
+                DataCardKey3 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: ="Category"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                ErrorMessage3 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue3.Y + DataCardValue3.Height
+                    ZIndex: =3
+
+                StarVisible3 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey3.Y
+                    ZIndex: =4
+
+                DataCardValue3 As Combobox.pcfdataset:
+                    DefaultSelectedItems: =LookUp(Asset_Categories,ID=Int(Parent.Default))
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Items: =Asset_Categories
+                    Width: =320
+                    X: =24
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 4
+                    ZIndex: =5
+
+                    Label5 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =15
+
+                    ID3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =16
+
+            AssetType_DataCard1 As typedDataCard.fluentV9NumberEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="AssetType"
+                Default: =ThisItem.AssetType
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"AssetType")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =Int(DataCardValue4.Selected.ID)
+                Width: =266
+                WidthFit: =true
+                X: =0
+                Y: =6
+                ZIndex: =1
+
+                DataCardKey4 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: ="Type"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                ErrorMessage4 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue4.Y + DataCardValue4.Height
+                    ZIndex: =3
+
+                StarVisible4 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey4.Y
+                    ZIndex: =4
+
+                DataCardValue4 As Combobox.pcfdataset:
+                    DefaultSelectedItems: =LookUp(Asset_Types,ID=Parent.Default)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Items: =Asset_Types
+                    Width: =320
+                    X: =24
+                    Y: =DataCardKey4.Y + DataCardKey4.Height + 4
+                    ZIndex: =5
+
+                    Label6 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =17
+
+                    ID6 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =18
+
+            Number_Service_Request_DataCard1 As typedDataCard.fluentV9NumberEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Number_Service_Request"
+                Default: =ThisItem.Number_Service_Request
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Number_Service_Request")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =true
+                Update: =Value(DataCardValue10.Value)
+                Visible: =false
+                Width: =266
+                X: =0
+                Y: =7
+                ZIndex: =1
+
+                DataCardKey10 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue10 As 'Text input'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey10.Y + DataCardKey10.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage10 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue10.Y + DataCardValue10.Height
+                    ZIndex: =3
+
+                StarVisible10 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey10.Y
+                    ZIndex: =4
+
+            Prefered_Vendor_DataCard1 As typedDataCard.fluentV9NumberEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Prefered_Vendor"
+                Default: =ThisItem.Prefered_Vendor
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Prefered_Vendor")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =Int(DataCardValue11.Selected.ID)
+                Width: =400
+                WidthFit: =true
+                X: =1
+                Y: =7
+                ZIndex: =1
+
+                DataCardKey11 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: ="Preferred Vendor"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                ErrorMessage11 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue11.Y + DataCardValue11.Height
+                    ZIndex: =3
+
+                StarVisible11 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey11.Y
+                    ZIndex: =4
+
+                DataCardValue11 As Combobox.pcfdataset:
+                    DefaultSelectedItems: =LookUp(Vendors,ID = ThisItem.Prefered_Vendor)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Items: =Vendors
+                    Width: =320
+                    X: =40
+                    Y: =DataCardKey11.Y + DataCardKey11.Height + 4
+                    ZIndex: =5
+
+                    Name3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Name"
+                        FieldName: ="Name"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =19
+
+                    ID7 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =20
+
+            Purchase_Price_DataCard1 As typedDataCard.fluentV9CurrencyEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Purchase_Price"
+                Default: =ThisItem.Purchase_Price
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Purchase_Price")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =Value(DataCardValue12.Value)
+                Width: =266
+                WidthFit: =true
+                X: =0
+                Y: =8
+                ZIndex: =1
+
+                DataCardKey12 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue12 As 'Text input'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey12.Y + DataCardKey12.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage12 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue12.Y + DataCardValue12.Height
+                    ZIndex: =3
+
+                StarVisible12 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey12.Y
+                    ZIndex: =4
+
+            Ticket_Category_ID_DataCard2 As typedDataCard.fluentV9NumberEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Ticket_Category_ID"
+                Default: =ThisItem.Ticket_Category_ID
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Ticket_Category_ID")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =Value(DataCardValue14.Value)
+                Visible: =false
+                Width: =266
+                X: =1
+                Y: =8
+                ZIndex: =1
+
+                DataCardKey14 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue14 As 'Text input'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey14.Y + DataCardKey14.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage14 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue14.Y + DataCardValue14.Height
+                    ZIndex: =3
+
+                StarVisible14 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey14.Y
+                    ZIndex: =4
+
+            Asset_Category_ID_DataCard1 As typedDataCard.fluentV9NumberEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Asset_Category_ID"
+                Default: =ThisItem.Asset_Category_ID
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"Asset_Category_ID")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =Value(DataCardValue2.Value)
+                Visible: =false
+                Width: =266
+                X: =2
+                Y: =8
+                ZIndex: =1
+
+                DataCardKey2 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue2 As 'Text input'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage2 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue2.Y + DataCardValue2.Height
+                    ZIndex: =3
+
+                StarVisible2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey2.Y
+                    ZIndex: =4
+
+            PDIItemID_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="PDIItemID"
+                Default: =ThisItem.PDIItemID
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Assets],DataSourceInfo.DisplayName,"PDIItemID")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@Assets], DataSourceInfo.MaxLength, "PDIItemID")
+                Required: =false
+                Update: =DataCardValue9.Value
+                Visible: =false
+                Width: =266
+                X: =0
+                Y: =9
+                ZIndex: =1
+
+                DataCardKey9 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue9 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey9.Y + DataCardKey9.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage9 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue9.Y + DataCardValue9.Height
+                    ZIndex: =3
+
+                StarVisible9 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey9.Y
+                    ZIndex: =4
+
+        Label18_15 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(204, 214, 224, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(102, 133, 163, 1)
+            Height: =30
+            PaddingBottom: =7.67
+            PaddingLeft: =7.67
+            PaddingRight: =4.63
+            PaddingTop: =4.63
+            Size: = Min('Asset Dashboard'.Width / 40,18)
+            Text: |-
+                ="Asset: "& DataCardValue6.Value
+            Width: =Parent.Width
+            ZIndex: =2
+
+        AttachmentContainer_1 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =327
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =AssetEditForm.Width
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =AssetEditForm.Y + AssetEditForm.Height
+            ZIndex: =3
+
+            MessageEntry_2 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(214, 221, 224, 1)
+                BorderThickness: =1
+                DropShadow: =DropShadow.Semilight
+                Fill: =RGBA(255, 255, 255, 1)
+                LayoutMinHeight: =150
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Visible: =NewAttachementContainerVisble
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Icon15_2 As icon.Cancel:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(247, 116, 38, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =31
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(NewAttachementContainerVisble,false)
+                    Width: =49
+                    X: =147
+                    Y: =116
+                    ZIndex: =4
+
+                AddMediaWithImage1_1 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =4
+
+                    UploadedImage1_1 As image:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =116
+                        Image: =If(IsBlank(ButtonCanvas2_2.Media), SampleImage, ButtonCanvas2_2.Media)
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =
+                        Width: =196
+                        ZIndex: =2
+
+                    ButtonCanvas2_2 As addMedia:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(40, 134, 222, 1)
+                        Height: =34
+                        OnChange: |
+                            =
+                        OnSelect: |
+                            =Set(
+                                UploadedImage1Var,
+                                JSON(
+                                    UploadedImage1_1.Image,
+                                    JSONFormat.IncludeBinaryData
+                                )
+                            );
+                            Set(
+                                UploadedImage1VarTrimmed,
+                                Mid(
+                                    UploadedImage1Var,
+                                    2,
+                                    Len(UploadedImage1Var) - 2
+                                )
+                            );
+                            Set(
+                                AssetImageRES,
+                                ProcessTicketData_Add_Attachments_Asset.Run(
+                                    Int(ID_DataCard1.Default),
+                                    ButtonCanvas2_2.FileName,
+                                    UploadedImage1VarTrimmed
+                                ).status;
+                                
+                            );
+                            Notify(AssetImageRES,NotificationType.Information);
+                            Refresh(Assets_Images);
+                            Set(
+                                NewAttachementContainerVisble,
+                                false
+                            );
+                            Reset(ButtonCanvas2_2);
+                        Size: =10
+                        UseMobileCamera: =true
+                        Width: =147
+                        Y: =116
+                        ZIndex: =3
+
+            Label18_16 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 89, 178, 1)
+                Color: =RGBA(204, 214, 224, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(102, 133, 163, 1)
+                Height: =30
+                PaddingBottom: =7.67
+                PaddingLeft: =7.67
+                PaddingRight: =4.63
+                PaddingTop: =4.63
+                Size: = Min('Asset Dashboard'.Width / 40,18)
+                Text: ="Attachments"
+                Width: =Parent.Width
+                X: =0.00
+                Y: =0.00
+                ZIndex: =2
+
+            NewAttachmentsBtn_2 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =20
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: =Set(NewAttachementContainerVisble,true)
+                Text: ="New"
+                Visible: =true
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+            TextCanvas2_3 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AlignInContainer: =AlignInContainer.Start
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Text: ="No Attachments"
+                Visible: =IsEmpty(Gallery10_2.AllItems)
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+            "Gallery10_2 As gallery.'BrowseLayout_Flexible_SocialFeed_ver5.0'":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(0, 89, 178, 1)
+                Default: =First(Gallery10_2.AllItems)
+                DelayItemLoading: =true
+                Items: =Sort(Filter(Assets_Images,AssetID=Int(ID_DataCard1.Default)),UploadDateTime,SortOrder.Descending)
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =Parent.Height
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =4
+                TemplateSize: =Image7_1.Height+Title12_4.Height+Title12_5.Height+divider_2.Height
+                Visible: |-
+                    =
+                    
+                    
+                    !IsEmpty(Gallery10_2.AllItems)
+                Width: =Parent.Width
+                ZIndex: =5
+
+                Title12_5 As label:
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Semibold)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =12
+                    Text: =ThisItem.UploadDateTime
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth /2
+                    Y: =16
+                    ZIndex: =2
+
+                divider_2 As icon.HorizontalLine:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(0, 89, 178, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Height: =5
+                    Icon: =Icon.HorizontalLine
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =99
+                    ZIndex: =5
+
+                Title12_4 As label:
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Semibold)
+                    Height: =16
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =8
+                    Text: =ThisItem.ImageName
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =582
+                    ZIndex: =6
+
+                Image7_1 As image:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Height: =63
+                    Image: |-
+                        =If(
+                            Or(
+                                EndsWith(
+                                    ThisItem.ImageName,
+                                    ".docx"
+                                ),
+                                EndsWith(
+                                    ThisItem.ImageName,
+                                    ".pdf"
+                                ),
+                                EndsWith(
+                                    ThisItem.ImageName,
+                                    ".xlsx"
+                                )
+                                // ... add other document types as needed
+                            ),
+                            DocumentPlaceHolder,// Replace with the actual reference to your temporary image
+                            ThisItem.WebURL)
+                    OnSelect: |
+                        =Download(ThisItem.WebURL)
+                    Width: =109
+                    X: =11
+                    Y: =37
+                    ZIndex: =7
+
+                Icon2 As icon.ArrowRight:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(0, 0, 0, 0)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Height: =Parent.TemplateHeight
+                    Icon: =Icon.ArrowRight
+                    OnSelect: =Download(ThisItem.WebURL)
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =8
+

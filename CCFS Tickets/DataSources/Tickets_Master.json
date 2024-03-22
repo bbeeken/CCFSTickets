@@ -1,0 +1,45 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2023-11-14T18:31:05.7840000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "Asset_ID": "Asset_ID",
+      "Assigned_Email": "Assigned_Email",
+      "Assigned_Name": "Assigned_Name",
+      "Assigned_Vendor_ID": "Assigned_Vendor_ID",
+      "Closed_Date": "Closed_Date",
+      "Created_Date": "Created_Date",
+      "CustomCompletionDate": "CustomCompletionDate",
+      "EstimatedCompletionDate": "EstimatedCompletionDate",
+      "EstimatedCompletionDateAsInt": "EstimatedCompletionDateAsInt",
+      "HasServiceRequest": "HasServiceRequest",
+      "LastCreatedBy": "LastCreatedBy",
+      "LastModfiedBy": "LastModfiedBy",
+      "LastModified": "LastModified",
+      "Most_Recent_Service_Scheduled_ID": "Most_Recent_Service_Scheduled_ID",
+      "Private": "Private",
+      "RV": "RV",
+      "Severity_ID": "Severity_ID",
+      "Site_ID": "Site_ID",
+      "Subject": "Subject",
+      "Ticket_Body": "Ticket_Body",
+      "Ticket_Category_ID": "Ticket_Category_ID",
+      "Ticket_Contact_Email": "Ticket_Contact_Email",
+      "Ticket_Contact_Name": "Ticket_Contact_Name",
+      "Ticket_ID": "Ticket_ID",
+      "Ticket_Status_ID": "Ticket_Status_ID",
+      "Version": "Version",
+      "Watchers": "Watchers"
+    },
+    "DatasetName": "192.168.140.101%5cinhouse,CCFS_Tickets",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Tickets_Master",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

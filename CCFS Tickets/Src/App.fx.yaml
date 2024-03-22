@@ -1,0 +1,235 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |
+        =Set(
+            UserRegistered,
+            true
+        );
+        // Enhanced Switch statement for navigation
+        If(
+            !IsBlank(Param("TicketID")),
+            Set(
+                varTicketID,
+                First(
+                    Filter(
+                        Tickets_Master,
+                        Ticket_ID = Int(Param("TicketID"))
+                    )
+                )
+            )
+        );
+        ClearCollect(
+            TempFilteredStaff,
+            Office365Groups.ListGroupMembers("2759f317-dfb9-443f-96a1-ad8ff545aaf4").value
+        );
+        ClearCollect(
+            TempFilteredStaff1,
+            Ticket_System_Get_TicketUsers_List.Run().data
+        );
+        ClearCollect(
+            StaffLocalVariable,
+            Filter(
+                TempFilteredStaff,
+                !IsNumeric(
+                    Left(
+                        displayName,
+                        1
+                    )
+                ) && !(Left(
+                    displayName,
+                    5
+                ) = "Store")
+            )
+        );
+        Set(
+            UserRegistered,
+            false
+        );
+        // Collect User Configuration
+        ClearCollect(
+            UserConfig,
+            Filter(
+                User_Configuration_1,
+                UserEmail = User().Email
+            )
+        );
+        // Set User Variables
+        If(
+            !IsEmpty(UserConfig),
+            With(
+                {FirstConfig: First(UserConfig)},
+                Set(
+                    UserRegistered,
+                    true
+                );
+                Set(
+                    UserAdmin,
+                    Int(FirstConfig.Admin)
+                );
+                Set(
+                    UserSite,
+                    Int(FirstConfig.DefaultSite)
+                )
+            ),
+            Set(
+                UserRegistered,
+                false
+            )// In case UserConfig is empty
+        );
+        // Load Static Data
+        ClearCollect(
+            TicketStatusLocalVariable,
+            Ticket_Status
+        );
+        ClearCollect(
+            SitesLocalVariable,
+            Sites
+        );
+        ClearCollect(
+            TicketCategoriesLocalVariable,
+            Ticket_Categories
+        );
+        // Load Staff Data
+        // Conditional Logic based on UserAdmin
+        Switch(
+            UserAdmin,
+            0,
+            // Non-Admin User
+            ClearCollect(
+                ColTabs,
+                {
+                    ID: 2,
+                    Name: "Attention",
+                    Logo: Icon.Clock
+                },
+                {
+                    ID: 1,
+                    Name: "Active",
+                    Logo: Icon.Tag
+                },
+                {
+                    ID: 15,
+                    Name: "My Site",
+                    Logo: Icon.Tag
+                },
+                {
+                    ID: 4,
+                    Name: "Private",
+                    Logo: Icon.Tag
+                },
+                {
+                    ID: 3,
+                    Name: "Closed",
+                    Logo: Icon.Airplane
+                }
+            );
+            ClearCollect(
+                ScreenNavigationDropDownOptions,
+                {
+                    ID: 3,
+                    Name: "Tickets",
+                    Screen: 'Ticket Dashboard'
+                },
+                {
+                    ID: 1,
+                    Name: "Assets",
+                    Screen: 'Asset Dashboard'
+                },
+                {
+                    ID: 2,
+                    Name: "Vendors",
+                    Screen: 'Vendor Dashboard'
+                }
+            ),
+            1,
+            // Admin User
+            ClearCollect(
+                ColTabs,
+                {
+                    ID: 2,
+                    Name: "Attention",
+                    Logo: Icon.Alarm
+                },
+                {
+                    ID: 11,
+                    Name: "Waiting",
+                    Logo: Icon.Clock
+                },
+                {
+                    ID: 1,
+                    Name: "Active",
+                    Logo: Icon.Tag
+                },
+                {
+                    ID: 14,
+                    Name: "Assigned to me",
+                    Logo: Icon.Tag
+                },
+                {
+                    ID: 4,
+                    Name: "Private",
+                    Logo: Icon.Tag
+                },
+                {
+                    ID: 3,
+                    Name: "Closed",
+                    Logo: Icon.Airplane
+                }
+            );
+            ClearCollect(
+                ScreenNavigationDropDownOptions,
+                {
+                    ID: 3,
+                    Name: "Tickets",
+                    Screen: 'Ticket Dashboard'
+                },
+                {
+                    ID: 1,
+                    Name: "Assets",
+                    Screen: 'Asset Dashboard'
+                },
+                {
+                    ID: 2,
+                    Name: "Vendors",
+                    Screen: 'Vendor Dashboard'
+                },
+                {
+                    ID: 4,
+                    Name: "UserConfig",
+                    Screen: 'Ticket Dashboard'
+                },
+                {
+                    ID: 5,
+                    Name: "Ticket Categories",
+                    Screen: 'Ticket Dashboard'
+                },
+                {
+                    ID: 6,
+                    Name: "Site Notifications",
+                    Screen: 'Ticket Dashboard'
+                },
+                {
+                    ID: 7,
+                    Name: "Item Lookup",
+                    Screen: 'Ticket Dashboard'
+                }
+            )
+            // Add additional cases as necessary
+        );
+    SizeBreakpoints: =[600, 900, 1200,1400]
+    StartScreen: |-
+        =Switch(
+            Param("NavigateScreen"),
+            "TicketScreen",
+            'Ticket Information (X)',
+           Dashboard
+        )
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

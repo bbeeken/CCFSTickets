@@ -1,0 +1,704 @@
+"'Ticket Dashboard' As screen.'autoLayout_Sidebar_ver1.0'":
+    Fill: =RGBA(232, 232, 232, 1)
+    OnVisible: |
+        =Set(
+            VarSelectedTab,
+            2
+        );
+
+    ScreenContainer5 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Header1_1 As Header:
+            BasePaletteColor: =
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            Height: =75
+            LayoutMinHeight: =75
+            LayoutMinWidth: =Parent.Width * .9
+            Logo: ='Updated Logo June 2022 (002)'
+            OnSelectLogo: =false
+            Title: =App.ActiveScreen.Name
+            UserEmail: =User().Email
+            UserImage: =User().Image
+            UserName: =User().FullName
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        Container1_6 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =Icon3.Height+Icon1_6.Height
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            Container3 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                FillPortions: =0
+                Height: =Container2_1.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =Container2_1.Height + 25
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =32
+                ZIndex: =1
+
+                Icon1_6 As icon.Home:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(40, 134, 222, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Height: =32
+                    Icon: =Icon.Home
+                    OnSelect: |
+                        =Navigate(Dashboard)
+                    Width: =32
+                    ZIndex: =1
+
+                Icon3 As icon.BackArrow:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(71, 158, 245, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Height: =32
+                    Icon: =Icon.BackArrow
+                    OnSelect: =Back()
+                    Width: =32
+                    ZIndex: =2
+
+            Container2_1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                FillPortions: =0
+                Height: =Label8_1.Height+DropdownCanvas1_7.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =Label8_1.Height+DropdownCanvas1_7.Height
+                LayoutMinWidth: =DropdownCanvas1_7.Width
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =DropdownCanvas1_7.Width
+                ZIndex: =4
+
+                Label8_1 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Size: =9
+                    Text: ="Navigation"
+                    ZIndex: =1
+
+                DropdownCanvas1_7 As Dropdown.pcfdataset:
+                    BasePaletteColor: =RGBA(214, 221, 224, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    Items: =ScreenNavigationDropDownOptions
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =150
+                    OnChange: |-
+                        =Navigate(DropdownCanvas1_7.Selected.Screen);
+                        Reset(DropdownCanvas1_7);
+                    Width: =320
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                    Name4_7 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Name"
+                        FieldName: ="Name"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =11
+
+            Timer1 As timer:
+                AutoStart: =true
+                Color: =RGBA(0, 0, 0, 0)
+                Duration: =300000
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                OnTimerEnd: |-
+                    =Refresh(Tickets_Master);
+                    Reset(Timer1);
+                Repeat: =true
+                ZIndex: =5
+
+        HeaderContainer5_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =40
+            LayoutAlignItems: =LayoutAlignItems.End
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =3
+
+            "TicketPriortyCateSelector As 'Tab list'.pcfdataset":
+                AlignInContainer: =AlignInContainer.Center
+                Alignment: ='TabList.Alignment'.Horizontal
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Font: =""
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =55
+                Items: =ColTabs
+                LayoutMinHeight: =Parent.Height
+                LayoutMinWidth: =Parent.Width
+                OnChange: =Set(VarSelectedTab,TicketPriortyCateSelector.Selected.ID)
+                Width: =Parent.Width/2
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                Name2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Name"
+                    FieldName: ="Name"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =9
+
+        BottomContainer3 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            SidebarContainer4_1 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(209, 209, 209, 1)
+                LayoutGap: =3
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                LayoutWrap: =true
+                PaddingLeft: =2
+                PaddingRight: =2
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =Parent.Width
+                ZIndex: =3
+
+                Label18_4 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Text: ="Filter"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                EnableTicketFilterChk_1 As Checkbox:
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =35
+                    Label: ="Enable Filters"
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =50
+                    OnCheck: =false
+                    OnUncheck: = Reset(DropdownStatusFilter_1);Reset(TextInputCanvas_KeywordSearch)
+                    Width: =Parent.Width/5
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                "TextInputCanvas_KeywordSearch As 'Text input'":
+                    Align: ="Start"
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =3
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =EnableTicketFilterChk_1.Height
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =75
+                    Placeholder: ="Keywords"
+                    Width: =Parent.Width/2
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                DropdownStatusFilter_1 As Dropdown.pcfdataset:
+                    AccessibleLabel: ="Ticket Status"
+                    DefaultSelectedItems: =
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =2
+                    Height: =EnableTicketFilterChk_1.Height
+                    Items: =Sort(TicketStatusLocalVariable,Label,SortOrder.Descending)
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =75
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =6
+
+                    Label27_1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =10
+
+            MainContainer3 As groupContainer.verticalAutoLayoutContainer:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =1
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(241, 241, 241, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =4
+
+                NewTicketBtn1 As Button:
+                    Appearance: ='ButtonCanvas.Appearance'.Primary
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: |-
+                        =ResetForm(TicketDataEditForm_1);
+                        NewForm(TicketDataEditForm_1);
+                        
+                        Navigate('Ticket Information 2');
+                    Text: ="New Ticket"
+                    Width: =Parent.Width/3
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                Container6 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label18_2.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =2
+
+                    Label18_2 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =30
+                        PaddingBottom: =7.67
+                        PaddingLeft: =7.67
+                        PaddingRight: =4.63
+                        PaddingTop: =4.63
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
+                        Text: =TicketPriortyCateSelector.Selected.Name& " Tickets"
+                        Width: |-
+                            =Parent.Width - 
+                            Icon4.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    Icon4 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_2.Fill
+                        Height: =Label18_2.Height
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(Tickets_Master);
+                        Width: =32
+                        ZIndex: =2
+
+                "Gallery8 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Height: =Parent.Height
+                    Items: |
+                        =Switch(
+                            VarSelectedTab,
+                            1,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                (Private <> "1")And (Ticket_Status_ID <> "3" And Ticket_Status_ID <> "7") And
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            ),
+                            3,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                (Ticket_Status_ID = "3" Or Ticket_Status_ID = "7") And (EnableTicketFilterChk_1.Checked = false Or Ticket_Status_ID = Text(DropdownStatusFilter_1.Selected.ID) || DropdownStatusFilter_1.Selected.ID = Blank()),
+                                Assigned_Email = User().Email Or Ticket_Contact_Email = User().Email,
+                                (Private <> "1"),
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            ),
+                            2,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                (EstimatedCompletionDateAsInt <= Value(
+                                    Text(
+                                        Today(),
+                                        "[$-en-US]yyyymmdd"
+                                    )
+                                ) And (Ticket_Status_ID <> "3" And Ticket_Status_ID <> "7")) Or ((Ticket_Status_ID = "5" And Assigned_Email = User().Email) Or (Ticket_Status_ID = "4" And Ticket_Contact_Email = User().Email)),
+                                (EnableTicketFilterChk_1.Checked = false Or Ticket_Status_ID = Text(DropdownStatusFilter_1.Selected.ID) || DropdownStatusFilter_1.Selected.ID = Blank()),
+                                (Private <> "1"),
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            ),
+                            11,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                ((Assigned_Email = User().Email And Ticket_Status_ID = "5") Or (Ticket_Contact_Email = User().Email And Ticket_Status_ID = "4")) And (Ticket_Status_ID <> "3" And Ticket_Status_ID <> "7"),
+                                (EnableTicketFilterChk_1.Checked = false Or Ticket_Status_ID = Text(DropdownStatusFilter_1.Selected.ID) || DropdownStatusFilter_1.Selected.ID = Blank()),
+                                (Private <> "1"),
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            ),
+                            4,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                (UserAdmin = 1 Or Assigned_Email = User().Email Or Ticket_Contact_Email = User().Email) And (Private = "1"),
+                                (EnableTicketFilterChk_1.Checked = false Or Ticket_Status_ID = Text(DropdownStatusFilter_1.Selected.ID) || DropdownStatusFilter_1.Selected.ID = Blank()),
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            ),
+                            14,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                ((Assigned_Email = User().Email) And (Ticket_Status_ID <> "3" And Ticket_Status_ID <> "7")),
+                                (EnableTicketFilterChk_1.Checked = false Or Ticket_Status_ID = Text(DropdownStatusFilter_1.Selected.ID) || DropdownStatusFilter_1.Selected.ID = Blank()),
+                                (Private <> "1"),
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            ),
+                            15,
+                            Filter(
+                                Sort(
+                                    Tickets_Master,
+                                    Ticket_ID,
+                                    SortOrder.Descending
+                                ),
+                                (UserAdmin = 1 Or Site_ID = UserSite) And
+                                (Site_ID = UserSite And (Ticket_Status_ID <> "3" And Ticket_Status_ID <> "7")),
+                                (EnableTicketFilterChk_1.Checked = false Or Ticket_Status_ID = Text(DropdownStatusFilter_1.Selected.ID) || DropdownStatusFilter_1.Selected.ID = Blank()),
+                                (Private <> "1"),
+                                (EnableTicketFilterChk_1.Checked = false Or TextInputCanvas_KeywordSearch.Value in Subject Or TextInputCanvas_KeywordSearch.Value in Ticket_Body || TextInputCanvas_KeywordSearch.Value = Blank())
+                            )
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =116
+                    Visible: =!IsEmpty(Gallery8.AllItems)
+                    Width: =Parent.Width
+                    ZIndex: =4
+
+                    Title10 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =21
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =857
+                        X: =Label16_2.X
+                        Y: =Label16_2.Y + Label16_2.Height
+                        ZIndex: =1
+
+                    Subtitle8 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: |-
+                            =
+                            If(UserAdmin=0, "Store Contact: "&ThisItem.Ticket_Contact_Name,"Assigned To: "&ThisItem.Assigned_Name)
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title10.Width
+                        X: =Title10.X
+                        Y: =Title10.Y + Title10.Height
+                        ZIndex: =2
+
+                    Body3 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(246, 246, 246, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size*1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.Ticket_Body
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title10.Width
+                        X: =Subtitle8.X
+                        Y: =Subtitle8.Y + Subtitle8.Height
+                        ZIndex: =3
+
+                    Separator11 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =4
+
+                    Rectangle6 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(0, 89, 178, 1)
+                        Height: =Parent.TemplateHeight - Separator11.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =5
+
+                    Label16_2 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: |-
+                            =If(
+                                "Open" in Label16_2.Text,
+                                RGBA(
+                                    187,
+                                    221,
+                                    140,
+                                    1
+                                ),
+                                If(
+                                    "Closed" in Label16_2.Text,
+                                    RGBA(
+                                        238,
+                                        204,
+                                        204,
+                                        1
+                                    ),
+                                    If(
+                                        "Progress" in Label16_2.Text,
+                                      RGBA(250, 155, 112, 1)
+                                    )
+                                )
+                            )
+                        FontWeight: =FontWeight.Lighter
+                        Height: =20
+                        OnSelect: =Select(Gallery8)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            ="Ticket: " & ThisItem.Ticket_ID & " - " & LookUp(
+                                TicketStatusLocalVariable,
+                                ID = Int(ThisItem.Ticket_Status_ID)
+                            ).Label & " " & If(
+                                IsBlank(ThisItem.Closed_Date),
+                                "Created:" & Text(ThisItem.Created_Date) & " - Alive: " & DateDiff(
+                                    ThisItem.Created_Date,
+                                    Now(),
+                                    TimeUnit.Hours
+                                ) & " Hours " & "(" & DateDiff(
+                                    ThisItem.Created_Date,
+                                    Now(),
+                                    TimeUnit.Days
+                                ) & " Day(s) )",
+                                "lived: " & DateDiff(
+                                    ThisItem.Created_Date,
+                                    ThisItem.Closed_Date,
+                                    TimeUnit.Hours
+                                ) & " Hours " & "(" & DateDiff(
+                                    ThisItem.Created_Date,
+                                    ThisItem.Closed_Date,
+                                    TimeUnit.Days
+                                ) & " Day(s) )"
+                            )
+                        Width: =Parent.Width-Rectangle6.Width
+                        X: =4
+                        ZIndex: =6
+
+                    Icon16 As icon.ArrowRight:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(250, 250, 250, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ArrowRight
+                        OnSelect: |
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery8.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            EditForm(TicketDataEditForm_1);
+                            Navigate('Ticket Information 2');
+                        Width: =Parent.TemplateWidth - Rectangle6.Width
+                        ZIndex: =7
+
+                TextCanvas8 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    AlignInContainer: =AlignInContainer.Start
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    Text: ="No Tickets Found"
+                    Visible: =IsEmpty(Gallery8.AllItems)
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =5
+

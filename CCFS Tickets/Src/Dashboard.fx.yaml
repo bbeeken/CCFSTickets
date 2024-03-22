@@ -1,0 +1,1465 @@
+"Dashboard As screen.'autoLayout_Sidebar_ver1.0'":
+    BackgroundImage: =
+    Fill: =RGBA(232, 232, 232, 1)
+    OnVisible: |-
+        =Collect(partsTableData, {ItemNumber: "", Description: "", Quantity: ""})
+
+    ScreenContainer4 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =8
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        "'CCTP Dashboard Header' As Header":
+            BasePaletteColor: =
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            Height: =75
+            LayoutMinHeight: =75
+            LayoutMinWidth: =Parent.Width * .9
+            Logo: ='Updated Logo June 2022 (002)'
+            OnSelectLogo: =false
+            Title: =App.ActiveScreen.Name
+            UserEmail: =User().Email
+            UserImage: =User().Image
+            UserName: =User().FullName
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        Navigation As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =Label8.Height+DropdownCanvas1_6.Height
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            Icon1_4 As icon.Home:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                Color: =RGBA(40, 134, 222, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Height: =32
+                Icon: =Icon.Home
+                OnSelect: |
+                    =Navigate(Dashboard)
+                Width: =32
+                ZIndex: =1
+
+            Container2 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                FillPortions: =0
+                Height: =Label8.Height+DropdownCanvas1_6.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =Label8.Height+DropdownCanvas1_6.Height
+                LayoutMinWidth: =DropdownCanvas1_6.Width
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =DropdownCanvas1_6.Width
+                ZIndex: =2
+
+                Label8 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Size: =9
+                    Text: ="Navigation"
+                    ZIndex: =1
+
+                DropdownCanvas1_6 As Dropdown.pcfdataset:
+                    BasePaletteColor: =RGBA(214, 221, 224, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    Items: =ScreenNavigationDropDownOptions
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =150
+                    OnChange: |-
+                        =Navigate(DropdownCanvas1_6.Selected.Screen);
+                        Reset(DropdownCanvas1_6);
+                    Width: =320
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                    Name4_6 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Name"
+                        FieldName: ="Name"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =11
+
+            Timer1_1 As timer:
+                AutoStart: =true
+                Color: =RGBA(0, 0, 0, 0)
+                Duration: =300000
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+                OnTimerEnd: |-
+                    =Refresh(Tickets_Master);
+                    Reset(Timer1_1);
+                Repeat: =true
+                ZIndex: =3
+
+        "'RU, OT, OT45D' As groupContainer.horizontalAutoLayoutContainer":
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: ='Recently Updated'.Height+'Older Than 45 Days'.Height+'Open Tickets'.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =5
+            LayoutMinHeight: =If(Dashboard.Size < 4,400,200)
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =3
+
+            "'Recently Updated' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(214, 221, 224, 1)
+                Height: =MainContainer1.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutMinHeight: ='RU Body'.Height
+                LayoutMinWidth: |-
+                    = If(
+                            Dashboard.Width <= 640,  // Small screens
+                            'RU, OT, OT45D'.Width,
+                            // Add conditions for medium and large screens as needed
+                            'RU, OT, OT45D'.Width / 8  // Example for larger screens
+                        )
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =1
+
+                "'RU Label' As label":
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Text: ="Recently Updated"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =2
+
+                "'RU Body' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =2
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =700
+                    Items: |-
+                        =Sort(
+                            Filter(
+                                'OT Body'.AllItems,
+                                DateValue(
+                                    Text(
+                                        LastModified,
+                                        DateTimeFormat.ShortDate
+                                    )
+                                ) > DateValue(
+                                    Text(
+                                        DateAdd(
+                                            Now(),
+                                            -1,
+                                            TimeUnit.Days
+                                        ),
+                                        DateTimeFormat.ShortDate
+                                    )
+                                )
+                            ),
+                            Ticket_ID,
+                            SortOrder.Descending
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =('RU Body'.TemplateHeight * 'RU Body'.AllItemsCount) + (('RU Body'.TemplateHeight * 'RU Body'.AllItemsCount) * 25%)
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =
+                    ShowNavigation: =true
+                    TemplatePadding: =1
+                    TemplateSize: =75
+                    Visible: =If('RU Body'.AllItemsCount = 0 ,false, true)
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+                    "'RU Ticket # and Name' As label":
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =22
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: |-
+                            =ThisItem.Ticket_ID&": "& ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width-2
+                        Y: =22
+                        ZIndex: =1
+
+                    Separator8_1 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =5
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =5
+
+                    NextArrow1_5 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int('RU Body'.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            
+                            EditForm(TicketDataEditForm_1);
+                            Navigate('Ticket Information 2');
+                        PaddingBottom: =15.33
+                        PaddingLeft: =15.33
+                        PaddingRight: =9.26
+                        PaddingTop: =9.26
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =Parent.TemplateWidth
+                        Y: =0.00
+                        ZIndex: =6
+
+                    "'Modified: Date, Time' As Text":
+                        AutoHeight: =true
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =32
+                        Size: =12
+                        Text: |-
+                            ="Modified:" & ThisItem.LastModified
+                        Width: =194
+                        X: =0
+                        Y: =44
+                        ZIndex: =7
+
+            "'Open Tickets' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                Height: ='OT Body'.LayoutMinHeight
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: ='OT Body'.Height
+                LayoutMinWidth: |-
+                    = If(
+                            Dashboard.Width <= 640,  // Small screens
+                            'RU, OT, OT45D'.Width,
+                            // Add conditions for medium and large screens as needed
+                            'RU, OT, OT45D'.Width / 3 // Example for larger screens
+                        )
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =Parent.Width
+                Y: = If(Dashboard.Width <= 640, 'Older Than 45 Days'.Y + 'Older Than 45 Days'.Height, 0)
+                ZIndex: =2
+
+                "'OT Header w/ Button' As groupContainer.horizontalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: ='OT Label'.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                    "'OT Label' As label":
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =32
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
+                        Text: |
+                            =If(
+                                UserAdmin = 1,
+                                "Open Tickets: " & CountRows('OT Body'.AllItems),
+                                "My Tickets: " & CountRows('OT Body'.AllItems)
+                            )
+                        Width: =Parent.Width - 'New Ticket Icon'.Width - 'Refresh Icon'.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    "'New Ticket Icon' As icon.Reload":
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: ='OT Label'.Fill
+                        Height: ='OT Label'.Height
+                        Icon: =Icon.DocumentWithContent
+                        OnSelect: |-
+                            =Navigate('Ticket Information 2');
+                            NewForm(TicketDataEditForm_1);
+                        ZIndex: =2
+
+                    "'Refresh Icon' As icon.Reload":
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: ='OT Label'.Fill
+                        Height: ='OT Label'.Height-.5
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(Tickets_Master);
+                        ZIndex: =3
+
+                "'OT Body' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =2
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =Parent.Height - 'OT Body'.Y
+                    Items: |
+                        =// Assuming 'Tickets_Master' is your data source and all fields used in filtering and sorting are delegable
+                        // 'UserAdmin', 'Private', and 'Ticket_Status_ID' need to be delegable fields in your data source
+                        
+                        Sort(
+                            Filter(
+                                Tickets_Master,
+                                (UserAdmin = 1 && Private <> "1" && Ticket_Status_ID <> "7"  && Ticket_Status_ID <> "3") ||
+                                (UserAdmin <> 1 && (Assigned_Email = User().Email || Ticket_Contact_Email = User().Email || Site_ID = UserSite)  && Private <> "1" && Ticket_Status_ID <> "7" && Ticket_Status_ID <> "3")
+                            ),
+                            Ticket_ID,
+                            SortOrder.Descending
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =('OT Body'.TemplateHeight * 'OT Body'.AllItemsCount) + (('OT Body'.TemplateHeight * 'OT Body'.AllItemsCount) * 25%)
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =
+                    ShowNavigation: =true
+                    TemplateFill: =If(ThisItem.IsSelected, Color.LightGray, 'OT Body'.Fill)
+                    TemplateSize: =75
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+                    "'OT Ticket # and Name' As label":
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =22
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            =ThisItem.Ticket_ID&": "& ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width-Rectangle5.Width-2
+                        X: =4
+                        Y: =10
+                        ZIndex: =1
+
+                    Rectangle5 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(0, 89, 178, 1)
+                        Height: =Parent.TemplateHeight/2
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =3
+
+                    "'Ticket Status' As label":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: |
+                            =If(
+                                Int(ThisItem.Ticket_Status_ID) = 1 ,
+                                RGBA(
+                                    187,
+                                    221,
+                                    140,
+                                    1
+                                ),
+                                If(
+                                    "Closed" in 'Ticket Status'.Text,
+                                    RGBA(
+                                        238,
+                                        204,
+                                        204,
+                                        1
+                                    ),
+                                    If(
+                                        "Progress" in 'Ticket Status'.Text,
+                                      RGBA(250, 155, 112, 1)
+                                    )
+                                )
+                            )
+                        FontWeight: =FontWeight.Lighter
+                        Height: =25
+                        OnSelect: =Select('OT Body')
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(TicketStatusLocalVariable,ID =Int(ThisItem.Ticket_Status_ID)).Label 
+                        Width: =Parent.Width-Rectangle5.Width
+                        Y: =32
+                        ZIndex: =4
+
+                    Separator8 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =5
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =5
+
+                    NextArrow1_4 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =75
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int('OT Body'.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            EditForm(TicketDataEditForm_1);
+                            Navigate('Ticket Information 2');
+                        PaddingBottom: =15.33
+                        PaddingLeft: =15.33
+                        PaddingRight: =9.26
+                        PaddingTop: =9.26
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =Parent.TemplateWidth
+                        Y: =0.00
+                        ZIndex: =6
+
+            "'Older Than 45 Days' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(214, 221, 224, 1)
+                Height: ='Open Tickets'.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =2
+                LayoutMinHeight: =75
+                LayoutMinWidth: |-
+                    = If(
+                            Dashboard.Width <= 640,  // Small screens
+                            'RU, OT, OT45D'.Width,
+                            // Add conditions for medium and large screens as needed
+                            'RU, OT, OT45D'.Width / 8  // Example for larger screens
+                        )
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Y: =If(Dashboard.Width <= 640, 'Recently Updated'.Y + 'Recently Updated'.Height, 0)
+                ZIndex: =3
+
+                "'OT45D Label' As label":
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Text: ="Older Than 45 Days"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                "Gallery7_2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =2
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =700
+                    Items: |-
+                        =Sort(
+                            Filter(
+                                'OT Body'.AllItems,
+                                DateValue(
+                                    Text(
+                                        Created_Date,
+                                        DateTimeFormat.ShortDate
+                                    )
+                                ) < DateValue(
+                                    Text(
+                                        DateAdd(
+                                            Now(),
+                                            -44,
+                                            TimeUnit.Days
+                                        ),
+                                        DateTimeFormat.ShortDate
+                                    )
+                                )
+                            ),
+                            Ticket_ID,
+                            SortOrder.Descending
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =(Gallery7_2.TemplateHeight * Gallery7_2.AllItemsCount) + ((Gallery7_2.TemplateHeight * Gallery7_2.AllItemsCount) * 25%)
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =
+                    TemplatePadding: =1
+                    TemplateSize: =75
+                    Visible: =If('RU Body'.AllItemsCount = 0 ,false, true)
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Title9_2 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =22
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            =ThisItem.Ticket_ID&": "& ThisItem.Subject
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width-Rectangle5_2.Width-2
+                        X: =4
+                        ZIndex: =1
+
+                    Rectangle5_2 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(0, 89, 178, 1)
+                        Height: =Parent.TemplateHeight/2
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =3
+
+                    Separator8_2 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =3
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =5
+
+                    NextArrow1_6 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery7_2.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            
+                            EditForm(TicketDataEditForm_1);
+                            Navigate('Ticket Information 2');
+                        PaddingBottom: =15.33
+                        PaddingLeft: =15.33
+                        PaddingRight: =9.26
+                        PaddingTop: =9.26
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =Parent.TemplateWidth
+                        Y: =0.00
+                        ZIndex: =6
+
+                    TextCanvas9_1 As Text:
+                        AutoHeight: =true
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =32
+                        Text: |-
+                            ="Modified:" & ThisItem.LastModified
+                        Width: =194
+                        X: =4
+                        Y: =22
+                        ZIndex: =7
+
+        "'QO, F/L, SR' As groupContainer.horizontalAutoLayoutContainer":
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutMinHeight: =If(Dashboard.Size < 4,400,200)
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            SidebarContainer3_4 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =4
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =400
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Visible: |
+                    =If(
+                        UserAdmin = 1,
+                        true ,
+                        false
+                    )
+                ZIndex: =2
+
+                Container4_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label18_24.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    Label18_24 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =30
+                        PaddingBottom: =7.67
+                        PaddingLeft: =7.67
+                        PaddingRight: =4.63
+                        PaddingTop: =4.63
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
+                        Text: |
+                            =If(
+                                UserAdmin = 1,
+                                "Quick Order" ,
+                                "Quick Order"
+                            )
+                        Width: =Parent.Width - Icon1_5.Width - Icon1_11.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    Icon1_5 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_24.Fill
+                        Height: =Label18_24.Height
+                        Icon: =Icon.Save
+                        OnSelect: |
+                            =ClearCollect(
+                                QuickOrderCollectionSend,
+                                {
+                                    SiteLabel: DropdownCanvas1_1.Selected.Label,
+                                    // Ensuring this is a string
+                            OrderPersonsName: UserConfig,
+                                    // Default value if UserEmail is null
+                            SiteAddress: DropdownCanvas1_1.Selected.streetl,
+                                    // Default value if Street is null
+                            OrderType: DropdownCanvas1.Selected.Value,
+                                    Items: [
+                                        {
+                                            itemNumber: TextInputCanvas2.Value,
+                                            description: TextInputCanvas2_1.Value,
+                                            quantity: TextInputCanvas2_2.Value
+                                        }
+                                    ]
+                                }
+                            );
+                            Forms_QuickOrder_Link.Run(JSON(QuickOrderCollectionSend));
+                        ZIndex: =3
+
+                    Icon1_11 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_24.Fill
+                        Height: =Label18_24.Height
+                        Icon: =Icon.Cancel
+                        OnSelect: =ResetForm(QuickOrderForm1)
+                        ZIndex: =4
+
+                QuickOrderForm1 As form:
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DataSource: =Tickets_Master
+                    DefaultMode: =FormMode.New
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =Parent.Width - 20
+                    ZIndex: =2
+
+                    OrderType As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =35
+                        Width: =Parent.Width
+                        WidthFit: =true
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                        DropdownCanvas1 As Dropdown.pcfdataset:
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            Items: =["Fuel", "IT", "General"]
+                            Width: =Parent.Width *60%
+                            X: =193
+                            Y: =0
+                            ZIndex: =1
+
+                        Label9 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =31
+                            Size: =13
+                            Text: |-
+                                ="Order Type:"
+                            Width: =Parent.Width *40%
+                            ZIndex: =2
+
+                    OrderSite As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =35
+                        Width: =Parent.Width
+                        WidthFit: =true
+                        X: =0
+                        Y: =1
+                        ZIndex: =1
+
+                        DropdownCanvas1_1 As Dropdown.pcfdataset:
+                            DefaultSelectedItems: =LookUp(SitesLocalVariable,ID=UserSite)
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            Items: =SitesLocalVariable
+                            Width: =Parent.Width *60%
+                            X: =192
+                            Y: =8
+                            ZIndex: =1
+
+                            Label10 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Label"
+                                FieldName: ="Label"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =12
+
+                            streetl1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="streetl"
+                                FieldName: ="streetl"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =2
+                                ZIndex: =13
+
+                        Label9_1 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =31
+                            Size: =13
+                            Text: |-
+                                ="Order Site:"
+                            Width: =Parent.Width *40%
+                            Y: =9
+                            ZIndex: =2
+
+                    PartsItemNumber As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =43
+                        Width: =173
+                        WidthFit: =true
+                        X: =0
+                        Y: =2
+                        ZIndex: =1
+
+                        "TextInputCanvas2 As 'Text input'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            Width: =Parent.Width *60%
+                            X: =194
+                            Y: =11
+                            ZIndex: =2
+
+                        Label9_2 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =28
+                            Size: =13
+                            Text: |-
+                                ="Part #: "
+                            Width: =194
+                            Y: =11
+                            ZIndex: =4
+
+                    PartsItemDesc As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =78
+                        Width: =519
+                        WidthFit: =true
+                        X: =0
+                        Y: =3
+                        ZIndex: =1
+
+                        "TextInputCanvas2_1 As 'Text input'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =74
+                            Mode: ='TextInputCanvas.Mode'.Multiline
+                            Width: =Parent.Width *60%
+                            X: =194
+                            Y: =5
+                            ZIndex: =1
+
+                        Label9_3 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =28
+                            Size: =13
+                            Text: |-
+                                ="Description: "
+                            Width: =194
+                            X: =5
+                            Y: =5
+                            ZIndex: =2
+
+                    PartsItemQty As typedDataCard.blankCard:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =32
+                        Width: =Parent.Width
+                        WidthFit: =true
+                        X: =0
+                        Y: =4
+                        ZIndex: =1
+
+                        "TextInputCanvas2_2 As 'Text input'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            Type: ='TextInputCanvas.Type'.Text
+                            Width: =120
+                            X: =194
+                            Y: =8
+                            ZIndex: =1
+
+                        Label9_4 As label:
+                            BorderColor: =RGBA(0, 89, 178, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Height: =28
+                            Size: =13
+                            Text: |-
+                                ="Qty:"
+                            Width: =194
+                            Y: =12
+                            ZIndex: =2
+
+            SidebarContainer3_3 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =4
+
+                Label18_5 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Text: ="Forms/Links"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =1
+
+                LinkCanvas1_1 As Link:
+                    AccessibleLabel: ="Operations Survey"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Operations Survey"
+                    URL: |-
+                        ="https://forms.office.com/r/N9SsYNxxGH"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                LinkCanvas1_2 As Link:
+                    AccessibleLabel: ="Order Form"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Order Form"
+                    URL: |-
+                        ="https://forms.heinzcorps.com:8091/ccfsorderform.html"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =5
+
+                LinkCanvas1_3 As Link:
+                    AccessibleLabel: ="Operations Survey"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Store Supplies - Supplier Information"
+                    URL: |-
+                        ="https://heinzinc.sharepoint.com/:x:/s/Tickets/EcWnYEYqr3FEpF15i4b7LYIB9r1T_JC_NZOP5qUL9K5rlQ?e=8NohbV"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =6
+
+                LinkCanvas1_4 As Link:
+                    AccessibleLabel: ="Operations Survey"
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    Text: ="Fuel Supplies - Inventory Tracking"
+                    URL: |-
+                        ="https://heinzinc.sharepoint.com/:x:/s/1021SummitTruckShop/EWdo0yxjQZxOnA5NuxtfkfgBU5IH_i9NjMJBctPW4CHPtg?e=61gHY4"
+                    Width: =Parent.Width
+                    X: =0
+                    Y: =0
+                    ZIndex: =7
+
+            SidebarContainer3_5 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =0
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =5
+
+                Container4_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =Label18_26.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    Label18_26 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(204, 214, 224, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(102, 133, 163, 1)
+                        Height: =30
+                        PaddingBottom: =7.67
+                        PaddingLeft: =7.67
+                        PaddingRight: =4.63
+                        PaddingTop: =4.63
+                        Size: = Min('Asset Dashboard'.Width / 40,18)
+                        Text: |
+                            =If(
+                                UserAdmin = 1,
+                                "Service Requests" ,
+                                "Service Requests"
+                            )
+                        Width: =Parent.Width - Icon1_3.Width
+                        X: =0.00
+                        Y: =0.00
+                        ZIndex: =1
+
+                    Icon1_3 As icon.Reload:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Fill: =Label18_26.Fill
+                        Height: =Label18_26.Height
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(ServiceRequestMaster);
+                        ZIndex: =2
+
+                "Gallery5_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    DelayItemLoading: =true
+                    Fill: =RGBA(204, 214, 224, 1)
+                    Height: =Parent.Height-Label18_27.Height
+                    Items: |+
+                        =
+                        If(UserAdmin = 0, 
+                            Filter(ServiceRequestMaster, SiteID = Int(UserSite) And (ServiceCompleteDate = Blank())), 
+                            Filter(ServiceRequestMaster, ServiceCompleteDate = Blank())
+                        )
+                        
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =60
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Title6_2 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(153, 173, 194, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(Vendors,ID=ThisItem.VendorID).Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth 
+                        ZIndex: =1
+
+                    Subtitle6_2 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.ServiceRequestDate
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title6_2.Width
+                        X: =Title6_2.X
+                        Y: =Title6_2.Y + Title6_2.Height
+                        ZIndex: =2
+
+                    Separator9_2 As rectangle:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =4
+
+                    Icon5 As icon.ArrowRight:
+                        BorderColor: =RGBA(0, 89, 178, 1)
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =Parent.TemplateHeight
+                        Icon: =Icon.ArrowRight
+                        OnSelect: |-
+                            =Set(
+                                SRFormDATA,
+                                Gallery5_1.Selected
+                            );
+                            Set(
+                                SRFormPopUpVisble,
+                                true
+                            );
+                            EditForm(ServiceRequestForm);
+                            
+                            Set(
+                                varTicketID,
+                                First(
+                                    Filter(
+                                        Tickets_Master,
+                                        Ticket_ID = Int(Gallery5_1.Selected.Ticket_ID)
+                                    )
+                                )
+                            );
+                            EditForm(TicketDataEditForm);
+                            Navigate('Ticket Information (X)');
+                            EditForm(ServiceRequestForm);
+                        Width: =Parent.Width
+                        ZIndex: =5
+
+                Label18_27 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 89, 178, 1)
+                    Color: =RGBA(204, 214, 224, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(102, 133, 163, 1)
+                    Height: =30
+                    PaddingBottom: =7.67
+                    PaddingLeft: =7.67
+                    PaddingRight: =4.63
+                    PaddingTop: =4.63
+                    Size: =18.46
+                    Text: ="Scheduled Services"
+                    Width: =Parent.Width
+                    X: =0.00
+                    Y: =0.00
+                    ZIndex: =3
+
+    UserRegisterationPopUp As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(214, 221, 224, 0.91)
+        Height: =Parent.Height/1.5
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =!UserRegistered
+        Width: =Parent.Width /1.5
+        X: =If(!UserRegistered, (Parent.Width - Self.Width) / 2, 0)
+        Y: =If(!UserRegistered, (Parent.Height - Self.Height) / 2, 0)
+        ZIndex: =2
+
+        Label18_3 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(204, 214, 224, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(102, 133, 163, 1)
+            Height: =30
+            PaddingBottom: =7.67
+            PaddingLeft: =7.67
+            PaddingRight: =4.63
+            PaddingTop: =4.63
+            Size: =18.46
+            Text: ="First Time User Registration"
+            Width: =Parent.Width
+            X: =0.00
+            ZIndex: =2
+
+        TextCanvas15 As Text:
+            AutoHeight: =false
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =true
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =32
+            Size: =24
+            Text: ="Hi " & User().FullName &"!" & " Quick Question"
+            Width: =Parent.Width/1.
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =30
+            ZIndex: =3
+
+        UserRegForm As form.PowerApps_CoreControls_Form:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            DataSource: =User_Configuration_1
+            DefaultMode: =FormMode.New
+            Height: =Parent.Height - TextCanvas15.Height - Label18_3.Height
+            UseFluentV9Cards: =true
+            Width: =Parent.Width
+            Y: =60
+            ZIndex: =4
+
+            DefaultSite_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="DefaultSite"
+                Default: =ThisItem.DefaultSite
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@User_Configuration_1],DataSourceInfo.DisplayName,"DefaultSite")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@User_Configuration_1], DataSourceInfo.MaxLength, "DefaultSite")
+                Required: =false
+                Update: =DataCardValue1.Selected.ID
+                Width: =350
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =22
+                    Text: ="Where is your Home Site?"
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                ErrorMessage1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue1.Y + DataCardValue1.Height
+                    ZIndex: =3
+
+                StarVisible1 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey1.Y
+                    ZIndex: =4
+
+                DataCardValue1 As Combobox.pcfdataset:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    Items: =SitesLocalVariable
+                    OnChange: |-
+                        =Patch(
+                            User_Configuration_1,
+                            Defaults(User_Configuration_1),
+                            {
+                                UserEmail: User().Email,
+                                Admin: 0,
+                                DefaultSite: DataCardValue1.Selected.ID,
+                                GetNewTicketNotifications: 0,
+                                GetNewHighTicketNotifications: 0
+                            }
+                        );
+                        Reset(DataCardValue1);
+                        Set(UserRegistered,true);
+                    Width: =320
+                    X: =24
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 4
+                    ZIndex: =5
+
+                    Label2 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Label"
+                        FieldName: ="Label"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =7
+
+                    ID1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ID"
+                        FieldName: ="ID"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =8
+
