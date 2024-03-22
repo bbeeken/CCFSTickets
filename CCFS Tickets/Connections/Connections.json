@@ -86,7 +86,7 @@
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "appVer": "3.24031.27",
-        "modifiedOn": "2024-03-22 18:36:37",
+        "modifiedOn": "2024-03-22 23:13:36",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
