@@ -10393,6 +10393,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Height"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.Height",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Height",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.LayoutMinHeight"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.LayoutMinHeight",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "LayoutMinHeight",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Ticket Updates Container'.MessageContainer_1.Label18_21.Size"
                 }
               ],
@@ -10423,6 +10483,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.LayoutMinHeight"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.LayoutMinHeight",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "LayoutMinHeight",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Label18_33.Size"
                 }
               ],
@@ -10436,6 +10526,36 @@
                 "member": "Size",
                 "module": "Ticket Information 2",
                 "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Attachments Container'.Label18_33"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.LayoutMinHeight"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'.LayoutMinHeight",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "LayoutMinHeight",
+                "module": "Ticket Information 2",
+                "type": "'Ticket Information 2'.ScreenContainer2_1.Container1.'Service Request Container'"
               }
             }
           ],

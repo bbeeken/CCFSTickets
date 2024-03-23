@@ -2814,7 +2814,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": " Set(\r\n        TicketID,\r\n        Gallery8.Selected\r\n    );\r\nEditForm(TicketDataEditForm);Navigate(TicketDataScreen);",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -5297,7 +5297,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "ResetForm(TicketDataEditForm);\nNewForm(TicketDataEditForm);\n\nNavigate('Ticket Information (X)');",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"

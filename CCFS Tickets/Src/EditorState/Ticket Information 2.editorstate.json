@@ -1146,7 +1146,7 @@
           "ControlPropertyState": {
             "AFDDataSourceName": "",
             "AutoRuleBindingEnabled": false,
-            "AutoRuleBindingString": "If(\n    IsEmpty(Gallery10_4.AllItems),\n    150,\n    Parent.Height / 4\n)",
+            "AutoRuleBindingString": "",
             "InvariantPropertyName": "LayoutMinHeight",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
@@ -2836,7 +2836,7 @@
         {
           "Category": "Design",
           "PropertyName": "Height",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -41353,7 +41353,7 @@
           "ControlPropertyState": {
             "AFDDataSourceName": "",
             "AutoRuleBindingEnabled": false,
-            "AutoRuleBindingString": "Parent.Height/5",
+            "AutoRuleBindingString": "",
             "InvariantPropertyName": "LayoutMinHeight",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
@@ -54647,7 +54647,7 @@
           "ControlPropertyState": {
             "AFDDataSourceName": "",
             "AutoRuleBindingEnabled": false,
-            "AutoRuleBindingString": "If(\n    IsEmpty(Gallery10_3.AllItems),\n    150,\n    Parent.Height / 4\n)",
+            "AutoRuleBindingString": "",
             "InvariantPropertyName": "LayoutMinHeight",
             "IsLockable": false,
             "NameMapSourceSchema": "?"

@@ -354,10 +354,10 @@
                     LayoutMinHeight: =32
                     LayoutMinWidth: =96
                     OnSelect: |-
-                        =ResetForm(TicketDataEditForm_1);
-                        NewForm(TicketDataEditForm_1);
+                        =ResetForm(TicketDataEditForm_2);
+                        NewForm(TicketDataEditForm_2);
                         
-                        Navigate('Ticket Information 2');
+                        Navigate('Ticket Information 2_1');
                     Text: ="New Ticket"
                     Width: =Parent.Width/3
                     X: =0
@@ -678,8 +678,8 @@
                                     )
                                 )
                             );
-                            EditForm(TicketDataEditForm_1);
-                            Navigate('Ticket Information 2');
+                            EditForm(TicketDataEditForm_2);
+                            Navigate('Ticket Information 2_1');
                         Width: =Parent.TemplateWidth - Rectangle6.Width
                         ZIndex: =7
 

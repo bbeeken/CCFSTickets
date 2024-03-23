@@ -3107,7 +3107,7 @@
         Container1 As groupContainer.horizontalAutoLayoutContainer:
             DropShadow: =DropShadow.Light
             FillPortions: =0
-            Height: ='Ticket Information 2'.Height -'Edit Ticket Container'.Height
+            Height: ='Ticket Information 2_1'.Height -'Edit Ticket Container'.Height
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
@@ -3129,7 +3129,7 @@
                             minHeight: 100,
                             // Minimum height to ensure usability
                     maxHeight: Min(
-                                'Ticket Information 2'.Height * 0.8,
+                                'Ticket Information 2_1'.Height * 0.8,
                                 600
                             ),
                             // Maximum height, the lesser of 80% screen height or 600 pixels
@@ -3348,7 +3348,7 @@
                             minHeight: 100,
                             // Minimum height to ensure usability
                     maxHeight: Min(
-                                'Ticket Information 2'.Height * 0.8,
+                                'Ticket Information 2_1'.Height * 0.8,
                                 600
                             ),
                             // Maximum height, the lesser of 80% screen height or 600 pixels
@@ -3551,7 +3551,7 @@
                             minHeight: 150,
                             // Minimum height to ensure usability
                     maxHeight: Min(
-                                'Ticket Information 2'.Height * 0.8,
+                                'Ticket Information 2_1'.Height * 0.8,
                                 600
                             ),
                             // Maximum height, the lesser of 80% screen height or 600 pixels
