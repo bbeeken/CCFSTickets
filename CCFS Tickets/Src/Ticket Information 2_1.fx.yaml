@@ -36,6 +36,7 @@
         LayoutMode: =LayoutMode.Auto
         LayoutOverflowX: =LayoutOverflow.Scroll
         LayoutOverflowY: =LayoutOverflow.Scroll
+        LayoutWrap: =true
         PaddingLeft: =16
         PaddingRight: =16
         PaddingTop: =16
@@ -245,7 +246,7 @@
                     DataSource: =Tickets_Master
                     Fill: =RGBA(255, 255, 255, 1)
                     FillPortions: =0
-                    Height: =400
+                    Height: =390
                     Item: =varTicketID
                     LayoutMinHeight: =100
                     LayoutMinWidth: =Parent.Width
@@ -275,8 +276,8 @@
                             LayoutGap: =5
                             LayoutMode: =LayoutMode.Auto
                             LayoutWrap: =true
-                            PaddingLeft: =2
-                            PaddingRight: =2
+                            PaddingLeft: =5
+                            PaddingRight: =5
                             RadiusBottomLeft: =4
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
@@ -401,7 +402,7 @@
                                 FontStrikethrough: =false
                                 FontUnderline: =false
                                 FontWeight: =""
-                                Height: =24
+                                Height: =20
                                 LayoutMinHeight: =32
                                 OnSelect: =ResetForm(TicketDataEditForm_2)
                                 Text: ="Reset Form"
@@ -1411,7 +1412,7 @@
                         DisplayMode: =Parent.DisplayMode
                         DisplayName: =DataSourceInfo([@Tickets_Master],DataSourceInfo.DisplayName,"Ticket_Body")
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =189
+                        Height: =150
                         MaxLength: =DataSourceInfo([@Tickets_Master], DataSourceInfo.MaxLength, "Ticket_Body")
                         Required: =false
                         Update: =DataCardValue35_2.Value
@@ -3070,6 +3071,7 @@
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowY: =LayoutOverflow.Scroll
                     LayoutWrap: =true
                     RadiusBottomLeft: =4
                     RadiusBottomRight: =4
