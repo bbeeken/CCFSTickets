@@ -11051,36 +11051,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Ticket Information 2_1'.ScreenContainer2_2.'Edit Ticket Container_1'.MainContainer1_2.Label18_30.Size"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Information 2_1'.ScreenContainer2_2.'Edit Ticket Container_1'.MainContainer1_2.Label18_30.Size",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Size",
-                "module": "Ticket Information 2_1",
-                "type": "'Ticket Information 2_1'.ScreenContainer2_2.'Edit Ticket Container_1'.MainContainer1_2.Label18_30"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Ticket Information 2_1'.MessageEntry_5.Label18_41.Size"
                 }
               ],

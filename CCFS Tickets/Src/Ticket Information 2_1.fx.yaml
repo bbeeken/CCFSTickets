@@ -34,6 +34,8 @@
         LayoutDirection: =LayoutDirection.Vertical
         LayoutGap: =8
         LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
         PaddingLeft: =16
         PaddingRight: =16
         PaddingTop: =16
@@ -221,12 +223,12 @@
                     Color: =RGBA(204, 214, 224, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(102, 133, 163, 1)
-                    Height: =30
+                    Height: =15
                     PaddingBottom: =7.67
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =7.67
-                    Size: = Min('Asset Dashboard'.Width / 40,18)
+                    Size: =12
                     Text: |-
                         =If(
                             TicketDataEditForm_2.Mode = 1,
@@ -399,7 +401,7 @@
                                 FontStrikethrough: =false
                                 FontUnderline: =false
                                 FontWeight: =""
-                                Height: =32
+                                Height: =24
                                 LayoutMinHeight: =32
                                 OnSelect: =ResetForm(TicketDataEditForm_2)
                                 Text: ="Reset Form"
@@ -3109,10 +3111,6 @@
                             )
                         LayoutMinWidth: =Parent.Width/2
                         LayoutMode: =LayoutMode.Auto
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
                         Visible: =TicketDataEditForm_2.Mode <> 1
                         Width: =Parent.Width/2
                         ZIndex: =1
@@ -3140,7 +3138,8 @@
                                 Color: =RGBA(204, 214, 224, 1)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 Fill: =RGBA(102, 133, 163, 1)
-                                Height: =18
+                                FontWeight: =FontWeight.Bold
+                                Height: =12
                                 PaddingBottom: =7.67
                                 PaddingLeft: =7.67
                                 PaddingRight: =4.63
@@ -3215,7 +3214,6 @@
                                     PaddingBottom: =0
                                     PaddingRight: =0
                                     PaddingTop: =0
-                                    Size: =12
                                     Text: =ThisItem.SenderUserName
                                     VerticalAlign: =VerticalAlign.Top
                                     Width: =217
@@ -3240,18 +3238,6 @@
                                     Y: =14
                                     ZIndex: =4
 
-                                divider_9 As icon.HorizontalLine:
-                                    BorderColor: =RGBA(0, 89, 178, 1)
-                                    Color: =RGBA(0, 89, 178, 1)
-                                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                                    DisabledColor: =RGBA(244, 244, 244, 1)
-                                    Height: =5
-                                    Icon: =Icon.HorizontalLine
-                                    OnSelect: =Select(Parent)
-                                    Width: =Parent.TemplateWidth
-                                    Y: =78
-                                    ZIndex: =5
-
                                 Title12_18 As label:
                                     Color: =RGBA(50, 49, 48, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -3265,8 +3251,20 @@
                                     Text: =ThisItem.DateTimeStamp
                                     VerticalAlign: =VerticalAlign.Top
                                     Width: =Parent.TemplateWidth /2
-                                    X: =164
+                                    X: =404
                                     ZIndex: =6
+
+                                Icon6 As icon.HorizontalLine:
+                                    BorderColor: =RGBA(0, 89, 178, 1)
+                                    Color: =RGBA(0, 0, 0, 0)
+                                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                    DisabledColor: =RGBA(244, 244, 244, 1)
+                                    Fill: =RGBA(214, 221, 224, 1)
+                                    Height: =2
+                                    Icon: =Icon.HorizontalLine
+                                    Width: =1325
+                                    X: =1
+                                    ZIndex: =7
 
                             TextCanvas2_10 As Text:
                                 Align: ='TextCanvas.Align'.Center
@@ -3293,9 +3291,9 @@
                         Fill: =RGBA(255, 255, 255, 1)
                         Height: |-
                             =If(
-                                IsEmpty(Gallery10_10.AllItems),
-                               100,
-                                 Parent.Height/3
+                                IsEmpty(Gallery5_7.AllItems),
+                                'Attachments Container_3'.Height,
+                              150
                             )
                         LayoutDirection: =LayoutDirection.Vertical
                         LayoutMinHeight: |-
@@ -3328,10 +3326,6 @@
                         LayoutMinWidth: =Parent.Width/2
                         LayoutMode: =LayoutMode.Auto
                         LayoutOverflowY: =LayoutOverflow.Scroll
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
                         Visible: =TicketDataEditForm_2.Mode <> 1
                         Width: =Parent.Width/2
                         ZIndex: =2
@@ -3342,7 +3336,7 @@
                             Color: =RGBA(204, 214, 224, 1)
                             DisabledColor: =RGBA(166, 166, 166, 1)
                             Fill: =RGBA(102, 133, 163, 1)
-                            Height: =18
+                            Height: =12
                             PaddingBottom: =7.67
                             PaddingLeft: =7.67
                             PaddingRight: =4.63
@@ -3462,6 +3456,12 @@
                         AlignInContainer: =AlignInContainer.SetByContainer
                         DropShadow: =DropShadow.Light
                         Fill: =RGBA(255, 255, 255, 1)
+                        Height: |-
+                            =If(
+                                IsEmpty(Gallery10_10.AllItems),
+                                50,
+                                150
+                            )
                         LayoutDirection: =LayoutDirection.Vertical
                         LayoutMinHeight: |-
                             =With(
@@ -3493,10 +3493,6 @@
                         LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
                         LayoutOverflowY: =LayoutOverflow.Scroll
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
                         Visible: =TicketDataEditForm_2.Mode <> 1
                         Width: =Parent.Width/2
                         ZIndex: =3
@@ -3507,7 +3503,7 @@
                             Color: =RGBA(204, 214, 224, 1)
                             DisabledColor: =RGBA(166, 166, 166, 1)
                             Fill: =RGBA(102, 133, 163, 1)
-                            Height: =18
+                            Height: =12
                             PaddingBottom: =7.67
                             PaddingLeft: =7.67
                             PaddingRight: =4.63
@@ -3650,9 +3646,10 @@
                                         DocumentPlaceHolder,// Replace with the actual reference to your temporary image
                                         ThisItem.WebURl// Replace with the actual field name if different
                                     )
+                                ImagePosition: =ImagePosition.Stretch
                                 OnSelect: |
                                     =Launch(ThisItem.WebURl)
-                                Width: =142
+                                Width: =150
                                 Y: =16
                                 ZIndex: =4
 
@@ -5138,7 +5135,7 @@
                 ImagePosition: =ImagePosition.Fill
                 OnSelect: =
                 Width: =Parent.Width
-                Y: =Label18_42.Y + Label18_42.Height +5
+                Y: =35
                 ZIndex: =5
 
             ButtonCanvas2_6 As addMedia:
@@ -5179,6 +5176,6 @@
                 Size: =16
                 UseMobileCamera: =true
                 Width: =Parent.Width
-                Y: =Label18_42.Y + Label18_42.Height +5
+                Y: =35
                 ZIndex: =6
 
