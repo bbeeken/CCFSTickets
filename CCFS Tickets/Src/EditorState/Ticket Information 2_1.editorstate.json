@@ -52713,7 +52713,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Ticket Information 2_1",
-      "OptimizeForDevices": "On",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
