@@ -605,17 +605,8 @@
                                 Asset_Category_ID: Int(Asset_Category_ID_MS_DataCard1.Update),
                                 PDIItemID: PDIItemID_DataCard1.Update,
                                 LastModifiedBy: User().FullName,
-                                LastModifiedDate: Now(),
-                                CreatedBy: If(
-                                    IsNewAsset,
-                                    User().FullName,
-                                    LastCreatedBy_DataCard1.Default
-                                ),
-                                Version: If(
-                                    IsNewAsset,
-                                    1,
-                                    Version_DataCard2.Default + 1
-                                )
+                                LastModifiedDate: Now()
+                              
                                 // ... include other data cards as needed
                             }
                         );
