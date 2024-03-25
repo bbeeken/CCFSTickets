@@ -1,4 +1,4 @@
-"'Ticket Information 2' As screen.'autoLayout_Sidebar_ver1.0'":
+"'Ticket Information' As screen.'autoLayout_Sidebar_ver1.0'":
     Fill: =RGBA(232, 232, 232, 1)
     OnVisible: |
         =Set(
@@ -3092,7 +3092,7 @@
                                     minHeight: 60,
                                     // Minimum height to ensure usability
                             maxHeight: Min(
-                                        'Ticket Information 2'.Height * 0.8,
+                                        'Ticket Information'.Height * 0.8,
                                         600
                                     ),
                                     // Maximum height, the lesser of 80% screen height or 600 pixels
@@ -3306,7 +3306,7 @@
                                     minHeight: 60,
                                     // Minimum height to ensure usability
                             maxHeight: Min(
-                                        'Ticket Information 2'.Height * 0.8,
+                                        'Ticket Information'.Height * 0.8,
                                         600
                                     ),
                                     // Maximum height, the lesser of 80% screen height or 600 pixels
@@ -3474,7 +3474,7 @@
                                     minHeight: 60,
                                     // Minimum height to ensure usability
                             maxHeight: Min(
-                                        'Ticket Information 2'.Height * 0.8,
+                                        'Ticket Information'.Height * 0.8,
                                         600
                                     ),
                                     // Maximum height, the lesser of 80% screen height or 600 pixels

@@ -346,7 +346,7 @@
                         =ResetForm(TicketDataEditForm_2);
                         NewForm(TicketDataEditForm_2);
                         
-                        Navigate('Ticket Information 2');
+                        Navigate('Ticket Information');
                     Text: ="New Ticket"
                     Width: =Parent.Width/3
                     X: =0
@@ -668,7 +668,7 @@
                                 )
                             );
                             EditForm(TicketDataEditForm_2);
-                            Navigate('Ticket Information 2');
+                            Navigate('Ticket Information');
                         Width: =Parent.TemplateWidth - Rectangle6.Width
                         ZIndex: =7
 

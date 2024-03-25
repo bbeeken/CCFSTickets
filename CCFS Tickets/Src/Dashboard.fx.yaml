@@ -268,7 +268,7 @@
                             );
                             
                             EditForm(TicketDataEditForm_2);
-                            Navigate('Ticket Information 2');
+                            Navigate('Ticket Information');
                         PaddingBottom: =15.33
                         PaddingLeft: =15.33
                         PaddingRight: =9.26
@@ -363,7 +363,7 @@
                         Height: ='OT Label'.Height
                         Icon: =Icon.DocumentWithContent
                         OnSelect: |-
-                            =Navigate('Ticket Information 2');
+                            =Navigate('Ticket Information');
                             NewForm(TicketDataEditForm_2);
                         ZIndex: =2
 
@@ -505,7 +505,7 @@
                                 )
                             );
                             EditForm(TicketDataEditForm_2);
-                            Navigate('Ticket Information 2');
+                            Navigate('Ticket Information');
                         PaddingBottom: =15.33
                         PaddingLeft: =15.33
                         PaddingRight: =9.26
@@ -653,7 +653,7 @@
                             );
                             
                             EditForm(TicketDataEditForm_2);
-                            Navigate('Ticket Information 2');
+                            Navigate('Ticket Information');
                         PaddingBottom: =15.33
                         PaddingLeft: =15.33
                         PaddingRight: =9.26
