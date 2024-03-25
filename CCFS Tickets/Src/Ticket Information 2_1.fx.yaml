@@ -231,7 +231,7 @@
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =7.67
-                    Size: =12
+                    Size: =18
                     Text: |-
                         =If(
                             TicketDataEditForm_2.Mode = 1,
@@ -3148,7 +3148,7 @@
                                 PaddingLeft: =7.67
                                 PaddingRight: =4.63
                                 PaddingTop: =4.63
-                                Size: =10
+                                Size: =18
                                 Text: ="Ticket Updates"
                                 Width: =Parent.Width
                                 X: =0.00
@@ -3346,7 +3346,7 @@
                             PaddingLeft: =7.67
                             PaddingRight: =4.63
                             PaddingTop: =4.63
-                            Size: =10
+                            Size: =18
                             Text: ="Service Requests"
                             Width: =Parent.Width
                             X: =0.00
@@ -3514,7 +3514,7 @@
                             PaddingLeft: =7.67
                             PaddingRight: =4.63
                             PaddingTop: =4.63
-                            Size: =10
+                            Size: =18
                             Text: ="Attachments"
                             Width: =Parent.Width
                             X: =0.00

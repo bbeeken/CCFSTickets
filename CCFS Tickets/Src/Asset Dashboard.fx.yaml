@@ -190,7 +190,7 @@
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =4.63
-                    Size: =18.46
+                    Size: =18
                     Text: ="Filter"
                     Width: =Parent.Width
                     X: =0.00
@@ -360,7 +360,7 @@
                     PaddingLeft: =7.67
                     PaddingRight: =4.63
                     PaddingTop: =4.63
-                    Size: =18.46
+                    Size: =18
                     Text: =ComboboxCanvas_Assets_Sites.Selected.Label & " Assets"
                     Width: =Parent.Width
                     X: =0.00
