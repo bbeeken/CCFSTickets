@@ -3672,7 +3672,8 @@
         RadiusTopRight: =4
         Visible: =SRFormPopUpVisble
         Width: =App.Width * 0.85
-        Y: =(App.Height- ServiceRequestFormPopUp_2.Height) / 2
+        X: =102
+        Y: =58
         ZIndex: =3
 
         Label18_40 As label:
