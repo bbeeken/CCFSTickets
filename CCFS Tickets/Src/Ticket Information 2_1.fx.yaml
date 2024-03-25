@@ -48,9 +48,10 @@
         ZIndex: =1
 
         "'Navigation and Title/Header Container_1' As groupContainer.horizontalAutoLayoutContainer":
+            ContentLanguage: =Icon1_17.Height+Icon3_6.height
             DropShadow: =DropShadow.Light
             FillPortions: =0
-            Height: =60
+            Height: =58
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto

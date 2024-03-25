@@ -79,7 +79,7 @@
                 DropdownCanvas1_6 As Dropdown.pcfdataset:
                     BasePaletteColor: =RGBA(214, 221, 224, 1)
                     DisplayMode: =DisplayMode.Edit
-                    Height: =32
+                    Height: =28
                     Items: =ScreenNavigationDropDownOptions
                     LayoutMinHeight: =32
                     LayoutMinWidth: =150

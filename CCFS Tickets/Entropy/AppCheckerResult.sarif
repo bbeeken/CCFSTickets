@@ -525,6 +525,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Ticket Information 2_1'.ScreenContainer2_2.'Navigation and Title/Header Container_1'.ContentLanguage"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Ticket Information 2_1'.ScreenContainer2_2.'Navigation and Title/Header Container_1'.ContentLanguage",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 23,
+                  "snippet": {
+                    "text": ".height"
+                  }
+                }
+              },
+              "properties": {
+                "member": "ContentLanguage",
+                "module": "Ticket Information 2_1",
+                "type": "'Ticket Information 2_1'.ScreenContainer2_2.'Navigation and Title/Header Container_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "height"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Ticket Information 2_1'.ServiceRequestFormPopUp_2.ServiceRequestForm_2.Parts_Serviced_DataCard1_2.VendorComboServiceRquestForm1_5.DefaultSelectedItems"
                 }
               ],
@@ -829,36 +869,6 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Ticket Dashboard'.ScreenContainer5.Container1_6.Timer1.AutoStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Ticket Dashboard'.ScreenContainer5.Container1_6.Timer1.AutoStart",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AutoStart",
-                "module": "Ticket Dashboard",
-                "type": "'Ticket Dashboard'.ScreenContainer5.Container1_6.Timer1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AutostartShouldBeOff",
-          "ruleIndex": 6
         },
         {
           "locations": [
@@ -1188,7 +1198,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 7
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -2058,7 +2068,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 7
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -3085,49 +3095,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7.AccessibleLabel"
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon8.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Asset Dashboard",
-                "type": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7.TabIndex",
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon8.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Asset Dashboard",
-                "type": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon1_7"
+                "type": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon8"
               }
             }
           ],
@@ -3145,19 +3125,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon3_5.AccessibleLabel"
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon8.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon3_5.AccessibleLabel",
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon8.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Asset Dashboard",
-                "type": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon3_5"
+                "type": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon8"
               }
             }
           ],
@@ -3175,19 +3155,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon3_5.TabIndex"
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon7.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon3_5.TabIndex",
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon7.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Asset Dashboard",
-                "type": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container3_1.Icon3_5"
+                "type": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon7"
               }
             }
           ],
@@ -3205,19 +3185,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container2_2.DropdownCanvas1_8.AccessibleLabel"
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon7.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container2_2.DropdownCanvas1_8.AccessibleLabel",
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon7.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Asset Dashboard",
-                "type": "'Asset Dashboard'.ScreenContainer5_1.BottomContainer3_1.Container1_7.Container2_2.DropdownCanvas1_8"
+                "type": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container5.Icon7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container2_2.DropdownCanvas1_8.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container2_2.DropdownCanvas1_8.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Asset Dashboard",
+                "type": "'Asset Dashboard'.ScreenContainer5_1.'Navigation AD'.Container2_2.DropdownCanvas1_8"
               }
             }
           ],
@@ -8448,7 +8458,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 8
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -8478,7 +8488,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 8
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -8508,7 +8518,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 8
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -8538,7 +8548,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8568,7 +8578,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8598,7 +8608,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8628,7 +8638,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8658,7 +8668,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8688,7 +8698,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8718,7 +8728,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8748,7 +8758,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8777,7 +8787,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 10
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -8807,7 +8817,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8837,7 +8847,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8866,7 +8876,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 10
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -8896,7 +8906,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8926,7 +8936,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8956,7 +8966,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -8986,7 +8996,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -9016,7 +9026,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -9046,7 +9056,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -9076,7 +9086,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -9106,7 +9116,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -9136,7 +9146,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -9166,7 +9176,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
+          "ruleIndex": 8
         }
       ],
       "tool": {
@@ -9270,23 +9280,6 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
-              }
-            },
-            {
-              "id": "acc-AutostartShouldBeOff",
-              "messageStrings": {
-                "issue": {
-                  "text": "Turn off autostart"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Set autostart for video and audio to False."
-                ],
-                "level": "Medium",
-                "primaryCategory": "accessibility",
-                "whyFix": "Autostart of video and audio files can be distracting. Let users choose whether to play or not."
               }
             },
             {
