@@ -15,7 +15,7 @@
     "AppPreviewFlagsMap": {
       "aibuilderserviceenrollment": false,
       "allowmultiplescreensincanvaspages": false,
-      "appinsightserrortracing": true,
+      "appinsightserrortracing": false,
       "appinstrumentationcorrelationtracing": true,
       "autocreateenvironmentvariables": true,
       "behaviorpropertyui": true,
@@ -23,7 +23,7 @@
       "cdsdataformatting": false,
       "classiccontrols": false,
       "consistentreturnschemafortabularfunctions": true,
-      "copyandmerge": true,
+      "copyandmerge": false,
       "dataflowanalysisenabled": true,
       "datatablev2control": true,
       "dataverseactionsenabled": true,
