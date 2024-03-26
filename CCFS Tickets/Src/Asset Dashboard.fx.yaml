@@ -185,6 +185,7 @@
                     Color: =RGBA(204, 214, 224, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(102, 133, 163, 1)
+                    FontWeight: =FontWeight.Semibold
                     Height: =30
                     PaddingBottom: =7.67
                     PaddingLeft: =7.67
@@ -355,6 +356,7 @@
                     Color: =RGBA(204, 214, 224, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(102, 133, 163, 1)
+                    FontWeight: =FontWeight.Semibold
                     Height: =30
                     PaddingBottom: =7.67
                     PaddingLeft: =7.67

@@ -87,7 +87,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
         "appVer": "3.24032.26",
-        "modifiedOn": "2024-03-25 19:46:57",
+        "modifiedOn": "2024-03-26 19:07:24",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[dbo].[assets]\":[\"post\",\"patch\",\"get\"],\"[dbo].[assets_images]\":[\"get\"],\"[dbo].[asset_categories]\":[\"get\"],\"[dbo].[asset_types]\":[\"get\"],\"[dbo].[asset_type_parts_types]\":[\"get\"],\"[dbo].[priority_levels]\":[\"get\"],\"[dbo].[servicerequestmaster]\":[\"post\",\"patch\",\"get\"],\"[dbo].[sites]\":[\"get\"],\"[dbo].[storenotificationmessages]\":[\"post\",\"patch\",\"get\"],\"[dbo].[tickets_master]\":[\"post\",\"patch\",\"get\"],\"[dbo].[ticket_attachments]\":[\"get\"],\"[dbo].[ticket_categories]\":[\"get\"],\"[dbo].[ticket_messages]\":[\"post\",\"patch\",\"get\"],\"[dbo].[ticket_status]\":[\"get\"],\"[dbo].[user_configuration]\":[\"post\",\"patch\",\"get\"],\"[dbo].[vendors]\":[\"post\",\"patch\",\"get\"]}}",
         "version": 1
       },

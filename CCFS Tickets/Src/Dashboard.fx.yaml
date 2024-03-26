@@ -167,6 +167,7 @@
                     Color: =RGBA(204, 214, 224, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(102, 133, 163, 1)
+                    FontWeight: =FontWeight.Semibold
                     Height: =30
                     PaddingBottom: =7.67
                     PaddingLeft: =7.67
@@ -337,6 +338,7 @@
                         Color: =RGBA(204, 214, 224, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Fill: =RGBA(102, 133, 163, 1)
+                        FontWeight: =FontWeight.Semibold
                         Height: =32
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -545,6 +547,7 @@
                     Color: =RGBA(204, 214, 224, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(102, 133, 163, 1)
+                    FontWeight: =FontWeight.Semibold
                     Height: =30
                     PaddingBottom: =7.67
                     PaddingLeft: =7.67
@@ -734,6 +737,7 @@
                         Color: =RGBA(204, 214, 224, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Fill: =RGBA(102, 133, 163, 1)
+                        FontWeight: =FontWeight.Semibold
                         Height: =30
                         PaddingBottom: =7.67
                         PaddingLeft: =7.67
@@ -1009,6 +1013,7 @@
                     Color: =RGBA(204, 214, 224, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(102, 133, 163, 1)
+                    FontWeight: =FontWeight.Semibold
                     Height: =30
                     PaddingBottom: =7.67
                     PaddingLeft: =7.67
@@ -1143,6 +1148,7 @@
                         Color: =RGBA(204, 214, 224, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Fill: =RGBA(102, 133, 163, 1)
+                        FontWeight: =FontWeight.Semibold
                         Height: =30
                         PaddingBottom: =7.67
                         PaddingLeft: =7.67
@@ -1176,7 +1182,7 @@
                     BorderColor: =RGBA(0, 89, 178, 1)
                     DelayItemLoading: =true
                     Fill: =RGBA(204, 214, 224, 1)
-                    Height: =Parent.Height-Label18_27.Height
+                    Height: =Parent.Height
                     Items: |+
                         =
                         If(UserAdmin = 0, 
@@ -1268,24 +1274,6 @@
                             EditForm(ServiceRequestForm_2);
                         Width: =Parent.Width
                         ZIndex: =5
-
-                Label18_27 As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 89, 178, 1)
-                    Color: =RGBA(204, 214, 224, 1)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(102, 133, 163, 1)
-                    Height: =30
-                    PaddingBottom: =7.67
-                    PaddingLeft: =7.67
-                    PaddingRight: =4.63
-                    PaddingTop: =4.63
-                    Size: =18.46
-                    Text: ="Scheduled Services"
-                    Width: =Parent.Width
-                    X: =0.00
-                    Y: =0.00
-                    ZIndex: =3
 
     UserRegisterationPopUp As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
